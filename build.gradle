@@ -30,7 +30,7 @@ dependencies {
     compile 'org.slf4j:slf4j-api:1.7.12'
 
     // https://mvnrepository.com/artifact/com.github.pengrad/java-telegram-bot-api
-	compile group: 'com.github.pengrad', name: 'java-telegram-bot-api', version: '2.3.1'
+    compile group: 'com.github.pengrad', name: 'java-telegram-bot-api', version: '3.6.0'
     
     // https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp
 	compile group: 'com.squareup.okhttp3', name: 'okhttp', version: '3.4.1'
