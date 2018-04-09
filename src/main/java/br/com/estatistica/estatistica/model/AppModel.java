@@ -1,9 +1,29 @@
 package br.com.estatistica.estatistica.model;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+import com.pengrad.telegrambot.model.Update;
+
+import br.com.estatistica.estatistica.view.Observer;
 
 public class AppModel {
 
+	private static AppModel instanceModel;
+	private List<Observer> observers = new LinkedList<Observer>();
+	
+	public static AppModel getInstance(){
+		if(instanceModel == null){
+			instanceModel = new AppModel();
+		}
+		return instanceModel;
+	}
+	
+	public void registerObserver(Observer observer){
+		observers.add(observer);
+	}
+	
 	public String calculaMedia(ArrayList<Double> valores) {
 		Double resultado, soma = null;
 
@@ -14,7 +34,8 @@ public class AppModel {
 		return "A média é igual a : " + resultado;
 	}
 
-	public String calculaModa(ArrayList<Double> valores) {
+	public String calculaModa(Update update) {
+		ArrayList<Double> valores = null;
 		Double maior = null;
 		double ocorrenciasMaior = -1;
 		int contagem = 1;

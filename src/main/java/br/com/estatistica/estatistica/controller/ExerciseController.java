@@ -1,6 +1,6 @@
 package br.com.estatistica.estatistica.controller;
 
-import org.telegram.telegrambots.api.objects.Update;
+import com.pengrad.telegrambot.model.Update;
 
 public interface ExerciseController {
 	public void calcular(Update update);

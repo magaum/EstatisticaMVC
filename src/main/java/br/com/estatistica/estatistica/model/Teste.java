@@ -17,7 +17,6 @@ public class Teste {
 
 		
 		AppModel appModel = new AppModel();
-		System.out.println(appModel.calculaModa(valores));
 	}
 
 }
