@@ -9,14 +9,18 @@ public class Teste {
 		valores.add(1.00);
 		valores.add(1.00);
 		valores.add(1.00);
+		valores.add(1.00);
+
 		valores.add(5.00);
+
 		valores.add(3.00);
 		valores.add(3.00);
 		valores.add(3.00);
 		valores.add(3.00);
 
 		
-		AppModel appModel = new AppModel();
+		Model appModel = new Model();
+		System.out.println(appModel.calculaModa(valores));
 	}
 
 }
