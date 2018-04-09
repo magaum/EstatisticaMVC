@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AppModel {
+public class Model {
 
 	public String calculaMedia(ArrayList<Double> valores) {
 		Double resultado, soma = null;

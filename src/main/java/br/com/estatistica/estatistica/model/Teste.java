@@ -19,7 +19,7 @@ public class Teste {
 		valores.add(3.00);
 
 		
-		AppModel appModel = new AppModel();
+		Model appModel = new Model();
 		System.out.println(appModel.calculaModa(valores));
 	}
 
