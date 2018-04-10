@@ -86,7 +86,8 @@ public class Model {
 		ArrayList<Double> valores = convertStringToDouble(update.message().text());
 		
 		if(valores.size() % 2 == 0) {
-			Double mediana = ((valores.get(valores.size() / 2)) + (valores.get(valores.size() / 2) + 1)) / 2;  
+			Double mediana = (((valores.get(valores.size()  / 2) - 1)) + 
+					(valores.get(valores.size() / 2) )) / 2;  
 			this.notifyObservers(update.message().chat().id(), "A mediana é igual a : " + mediana);
 		}else {
 			int mediana =  valores.get(valores.size() / 2).intValue(); 
