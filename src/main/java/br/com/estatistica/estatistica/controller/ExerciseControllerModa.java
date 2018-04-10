@@ -16,7 +16,8 @@ public class ExerciseControllerModa implements ExerciseController {
 	}
 
 	public void calcular(Update update) {
-		// TODO Auto-generated method stub
-		
+		model.calculaModa(update);
+		view.sendTypingMessage(update);
 	}
+
 }
