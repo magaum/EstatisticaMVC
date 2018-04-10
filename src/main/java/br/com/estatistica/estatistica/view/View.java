@@ -18,11 +18,11 @@ import br.com.estatistica.estatistica.controller.ExerciseControllerMedia;
 import br.com.estatistica.estatistica.controller.ExerciseControllerMediana;
 import br.com.estatistica.estatistica.model.Model;
 
-public class View {
+public class View implements Observer{
 	
 
 	@SuppressWarnings("deprecation")
-	TelegramBot bot = TelegramBotAdapter.build("");
+	TelegramBot bot = TelegramBotAdapter.build("560936083:AAFbkcvYcWYgkzBrQcR6ufih8Ar_7VzPv2U" );
 
 	//Object that receives messages
 	GetUpdatesResponse updatesResponse;
@@ -85,6 +85,7 @@ public class View {
 				
 				} else {
 					sendResponse = bot.execute(new SendMessage(update.message().chat().id(),"Type teacher or student"));
+					System.out.println("Bateu aqui");
 				}
 				
 			}

@@ -2,10 +2,33 @@ package br.com.estatistica.estatistica.model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
-public class Model {
+import br.com.estatistica.estatistica.view.Observer;
 
+public class Model {
+	
+	private List<Observer> observers = new LinkedList<Observer>();
+	private static Model uniqueInstance;
+
+	
+	public static Model getInstance(){
+		if(uniqueInstance == null){
+			uniqueInstance = new Model();
+		}
+		return uniqueInstance;
+	}
+	
+	
+	public void registerObserver(Observer observer){
+		observers.add(observer);
+	}
+	
+	
+	
+	
 	public String calculaMedia(ArrayList<Double> valores) {
 		Double resultado, soma = null;
 
