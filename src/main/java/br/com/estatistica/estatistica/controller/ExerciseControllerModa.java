@@ -16,8 +16,8 @@ public class ExerciseControllerModa implements ExerciseController {
 	}
 
 	public void calcular(Update update) {
-		model.calculaModa(update);
 		view.sendTypingMessage(update);
+		model.calculaModa(update);
 	}
 
 }

@@ -16,8 +16,8 @@ public class ExerciseControllerMediana implements ExerciseController {
 	}
 
 	public void calcular(Update update) {
-		// TODO Auto-generated method stub
-		
+		view.sendTypingMessage(update);
+		model.calculaMediana(update);
 	}
 
 	

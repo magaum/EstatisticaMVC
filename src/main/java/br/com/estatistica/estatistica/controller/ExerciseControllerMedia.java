@@ -17,8 +17,8 @@ public class ExerciseControllerMedia implements ExerciseController{
 	}
 
 	public void calcular(Update update) {
-		// TODO Auto-generated method stub
-		
+		view.sendTypingMessage(update);
+		model.calculaMedia(update);
 	}
 	
 		

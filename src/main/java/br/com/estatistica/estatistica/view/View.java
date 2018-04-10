@@ -16,6 +16,7 @@ import com.pengrad.telegrambot.response.SendResponse;
 import br.com.estatistica.estatistica.controller.ExerciseController;
 import br.com.estatistica.estatistica.controller.ExerciseControllerMedia;
 import br.com.estatistica.estatistica.controller.ExerciseControllerMediana;
+import br.com.estatistica.estatistica.controller.ExerciseControllerModa;
 import br.com.estatistica.estatistica.model.Model;
 
 public class View implements Observer{
@@ -32,12 +33,10 @@ public class View implements Observer{
 	BaseResponse baseResponse;
 			
 	
-	int queuesIndex=0;
-	
-	ExerciseController exerciseController; //Strategy Pattern -- connection View -> Controller
-	
+	int queuesIndex			=0;
 	boolean searchBehaviour = false;
 	
+	ExerciseController exerciseController; //Strategy Pattern -- connection View -> Controller
 	private Model model;
 	
 	public View(Model model){
@@ -49,8 +48,6 @@ public class View implements Observer{
 	}
 	
 	public void receiveUsersMessages() {
-
-		
 		
 		//infinity loop
 		while (true){
@@ -63,36 +60,38 @@ public class View implements Observer{
 
 			//taking each message in the Queue
 			for (Update update : updates) {
-				
-				//updating queue's index
-				queuesIndex = update.updateId()+1;
-				
-				if(this.searchBehaviour==true){
-					this.callController(update);
-					
-				}else if(update.message().text().equals("media")){
-					setControllerSearch(new ExerciseControllerMedia(model, this));
-					sendResponse = bot.execute(new SendMessage(update.message().chat().id(),"what's the student name?"));
-					this.searchBehaviour = true;
-					
-				} else if(update.message().text().equals("mediana")){
-					setControllerSearch(new ExerciseControllerMediana(model, this));
-					sendResponse = bot.execute(new SendMessage(update.message().chat().id(),"what's the teacher name?"));
-					this.searchBehaviour = true;
-					
-				} else if (update.message().text().equals("moda")) {
-					//faz tal coisa
-				
-				} else {
-					sendResponse = bot.execute(new SendMessage(update.message().chat().id(),"Type teacher or student"));
-					System.out.println("Bateu aqui");
-				}
-				
+				executa(update);
 			}
-
 		}
+	}
+	
+
+	public void executa(Update update) {
+		//updating queue's index
+		queuesIndex = update.updateId()+1;
 		
 		
+		if(this.searchBehaviour==true){
+			this.callController(update);
+			
+		}else if(update.message().text().equals("media")){
+			setControllerSearch(new ExerciseControllerMedia(model, this));
+			sendResponse 			= bot.execute(new SendMessage(update.message().chat().id(),"Digites os valores de entrada separados por ponto e virgula (;)!"));
+			this.searchBehaviour 	= true;
+			
+		} else if(update.message().text().equals("mediana")){
+			setControllerSearch(new ExerciseControllerMediana(model, this));
+			sendResponse 			= bot.execute(new SendMessage(update.message().chat().id(),"Digites os valores de entrada separados por ponto e virgula (;)!"));
+			this.searchBehaviour 	= true;
+			
+		} else if (update.message().text().equals("moda")) {
+			setControllerSearch(new ExerciseControllerModa(model, this));
+			sendResponse 			= bot.execute(new SendMessage(update.message().chat().id(),"Digites os valores de entrada separados por ponto e virgula (;)!"));
+			this.searchBehaviour 	= true;
+		
+		} else {
+			sendResponse = bot.execute(new SendMessage(update.message().chat().id(),"O que deseja calcular:\nMedia \nModa  \nMediana ?"));
+		}
 	}
 	
 	
@@ -108,6 +107,5 @@ public class View implements Observer{
 	public void sendTypingMessage(Update update){
 		baseResponse = bot.execute(new SendChatAction(update.message().chat().id(), ChatAction.typing.name()));
 	}
-	
 
 }
