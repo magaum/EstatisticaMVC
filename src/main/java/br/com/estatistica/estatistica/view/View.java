@@ -22,8 +22,7 @@ import br.com.estatistica.estatistica.model.Model;
 public class View implements Observer{
 	
 
-	@SuppressWarnings("deprecation")
-	TelegramBot bot = TelegramBotAdapter.build("560936083:AAFbkcvYcWYgkzBrQcR6ufih8Ar_7VzPv2U" );
+	TelegramBot bot = TelegramBotAdapter.build("560936083:AAFxIv0Rq1tO7SqILKU2hBirWeo1e_3mfG8");
 
 	//Object that receives messages
 	GetUpdatesResponse updatesResponse;

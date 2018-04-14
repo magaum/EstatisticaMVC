@@ -46,39 +46,46 @@ public class Model {
 	}
 
 	public void calculaModa(Update update) {
-		Double maior 			= null;
-		double ocorrenciasMaior = -1;
-		int contagem 			= 1;
-		Map<Double, Double> map = new HashMap<Double, Double>();
-
-		ArrayList<Double> valores = convertStringToDouble(update.message().text());
+		int contador 				= 0;
+		double maior 				= 0;
+		double ocorrenciaMaior 		= 0;
+		ArrayList<Double> modas 	= new ArrayList<>();
+		ArrayList<Double> valores 	= convertStringToDouble(update.message().text());
 
 		valores.sort(null);
+
 		for (int i = 1; i <= valores.size(); i++) {
 			if (i < valores.size() && valores.get(i).equals(valores.get(i - 1))) {
-				contagem++;
-
-			} else if (contagem > ocorrenciasMaior) {
-				map.remove(maior);
-				maior = valores.get(i - 1);
-				ocorrenciasMaior = contagem;
-
+				contador++;
+				continue;
+			} else {
+				if (contador > ocorrenciaMaior) {
+					removerDadosMap(modas);
+					maior = valores.get(i - 1);
+					ocorrenciaMaior = contador;
+					modas.add(maior);
+				} else if (contador == ocorrenciaMaior) {
+					modas.add(valores.get(i - 1));
+				}
 			}
-
-			if (contagem == ocorrenciasMaior) {
-				map.put(valores.get(i - 1), valores.get(i - 1));
-				contagem = 1;
-			}
+			contador = 0;
 		}
 
-		if (map.size() > 1) {
-			String modas = "";
-			for (Double d : map.keySet()) {
-				modas += String.valueOf(d) + "\n";
+		if (modas.size() > 1) {
+			String resultado = "os valores da moda são : ";
+			for (Double d : modas) {
+				resultado += d + ", ";
 			}
-			this.notifyObservers(update.message().chat().id(), "As modas são : \n" + modas);
-		} else {
-			this.notifyObservers(update.message().chat().id(), "A moda é igual a : " + maior);
+			this.notifyObservers(update.message().chat().id(), resultado);
+		} else
+			this.notifyObservers(update.message().chat().id(), "o valor da moda é igual a : " + maior);
+	}
+
+	public  void removerDadosMap(ArrayList<Double> modas) {
+		if (modas.size() > 0) {
+			for (int i = 0; i <= modas.size(); i++) {
+				modas.remove(0);
+			}
 		}
 	}
 	
