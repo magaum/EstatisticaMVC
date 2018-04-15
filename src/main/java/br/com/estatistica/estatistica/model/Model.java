@@ -97,7 +97,7 @@ public class Model {
 	}
 
 	public ArrayList<Double> convertStringToDouble(String valor ) {
-		ArrayList<Double> valores 	= new ArrayList<>();
+		ArrayList<Double> valores 	= new ArrayList<Double>();
 		String[] aux 				= valor.replaceAll(",", ".").split(";");
 		
 		for (String s : aux) {

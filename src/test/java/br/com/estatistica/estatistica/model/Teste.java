@@ -8,7 +8,7 @@ import java.util.Map;
 public class Teste {
 
 	public static void main(String[] args) {
-		ArrayList<Double> valores = new ArrayList<>();
+		ArrayList<Double> valores = new ArrayList<Double>();
 		
 		valores.add(1.0);
 		valores.add(1.0);
