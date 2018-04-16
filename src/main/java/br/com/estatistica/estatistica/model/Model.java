@@ -1,6 +1,7 @@
 package br.com.estatistica.estatistica.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -33,78 +34,85 @@ public class Model {
 	}
 
 	public void calculaMedia(Update update) {
-		
-		ArrayList<Double> valores 	= convertStringToDouble(update.message().text());
-		
-		Double resultado, soma 		= 0.0;
 
-		for (Double v : valores) {
-			soma += v;
+		ArrayList<Double> valores = convertStringToDouble(update.message().text(), update);
+
+		Double resultado, soma = 0.0;
+
+		if (valores != null) {
+			for (Double v : valores) {
+				soma += v;
+			}
+			resultado = soma / valores.size();
+			this.notifyObservers(update.message().chat().id(), "A média é igual a: " + resultado);
 		}
-		resultado = soma / valores.size();
-		this.notifyObservers(update.message().chat().id(), "A média é igual a : " + resultado);
 	}
 
 	public void calculaModa(Update update) {
-		Double maior 			= null;
-		double ocorrenciasMaior = -1;
-		int contagem 			= 1;
+		double ocorrenciasMaior = 0;
+		double contagem = 0;
 		Map<Double, Double> map = new HashMap<Double, Double>();
 
-		ArrayList<Double> valores = convertStringToDouble(update.message().text());
-
-		valores.sort(null);
-		for (int i = 1; i <= valores.size(); i++) {
-			if (i < valores.size() && valores.get(i).equals(valores.get(i - 1))) {
-				contagem++;
-
-			} else if (contagem > ocorrenciasMaior) {
-				map.remove(maior);
-				maior = valores.get(i - 1);
-				ocorrenciasMaior = contagem;
-
+		ArrayList<Double> valores = convertStringToDouble(update.message().text(), update);
+		if (valores != null) {
+			Collections.sort(valores);
+			for (int i = 1; i < valores.size(); i++) {
+				if (valores.get(i).equals(valores.get(i - 1))) {
+					contagem++;
+				}
+				else if(contagem > 1) {
+					if(ocorrenciasMaior == 0) {
+						map.put(valores.get(i),valores.get(i));
+					}
+					else if (contagem == ocorrenciasMaior) {
+						map.put(valores.get(i),valores.get(i));
+					}else if (contagem > ocorrenciasMaior) {
+						map.clear();
+						map.put(valores.get(i),valores.get(i));
+						ocorrenciasMaior = contagem;
+					}
+					contagem = 0;
+				}
 			}
 
-			if (contagem == ocorrenciasMaior) {
-				map.put(valores.get(i - 1), valores.get(i - 1));
-				contagem = 1;
+			if (map.size() > 1) {
+				String modas = "";
+				for (Double d : map.keySet()) {
+					modas += String.valueOf(d) + "\n";
+				}
+				this.notifyObservers(update.message().chat().id(), "As modas são: \n" + modas);
+			} else {
+				this.notifyObservers(update.message().chat().id(), "Não existe moda");
 			}
-		}
-
-		if (map.size() > 1) {
-			String modas = "";
-			for (Double d : map.keySet()) {
-				modas += String.valueOf(d) + "\n";
-			}
-			this.notifyObservers(update.message().chat().id(), "As modas são : \n" + modas);
-		} else {
-			this.notifyObservers(update.message().chat().id(), "A moda é igual a : " + maior);
 		}
 	}
-	
+
 	public void calculaMediana(Update update) {
-		ArrayList<Double> valores = convertStringToDouble(update.message().text());
-		
-		if(valores.size() % 2 == 0) {
-			Double mediana = (((valores.get(valores.size()  / 2) - 1)) + 
-					(valores.get(valores.size() / 2) )) / 2;  
-			this.notifyObservers(update.message().chat().id(), "A mediana é igual a : " + mediana);
-		}else {
-			int mediana =  valores.get(valores.size() / 2).intValue(); 
-			this.notifyObservers(update.message().chat().id(), "A mediana é igual a : " 
-					+ mediana);
+		ArrayList<Double> valores = convertStringToDouble(update.message().text(), update);
+		if (valores != null) {
+			if (valores.size() % 2 == 0) {
+				Double mediana = (((valores.get(valores.size() / 2) - 1)) + (valores.get(valores.size() / 2))) / 2;
+				this.notifyObservers(update.message().chat().id(), "A mediana é igual a: " + mediana);
+			} else {
+				int mediana = valores.get(valores.size() / 2).intValue();
+				this.notifyObservers(update.message().chat().id(), "A mediana é igual a: " + mediana);
+			}
 		}
 	}
 
-	public ArrayList<Double> convertStringToDouble(String valor ) {
-		ArrayList<Double> valores 	= new ArrayList<Double>();
-		String[] aux 				= valor.replaceAll(",", ".").split(";");
-		
-		for (String s : aux) {
-			valores.add(Double.parseDouble(s));
+	public ArrayList<Double> convertStringToDouble(String valor, Update update) {
+		ArrayList<Double> valores = new ArrayList<Double>();
+		String[] aux = valor.replaceAll(",", ".").split(";");
+
+		try {
+			for (String s : aux) {
+				valores.add(Double.parseDouble(s));
+			}
+		} catch (Exception error) {
+			notifyObservers(update.message().chat().id(),
+					"Entrada inválida, por favor, digite os valores de entrada separados por ponto e virgula ;");
+			valores = null;
 		}
 		return valores;
 	}
 }
-
-

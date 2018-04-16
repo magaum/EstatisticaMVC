@@ -78,31 +78,33 @@ public class View implements Observer {
 		if (this.searchBehaviour == true) {
 			this.callController(update);
 
-		} else if (update.message().text().equals("Media")) {
+		} else if (update.message().text().equalsIgnoreCase("Media")) {
 			setControllerSearch(new ExerciseControllerMedia(model, this));
 			sendResponse = bot.execute(new SendMessage(update.message().chat().id(),
-					"Digites os valores de entrada separados por ponto e virgula (;)!"));
+					"Digite os valores de entrada separados por ponto e virgula ;"));
 			this.searchBehaviour = true;
 
-		} else if (update.message().text().equals("Mediana")) {
+		} else if (update.message().text().equalsIgnoreCase("Mediana")) {
 			setControllerSearch(new ExerciseControllerMediana(model, this));
 			sendResponse = bot.execute(new SendMessage(update.message().chat().id(),
-					"Digites os valores de entrada separados por ponto e virgula (;)!"));
+					"Digite os valores de entrada separados por ponto e virgula ;"));
 			this.searchBehaviour = true;
 
-		} else if (update.message().text().equals("Moda")) {
+		} else if (update.message().text().equalsIgnoreCase("Moda")) {
 			setControllerSearch(new ExerciseControllerModa(model, this));
 			sendResponse = bot.execute(new SendMessage(update.message().chat().id(),
-					"Digites os valores de entrada separados por ponto e virgula (;)!"));
+					"Digite os valores de entrada separados por ponto e virgula ;"));
 			this.searchBehaviour = true;
 
-		} else if(update.message().text().equals("/start")) {
+		} else if (update.message().text().equals("/start")) {
 			Keyboard replyKeyboardMarkup = new ReplyKeyboardMarkup(new String[] { "Media", "Moda", "Mediana" })
-					.oneTimeKeyboard(false) // optional
-					.resizeKeyboard(true) // optional
+					.oneTimeKeyboard(false)
+					.resizeKeyboard(true)
 					.selective(true);
 			bot.execute(new SendMessage(update.message().chat().id(), "O que deseja calcular?")
 					.replyMarkup(replyKeyboardMarkup));
+		} else {
+			bot.execute(new SendMessage(update.message().chat().id(), "comando invalido, selecione ou digite media, moda ou mediana"));
 		}
 	}
 
