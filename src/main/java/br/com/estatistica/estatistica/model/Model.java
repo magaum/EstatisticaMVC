@@ -49,36 +49,12 @@ public class Model {
 	}
 
 	public void calculaModa(Update update) {
-<<<<<<< HEAD
-		double ocorrenciasMaior = 0;
-		double contagem = 0;
-		Map<Double, Double> map = new HashMap<Double, Double>();
 
-		ArrayList<Double> valores = convertStringToDouble(update.message().text(), update);
-		if (valores != null) {
-			Collections.sort(valores);
-			for (int i = 1; i < valores.size(); i++) {
-				if (valores.get(i).equals(valores.get(i - 1))) {
-					contagem++;
-				}
-				else if(contagem > 1) {
-					if(ocorrenciasMaior == 0) {
-						map.put(valores.get(i),valores.get(i));
-					}
-					else if (contagem == ocorrenciasMaior) {
-						map.put(valores.get(i),valores.get(i));
-					}else if (contagem > ocorrenciasMaior) {
-						map.clear();
-						map.put(valores.get(i),valores.get(i));
-						ocorrenciasMaior = contagem;
-					}
-					contagem = 0;
-=======
 		int contador 				= 0;
 		double maior 				= 0;
 		double ocorrenciaMaior 		= 0;
 		ArrayList<Double> modas 	= new ArrayList<>();
-		ArrayList<Double> valores 	= convertStringToDouble(update.message().text());
+		ArrayList<Double> valores 	= convertStringToDouble(update.message().text(), update);
 
 		valores.sort(null);
 
@@ -94,23 +70,11 @@ public class Model {
 					modas.add(maior);
 				} else if (contador == ocorrenciaMaior) {
 					modas.add(valores.get(i - 1));
->>>>>>> 81fa64dc8195db9e1214329fac57a301e69c34cb
 				}
 			}
 			contador = 0;
 		}
 
-<<<<<<< HEAD
-			if (map.size() > 1) {
-				String modas = "";
-				for (Double d : map.keySet()) {
-					modas += String.valueOf(d) + "\n";
-				}
-				this.notifyObservers(update.message().chat().id(), "As modas são: \n" + modas);
-			} else {
-				this.notifyObservers(update.message().chat().id(), "Não existe moda");
-			}
-=======
 		if (modas.size() > 1) {
 			String resultado = "os valores da moda são : ";
 			for (Double d : modas) {
@@ -126,7 +90,7 @@ public class Model {
 			for (int i = 0; i <= modas.size(); i++) {
 				modas.remove(0);
 			}
->>>>>>> 81fa64dc8195db9e1214329fac57a301e69c34cb
+
 		}
 	}
 
