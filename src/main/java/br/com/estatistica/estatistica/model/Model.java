@@ -49,6 +49,7 @@ public class Model {
 	}
 
 	public void calculaModa(Update update) {
+<<<<<<< HEAD
 		double ocorrenciasMaior = 0;
 		double contagem = 0;
 		Map<Double, Double> map = new HashMap<Double, Double>();
@@ -72,9 +73,34 @@ public class Model {
 						ocorrenciasMaior = contagem;
 					}
 					contagem = 0;
+=======
+		int contador 				= 0;
+		double maior 				= 0;
+		double ocorrenciaMaior 		= 0;
+		ArrayList<Double> modas 	= new ArrayList<>();
+		ArrayList<Double> valores 	= convertStringToDouble(update.message().text());
+
+		valores.sort(null);
+
+		for (int i = 1; i <= valores.size(); i++) {
+			if (i < valores.size() && valores.get(i).equals(valores.get(i - 1))) {
+				contador++;
+				continue;
+			} else {
+				if (contador > ocorrenciaMaior) {
+					removerDadosMap(modas);
+					maior = valores.get(i - 1);
+					ocorrenciaMaior = contador;
+					modas.add(maior);
+				} else if (contador == ocorrenciaMaior) {
+					modas.add(valores.get(i - 1));
+>>>>>>> 81fa64dc8195db9e1214329fac57a301e69c34cb
 				}
 			}
+			contador = 0;
+		}
 
+<<<<<<< HEAD
 			if (map.size() > 1) {
 				String modas = "";
 				for (Double d : map.keySet()) {
@@ -84,6 +110,23 @@ public class Model {
 			} else {
 				this.notifyObservers(update.message().chat().id(), "Não existe moda");
 			}
+=======
+		if (modas.size() > 1) {
+			String resultado = "os valores da moda são : ";
+			for (Double d : modas) {
+				resultado += d + ", ";
+			}
+			this.notifyObservers(update.message().chat().id(), resultado);
+		} else
+			this.notifyObservers(update.message().chat().id(), "o valor da moda é igual a : " + maior);
+	}
+
+	public  void removerDadosMap(ArrayList<Double> modas) {
+		if (modas.size() > 0) {
+			for (int i = 0; i <= modas.size(); i++) {
+				modas.remove(0);
+			}
+>>>>>>> 81fa64dc8195db9e1214329fac57a301e69c34cb
 		}
 	}
 
