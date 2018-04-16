@@ -1,18 +1,12 @@
 package br.com.estatistica.estatistica.view;
 
-import java.io.FileInputStream;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
 
 import com.pengrad.telegrambot.TelegramBot;
 import com.pengrad.telegrambot.TelegramBotAdapter;
 import com.pengrad.telegrambot.model.Update;
 import com.pengrad.telegrambot.model.request.ChatAction;
-import com.pengrad.telegrambot.model.request.InlineKeyboardButton;
-import com.pengrad.telegrambot.model.request.InlineKeyboardMarkup;
 import com.pengrad.telegrambot.model.request.Keyboard;
-import com.pengrad.telegrambot.model.request.KeyboardButton;
 import com.pengrad.telegrambot.model.request.ReplyKeyboardMarkup;
 import com.pengrad.telegrambot.request.GetUpdates;
 import com.pengrad.telegrambot.request.SendChatAction;
@@ -39,8 +33,8 @@ public class View implements Observer {
 	BaseResponse baseResponse;
 
 	int queuesIndex = 0;
+	
 	boolean searchBehaviour = false;
-	Properties properties;
 
 	ExerciseController exerciseController; // Strategy Pattern -- connection View -> Controller
 	private Model model;
@@ -49,7 +43,7 @@ public class View implements Observer {
 		this.model = model;
 	}
 
-	public void setControllerSearch(ExerciseController exerciseController) { // Strategy Pattern
+	public void setController(ExerciseController exerciseController) { // Strategy Pattern
 		this.exerciseController = exerciseController;
 	}
 
@@ -66,12 +60,12 @@ public class View implements Observer {
 
 			// taking each message in the Queue
 			for (Update update : updates) {
-				executa(update);
+				execute(update);
 			}
 		}
 	}
 
-	public void executa(Update update) {
+	public void execute(Update update) {
 		// updating queue's index
 		queuesIndex = update.updateId() + 1;
 
@@ -79,19 +73,19 @@ public class View implements Observer {
 			this.callController(update);
 
 		} else if (update.message().text().equalsIgnoreCase("Media")) {
-			setControllerSearch(new ExerciseControllerMedia(model, this));
+			setController(new ExerciseControllerMedia(model, this));
 			sendResponse = bot.execute(new SendMessage(update.message().chat().id(),
 					"Digite os valores de entrada separados por ponto e virgula ;"));
 			this.searchBehaviour = true;
 
 		} else if (update.message().text().equalsIgnoreCase("Mediana")) {
-			setControllerSearch(new ExerciseControllerMediana(model, this));
+			setController(new ExerciseControllerMediana(model, this));
 			sendResponse = bot.execute(new SendMessage(update.message().chat().id(),
 					"Digite os valores de entrada separados por ponto e virgula ;"));
 			this.searchBehaviour = true;
 
 		} else if (update.message().text().equalsIgnoreCase("Moda")) {
-			setControllerSearch(new ExerciseControllerModa(model, this));
+			setController(new ExerciseControllerModa(model, this));
 			sendResponse = bot.execute(new SendMessage(update.message().chat().id(),
 					"Digite os valores de entrada separados por ponto e virgula ;"));
 			this.searchBehaviour = true;

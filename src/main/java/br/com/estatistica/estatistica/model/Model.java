@@ -2,10 +2,8 @@ package br.com.estatistica.estatistica.model;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 import com.pengrad.telegrambot.model.Update;
 
@@ -27,9 +25,9 @@ public class Model {
 		observers.add(observer);
 	}
 
-	public void notifyObservers(long chatId, String studentsData) {
+	public void notifyObservers(long chatId, String data) {
 		for (Observer observer : observers) {
-			observer.update(chatId, studentsData);
+			observer.update(chatId, data);
 		}
 	}
 
@@ -55,9 +53,7 @@ public class Model {
 		double ocorrenciaMaior 		= 0;
 		ArrayList<Double> modas 	= new ArrayList<>();
 		ArrayList<Double> valores 	= convertStringToDouble(update.message().text(), update);
-
-		valores.sort(null);
-
+		Collections.sort(valores);
 		for (int i = 1; i <= valores.size(); i++) {
 			if (i < valores.size() && valores.get(i).equals(valores.get(i - 1))) {
 				contador++;

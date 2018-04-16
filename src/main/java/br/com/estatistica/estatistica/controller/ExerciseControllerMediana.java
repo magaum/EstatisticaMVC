@@ -15,7 +15,7 @@ public class ExerciseControllerMediana implements ExerciseController {
 		this.view = view;
 	}
 
-	public void calcular(Update update) {
+	public void calculate(Update update) {
 		view.sendTypingMessage(update);
 		model.calculaMediana(update);
 	}

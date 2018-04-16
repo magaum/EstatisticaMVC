@@ -4,5 +4,5 @@ import com.pengrad.telegrambot.model.Update;
 
 public interface ExerciseController {
 	
-	public void calcular(Update update);
+	public void calculate(Update update);
 }

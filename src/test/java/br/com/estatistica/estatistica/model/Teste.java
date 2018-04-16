@@ -7,13 +7,8 @@ import java.util.Map;
 public class Teste {
 
 	public static void main(String[] args) {
-<<<<<<< HEAD:src/test/java/br/com/estatistica/estatistica/model/Teste.java
 		ArrayList<Double> valores = new ArrayList<Double>();
 		
-=======
-		ArrayList<Double> valores = new ArrayList<>();
-
->>>>>>> 81fa64dc8195db9e1214329fac57a301e69c34cb:src/main/java/br/com/estatistica/estatistica/model/Teste.java
 		valores.add(1.0);
 		valores.add(1.0);
 		valores.add(1.0);

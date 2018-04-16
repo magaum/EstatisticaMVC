@@ -16,7 +16,7 @@ public class ExerciseControllerMedia implements ExerciseController{
 		this.view = view;
 	}
 
-	public void calcular(Update update) {
+	public void calculate(Update update) {
 		view.sendTypingMessage(update);
 		model.calculaMedia(update);
 	}
