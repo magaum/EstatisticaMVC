@@ -103,7 +103,7 @@ public class View implements Observer {
 	}
 
 	public void callController(Update update) {
-		this.exerciseController.calcular(update);
+		this.exerciseController.calculate(update);
 	}
 
 	public void update(long chatId, String studentsData) {
