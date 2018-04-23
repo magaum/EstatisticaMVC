@@ -48,17 +48,17 @@ public class Model {
 
 	public void calculaModa(Update update) {
 
-		int contador 				= 0;
-		double maior 				= 0;
-		double ocorrenciaMaior 		= 0;
-		ArrayList<Double> modas 	= new ArrayList<>();
-		ArrayList<Double> valores 	= convertStringToDouble(update.message().text(), update);
+		int contador = 0;
+		double maior = 0;
+		double ocorrenciaMaior = 0;
+		ArrayList<Double> modas = new ArrayList<>();
+		ArrayList<Double> valores = convertStringToDouble(update.message().text(), update);
 		Collections.sort(valores);
 		for (int i = 1; i <= valores.size(); i++) {
 			if (i < valores.size() && valores.get(i).equals(valores.get(i - 1))) {
 				contador++;
 				continue;
-			} else {
+			} else if (contador > 0) {
 				if (contador > ocorrenciaMaior) {
 					removerDadosMap(modas);
 					maior = valores.get(i - 1);
@@ -77,11 +77,14 @@ public class Model {
 				resultado += d + ", ";
 			}
 			this.notifyObservers(update.message().chat().id(), resultado);
-		} else
+		} else if (modas.size() == 1) {
 			this.notifyObservers(update.message().chat().id(), "o valor da moda é igual a : " + maior);
+		} else {
+			this.notifyObservers(update.message().chat().id(), "Não exite moda");
+		}
 	}
 
-	public  void removerDadosMap(ArrayList<Double> modas) {
+	public void removerDadosMap(ArrayList<Double> modas) {
 		if (modas.size() > 0) {
 			for (int i = 0; i <= modas.size(); i++) {
 				modas.remove(0);
