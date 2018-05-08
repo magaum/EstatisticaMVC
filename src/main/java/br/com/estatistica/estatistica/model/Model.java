@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.db4o.Db4oEmbedded;
+import com.db4o.ObjectContainer;
 import com.pengrad.telegrambot.model.Update;
 
 import br.com.estatistica.estatistica.view.Observer;
@@ -14,11 +16,24 @@ public class Model {
 	private List<Observer> observers = new LinkedList<Observer>();
 	private static Model uniqueInstance;
 
+	ObjectContainer bancoProblemas = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(), "db/bancoProblemas.db4o");
+
 	public static Model getInstance() {
 		if (uniqueInstance == null) {
 			uniqueInstance = new Model();
 		}
 		return uniqueInstance;
+	}
+
+	public boolean addHistorico(Historico historico) {
+		try {
+			bancoProblemas.store(historico);
+			bancoProblemas.commit();
+			return true;
+		} catch (Exception e) {
+			System.out.println("Erro ao salvar no banco: " + e);
+			return false;
+		}
 	}
 
 	public void registerObserver(Observer observer) {
@@ -33,27 +48,36 @@ public class Model {
 
 	public void calculaMedia(Update update) {
 
+		long chatId = update.message().chat().id();
+		String username = update.message().chat().username();
 		ArrayList<Double> valores = convertStringToDouble(update.message().text(), update);
-
 		Double resultado, soma = 0.0;
+		Historico historico = new Historico(valores, chatId, username);
 
 		if (valores != null) {
 			for (Double v : valores) {
 				soma += v;
 			}
 			resultado = soma / valores.size();
-			this.notifyObservers(update.message().chat().id(), "A média é igual a: " + resultado);
+			if (!addHistorico(historico)) {
+				System.out.println("Erro ao salvar no banco");
+			}
+			this.notifyObservers(chatId, "A média é igual a: " + resultado);
 		}
+
 	}
 
 	public void calculaModa(Update update) {
 
+		long chatId = update.message().chat().id();
+		String username = update.message().chat().username();
 		int contador = 0;
 		double maior = 0;
 		double ocorrenciaMaior = 0;
 		ArrayList<Double> modas = new ArrayList<>();
 		ArrayList<Double> valores = convertStringToDouble(update.message().text(), update);
 		Collections.sort(valores);
+		Historico historico = new Historico(valores, chatId, username);
 		for (int i = 1; i <= valores.size(); i++) {
 			if (i < valores.size() && valores.get(i).equals(valores.get(i - 1))) {
 				contador++;
@@ -71,16 +95,19 @@ public class Model {
 			contador = 0;
 		}
 
+		if(!addHistorico(historico)) {
+			System.out.println("Erro ao salvar no banco");
+		}
 		if (modas.size() > 1) {
 			String resultado = "os valores da moda são : ";
 			for (Double d : modas) {
 				resultado += d + ", ";
 			}
-			this.notifyObservers(update.message().chat().id(), resultado);
+			this.notifyObservers(chatId, resultado);
 		} else if (modas.size() == 1) {
-			this.notifyObservers(update.message().chat().id(), "o valor da moda é igual a : " + maior);
+			this.notifyObservers(chatId, "o valor da moda é igual a : " + maior);
 		} else {
-			this.notifyObservers(update.message().chat().id(), "Não exite moda");
+			this.notifyObservers(chatId, "Não exite moda");
 		}
 	}
 
@@ -94,7 +121,13 @@ public class Model {
 	}
 
 	public void calculaMediana(Update update) {
+		long chatId = update.message().chat().id();
+		String username = update.message().chat().username();
 		ArrayList<Double> valores = convertStringToDouble(update.message().text(), update);
+		Historico historico = new Historico(valores, chatId, username);
+		if(!addHistorico(historico)) {
+			System.out.println("Erro ao salvar no banco");
+		}
 		if (valores != null) {
 			if (valores.size() % 2 == 0) {
 				Double mediana = (((valores.get(valores.size() / 2) - 1)) + (valores.get(valores.size() / 2))) / 2;
