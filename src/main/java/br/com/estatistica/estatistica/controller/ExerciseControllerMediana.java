@@ -5,7 +5,7 @@ import com.pengrad.telegrambot.model.Update;
 import br.com.estatistica.estatistica.model.Model;
 import br.com.estatistica.estatistica.view.View;
 
-public class ExerciseControllerMediana implements ExerciseController {
+public class ExerciseControllerMediana implements ActionController {
 
 	private Model model;
 	private View view;
@@ -15,7 +15,7 @@ public class ExerciseControllerMediana implements ExerciseController {
 		this.view = view;
 	}
 
-	public void calculate(Update update) {
+	public void action(Update update) {
 		view.sendTypingMessage(update);
 		model.calculaMediana(update);
 	}

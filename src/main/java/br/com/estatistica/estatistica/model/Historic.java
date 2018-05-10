@@ -2,16 +2,16 @@ package br.com.estatistica.estatistica.model;
 
 import java.util.ArrayList;
 
-public class Historico {
+public class Historic implements Comparable<Historic>{
 
 	private ArrayList<Double> valores;
 	long chatId;
-	String username;
+	String tipo;
 
-	public Historico(ArrayList<Double> valores, long chatId, String username) {
+	public Historic(ArrayList<Double> valores, long chatId, String tipo) {
 		this.valores = valores;
 		this.chatId = chatId;
-		this.username = username;
+		this.tipo = tipo;
 	}
 
 	public ArrayList<Double> getvalores() {
@@ -30,12 +30,17 @@ public class Historico {
 		this.chatId = chatId;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getTipo() {
+		return tipo;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	@Override
+	public int compareTo(Historic historic) {
+		return tipo.compareTo(historic.getTipo());
 	}
 
 }

@@ -14,18 +14,18 @@ import com.pengrad.telegrambot.response.BaseResponse;
 import com.pengrad.telegrambot.response.GetUpdatesResponse;
 import com.pengrad.telegrambot.response.SendResponse;
 
-import br.com.estatistica.estatistica.controller.ExerciseController;
+import br.com.estatistica.estatistica.controller.ActionController;
 import br.com.estatistica.estatistica.controller.ExerciseControllerMedia;
 import br.com.estatistica.estatistica.controller.ExerciseControllerMediana;
 import br.com.estatistica.estatistica.controller.ExerciseControllerModa;
+import br.com.estatistica.estatistica.controller.HistoricController;
 import br.com.estatistica.estatistica.model.Model;
 
 public class View implements Observer {
 
 	private Model model;
-	int queuesIndex = 0;
 	int queue = 0;
-	boolean searchBehaviour = false;
+	boolean searchBehaviour;
 
 	TelegramBot bot; // TelegramBotAdapter.build(token);
 
@@ -36,15 +36,15 @@ public class View implements Observer {
 	// Object that manage chat actions like "typing action"
 	BaseResponse baseResponse;
 
-	ExerciseController exerciseController; // Strategy Pattern -- connection View -> Controller
+	ActionController actionController; // Strategy Pattern -- connection View -> Controller
 
 	public View(String token, Model model) {
 		this.model = model;
 		bot = new TelegramBot(token);
 	}
 
-	public void setController(ExerciseController exerciseController) { // Strategy Pattern
-		this.exerciseController = exerciseController;
+	public void setController(ActionController actionController) { // Strategy Pattern
+		this.actionController = actionController;
 	}
 
 	public void receiveUsersMessages() {
@@ -61,53 +61,60 @@ public class View implements Observer {
 	}
 
 	public void execute(List<Update> updates) {
-		for (Update update : updates) {
-			try {
-				System.out.println(queue+++" mensagem processada\n"
-						+ "ID: "+update.message().chat().id()+"\n"
-						+ "Usuário: "+update.message().chat().username()+"\n"
-						+ "Mensagem: "+update.message().text()+"\n"
-						);
-			}catch (Exception e) {
-				System.out.println("Log error: "+e);
-			}
-			queuesIndex = update.updateId() + 1;
 
+		for (Update update : updates) {
+			String nome = update.message().chat().firstName();
+			String message = update.message().text();
+			long chatId = update.message().chat().id();
+			try {
+				System.out.println(queue++ + " mensagem processada\n" + "ID: " + chatId + "\n" + "Usuário: " + nome
+						+ "\n" + "Mensagem: " + message + "\n");
+			} catch (Exception e) {
+				System.out.println("Log error: " + e);
+			}
+
+			if (message.equalsIgnoreCase("Media")) {
+				setController(new ExerciseControllerMedia(model, this));
+				sendResponse = bot.execute(new SendMessage(chatId,
+						"Entendi, media! Então digita os valores de entrada separados por ponto e virgula ; para eu poder calcular que já respondo"));
+				this.searchBehaviour = true;
+
+			} else if (message.equalsIgnoreCase("Mediana")) {
+				setController(new ExerciseControllerMediana(model, this));
+				sendResponse = bot.execute(new SendMessage(chatId,
+						"Entendi, mediana! Então digita os valores de entrada separados por ponto e virgula ; para eu poder calcular que já respondo"));
+				this.searchBehaviour = true;
+
+			} else if (message.equalsIgnoreCase("Moda")) {
+				setController(new ExerciseControllerModa(model, this));
+				sendResponse = bot.execute(new SendMessage(chatId,
+						"Entendi, moda! Então digita os valores de entrada separados por ponto e virgula ; para eu poder calcular que já respondo"));
+				this.searchBehaviour = true;
+
+			} else if (message.equalsIgnoreCase("Carregar")) {
+				setController(new HistoricController(model, this));
+				sendResponse = bot
+						.execute(new SendMessage(chatId, "Estou consultando valores armazenados, já respondo"));
+				this.searchBehaviour = true;
+
+			} else if (message.equals("/start")) {
+				Keyboard replyKeyboardMarkup = new ReplyKeyboardMarkup(
+						new String[] { "Media", "Moda", "Mediana", "Carregar" }).oneTimeKeyboard(false)
+								.resizeKeyboard(true).selective(true);
+				bot.execute(new SendMessage(update.message().chat().id(), "Ola, " + nome + ", o que deseja calcular?")
+						.replyMarkup(replyKeyboardMarkup));
+			} else if (this.searchBehaviour == false) {
+				bot.execute(new SendMessage(chatId,
+						"Não entendi o que você disse " + nome + ", digite ou selecione media, moda ou mediana"));
+			}
 			if (this.searchBehaviour == true) {
 				this.callController(update);
-
-			} else if (update.message().text().equalsIgnoreCase("Media")) {
-				setController(new ExerciseControllerMedia(model, this));
-				sendResponse = bot.execute(new SendMessage(update.message().chat().id(),
-						"Digite os valores de entrada separados por ponto e virgula ;"));
-				this.searchBehaviour = true;
-
-			} else if (update.message().text().equalsIgnoreCase("Mediana")) {
-				setController(new ExerciseControllerMediana(model, this));
-				sendResponse = bot.execute(new SendMessage(update.message().chat().id(),
-						"Digite os valores de entrada separados por ponto e virgula ;"));
-				this.searchBehaviour = true;
-
-			} else if (update.message().text().equalsIgnoreCase("Moda")) {
-				setController(new ExerciseControllerModa(model, this));
-				sendResponse = bot.execute(new SendMessage(update.message().chat().id(),
-						"Digite os valores de entrada separados por ponto e virgula ;"));
-				this.searchBehaviour = true;
-
-			} else if (update.message().text().equals("/start")) {
-				Keyboard replyKeyboardMarkup = new ReplyKeyboardMarkup(new String[] { "Media", "Moda", "Mediana" })
-						.oneTimeKeyboard(false).resizeKeyboard(true).selective(true);
-				bot.execute(new SendMessage(update.message().chat().id(), "O que deseja calcular?")
-						.replyMarkup(replyKeyboardMarkup));
-			} else {
-				bot.execute(new SendMessage(update.message().chat().id(),
-						"comando invalido, selecione ou digite media, moda ou mediana"));
 			}
 		}
 	}
 
 	public void callController(Update update) {
-		this.exerciseController.calculate(update);
+		this.actionController.action(update);
 	}
 
 	public void update(long chatId, String studentsData) {

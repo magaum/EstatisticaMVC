@@ -6,7 +6,7 @@ import br.com.estatistica.estatistica.model.Model;
 import br.com.estatistica.estatistica.view.View;
 
 
-public class ExerciseControllerMedia implements ExerciseController{
+public class ExerciseControllerMedia implements ActionController{
 
 	private Model model;
 	private View view;
@@ -16,7 +16,7 @@ public class ExerciseControllerMedia implements ExerciseController{
 		this.view = view;
 	}
 
-	public void calculate(Update update) {
+	public void action(Update update) {
 		view.sendTypingMessage(update);
 		model.calculaMedia(update);
 	}
