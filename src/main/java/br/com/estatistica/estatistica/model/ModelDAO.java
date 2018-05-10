@@ -9,6 +9,8 @@ import com.db4o.ObjectSet;
 import com.db4o.query.Query;
 import com.pengrad.telegrambot.model.Update;
 
+import br.com.estatistica.estatistica.log.Logs;
+
 public class ModelDAO {
 
 	private static ModelDAO modelDAO;
@@ -28,6 +30,10 @@ public class ModelDAO {
 	}
 
 	public boolean addHistoric(Historic historic) {
+		Logs.logInfoWriter("Dados armazenados no banco: ");
+		Logs.logInfoWriter("Tipo: " + historic.getTipo());
+		Logs.logInfoWriter("ChatID: " + historic.getChatId());
+		Logs.logInfoWriter("Valores: " + historic.getvalores());
 		bancoProblemas = connect();
 		bancoProblemas.store(historic);
 		bancoProblemas.commit();
@@ -46,7 +52,7 @@ public class ModelDAO {
 				userHistoric.add(historic);
 			}
 		}
-		if(userHistoric.isEmpty()) {
+		if (userHistoric.isEmpty()) {
 			userHistoric = null;
 		}
 		return userHistoric;

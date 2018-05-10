@@ -8,6 +8,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.pengrad.telegrambot.model.Update;
 
+import br.com.estatistica.estatistica.log.Logs;
 import br.com.estatistica.estatistica.model.Historic;
 
 public class ModelUtils {
@@ -28,6 +29,7 @@ public class ModelUtils {
 				valores.add(Double.parseDouble(numero));
 			}
 		} catch (Exception error) {
+			Logs.logErrorWriter("Valor inválido no input: "+error);
 			valores = null;
 		}
 		return valores;

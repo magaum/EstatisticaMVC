@@ -19,13 +19,14 @@ import br.com.estatistica.estatistica.controller.ExerciseControllerMedia;
 import br.com.estatistica.estatistica.controller.ExerciseControllerMediana;
 import br.com.estatistica.estatistica.controller.ExerciseControllerModa;
 import br.com.estatistica.estatistica.controller.HistoricController;
+import br.com.estatistica.estatistica.log.Logs;
 import br.com.estatistica.estatistica.model.Model;
 
 public class View implements Observer {
 
 	private Model model;
 	int queue = 0;
-	boolean searchBehaviour;
+	boolean waitUserInput = true;
 
 	TelegramBot bot; // TelegramBotAdapter.build(token);
 
@@ -53,7 +54,7 @@ public class View implements Observer {
 				try {
 					execute(updates);
 				} catch (Exception e) {
-					System.out.println("Erro ao processar mensagens: " + e);
+					Logs.logWarnWriter("Erro ao processar mensagens: " + e);
 				}
 				return UpdatesListener.CONFIRMED_UPDATES_ALL;
 			}
@@ -67,35 +68,39 @@ public class View implements Observer {
 			String message = update.message().text();
 			long chatId = update.message().chat().id();
 			try {
-				System.out.println(queue++ + " mensagem processada\n" + "ID: " + chatId + "\n" + "Usuário: " + nome
-						+ "\n" + "Mensagem: " + message + "\n");
+				Logs.logInfoWriter("Mensagem processada");
+				Logs.logInfoWriter("Nome do usuário: " + nome);
+				Logs.logInfoWriter("Mensagem: " + message);
+				Logs.logInfoWriter("ChatID: " + chatId);
 			} catch (Exception e) {
-				System.out.println("Log error: " + e);
+				Logs.logErrorWriter("Algum erro ocorreu ao processar a mensagem!" + e);
 			}
 
-			if (message.equalsIgnoreCase("Media")) {
+			if (message.equalsIgnoreCase("Carregar")) {
+				setController(new HistoricController(model, this));
+				sendResponse = bot
+						.execute(new SendMessage(chatId, "Estou consultando valores armazenados, já respondo"));
+				this.waitUserInput = false;
+
+			} 
+			if (this.waitUserInput == false) {
+				this.callController(update);
+			} else if (message.equalsIgnoreCase("Media")) {
 				setController(new ExerciseControllerMedia(model, this));
 				sendResponse = bot.execute(new SendMessage(chatId,
 						"Entendi, media! Então digita os valores de entrada separados por ponto e virgula ; para eu poder calcular que já respondo"));
-				this.searchBehaviour = true;
+				this.waitUserInput = false;
 
 			} else if (message.equalsIgnoreCase("Mediana")) {
 				setController(new ExerciseControllerMediana(model, this));
 				sendResponse = bot.execute(new SendMessage(chatId,
 						"Entendi, mediana! Então digita os valores de entrada separados por ponto e virgula ; para eu poder calcular que já respondo"));
-				this.searchBehaviour = true;
-
+				this.waitUserInput = false;
 			} else if (message.equalsIgnoreCase("Moda")) {
 				setController(new ExerciseControllerModa(model, this));
 				sendResponse = bot.execute(new SendMessage(chatId,
 						"Entendi, moda! Então digita os valores de entrada separados por ponto e virgula ; para eu poder calcular que já respondo"));
-				this.searchBehaviour = true;
-
-			} else if (message.equalsIgnoreCase("Carregar")) {
-				setController(new HistoricController(model, this));
-				sendResponse = bot
-						.execute(new SendMessage(chatId, "Estou consultando valores armazenados, já respondo"));
-				this.searchBehaviour = true;
+				this.waitUserInput = false;
 
 			} else if (message.equals("/start")) {
 				Keyboard replyKeyboardMarkup = new ReplyKeyboardMarkup(
@@ -103,23 +108,21 @@ public class View implements Observer {
 								.resizeKeyboard(true).selective(true);
 				bot.execute(new SendMessage(update.message().chat().id(), "Ola, " + nome + ", o que deseja calcular?")
 						.replyMarkup(replyKeyboardMarkup));
-			} else if (this.searchBehaviour == false) {
+			} else {
 				bot.execute(new SendMessage(chatId,
-						"Não entendi o que você disse " + nome + ", digite ou selecione media, moda ou mediana"));
-			}
-			if (this.searchBehaviour == true) {
-				this.callController(update);
+						"Não entendi o que você disse " + nome + " 🤔 digite ou selecione media, moda ou mediana"));
 			}
 		}
+
 	}
 
 	public void callController(Update update) {
 		this.actionController.action(update);
 	}
 
-	public void update(long chatId, String studentsData) {
-		sendResponse = bot.execute(new SendMessage(chatId, studentsData));
-		this.searchBehaviour = false;
+	public void update(long chatId, String data) {
+		sendResponse = bot.execute(new SendMessage(chatId, data));
+		this.waitUserInput = true;
 	}
 
 	public void sendTypingMessage(Update update) {
