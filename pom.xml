@@ -14,7 +14,6 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -22,10 +21,26 @@
 				<artifactId>heroku-maven-plugin</artifactId>
 				<version>2.0.3</version>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
-
 	<dependencies>
+
+		<!-- https://mvnrepository.com/artifact/com.db4o/db4o-core-java5 -->
+		<!-- <dependency> -->
+		<!-- <groupId>com.db4o</groupId> -->
+		<!-- <artifactId>db4o-core-java5</artifactId> -->
+		<!-- <version>8.0.184.15484</version> -->
+		<!-- </dependency> -->
 
 		<!-- Jar for db for objects -->
 		<dependency>
@@ -83,6 +98,13 @@
 			<groupId>com.github.pengrad</groupId>
 			<artifactId>java-telegram-bot-api</artifactId>
 			<version>3.6.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/jfree/jfreechart -->
+		<dependency>
+			<groupId>jfree</groupId>
+			<artifactId>jfreechart</artifactId>
+			<version>1.0.13</version>
 		</dependency>
 
 	</dependencies>

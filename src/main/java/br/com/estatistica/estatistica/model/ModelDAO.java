@@ -1,7 +1,9 @@
 package br.com.estatistica.estatistica.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import com.db4o.Db4oEmbedded;
 import com.db4o.ObjectContainer;
@@ -31,17 +33,23 @@ public class ModelDAO {
 
 	public boolean addHistoric(Historic historic) {
 		Logs.logInfoWriter("Dados armazenados no banco: ");
-		Logs.logInfoWriter("Tipo: " + historic.getTipo());
+		Logs.logInfoWriter("Tipo: " + historic.getType());
 		Logs.logInfoWriter("ChatID: " + historic.getChatId());
-		Logs.logInfoWriter("Valores: " + historic.getvalores());
+		Logs.logInfoWriter("Valores: " + historic.getValues());
 		bancoProblemas = connect();
 		bancoProblemas.store(historic);
 		bancoProblemas.commit();
 		return true;
 	}
 
+	public static boolean deleteRequest(Historic historic) {
+		bancoProblemas.delete(historic);
+		return true;
+	}
+
 	public static List<Historic> getHistoric(Update update) {
 		long chatId = update.message().chat().id();
+		Date date = new Date();
 		bancoProblemas = connect();
 		Query query = bancoProblemas.query();
 		query.constrain(Historic.class);
@@ -49,6 +57,10 @@ public class ModelDAO {
 		List<Historic> userHistoric = new ArrayList<>();
 		for (Historic historic : allHistoric) {
 			if (historic.getChatId() == chatId) {
+				long diff = TimeUnit.DAYS.convert(date.getTime() - historic.getDate().getTime(), TimeUnit.MILLISECONDS);
+				if (diff > 2) {
+					deleteRequest(historic);
+				}
 				userHistoric.add(historic);
 			}
 		}

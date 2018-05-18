@@ -1,25 +1,58 @@
 package br.com.estatistica.estatistica.model;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.Date;
 
-public class Historic implements Comparable<Historic>{
+public class Historic implements Comparable<Historic> {
 
-	private ArrayList<Double> valores;
-	long chatId;
-	String tipo;
+	private ArrayList<Double> values;
+	private ArrayList<Double> resultArr;
+	private Double result;
+	private long chatId;
+	private String type;
+	private File boxPlot;
+	private Date date;
 
-	public Historic(ArrayList<Double> valores, long chatId, String tipo) {
-		this.valores = valores;
+	public Historic(ArrayList<Double> valores, long chatId, String string, File boxPlot) {
+		this.values = valores;
 		this.chatId = chatId;
-		this.tipo = tipo;
+		this.type = string;
+		this.boxPlot = boxPlot;
+		this.date = new Date();
 	}
 
-	public ArrayList<Double> getvalores() {
-		return valores;
+	public Historic(ArrayList<Double> valores, long chatId, String string, Double resultado, File boxPlot) {
+		this.values = valores;
+		this.chatId = chatId;
+		this.type = string;
+		this.result = resultado;
+		this.boxPlot = boxPlot;
+		this.date = new Date();
 	}
 
-	public void setvalores(ArrayList<Double> valores) {
-		this.valores = valores;
+	public ArrayList<Double> getValues() {
+		return values;
+	}
+
+	public void setValues(ArrayList<Double> values) {
+		this.values = values;
+	}
+
+	public ArrayList<Double> getResultArr() {
+		return resultArr;
+	}
+
+	public void setResultArr(ArrayList<Double> resultArr) {
+		this.resultArr = resultArr;
+	}
+
+	public Double getResult() {
+		return result;
+	}
+
+	public void setResult(Double result) {
+		this.result = result;
 	}
 
 	public long getChatId() {
@@ -30,17 +63,32 @@ public class Historic implements Comparable<Historic>{
 		this.chatId = chatId;
 	}
 
-	public String getTipo() {
-		return tipo;
+	public String getType() {
+		return type;
 	}
 
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public File getBoxPlot() {
+		return boxPlot;
+	}
+
+	public void setBoxPlot(File boxPlot) {
+		this.boxPlot = boxPlot;
+	}
+	
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 	@Override
 	public int compareTo(Historic historic) {
-		return tipo.compareTo(historic.getTipo());
+		return type.compareTo(historic.getType());
 	}
-
 }
