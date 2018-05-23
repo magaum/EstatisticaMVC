@@ -9,7 +9,7 @@ Para que o projeto funcione o arquivo example.properties deve ser renomeado para
 
 # Diagrama de classes
 
-![diagrama de classes](files/imgs/diagramas/EstatisticaMVCv2.jpg)
+![diagrama de classes](files/imgs/readme/EstatisticaMVCv2.jpg)
 
 # Funcionamento do sistema
 
@@ -17,37 +17,37 @@ Para que o projeto funcione o arquivo example.properties deve ser renomeado para
 
 ### **Informações Bot**
 
-![informacoes bot](files/imgs/readme/0_informacoesBot.jng)
+![informacoes bot](files/imgs/readme/0_informacoesBot.jpg)
 
 ---
 
 ### **Primeiro comando**
 
-![tela inicial](files/imgs/readme/1_telaInicial.jng)
+![tela inicial](files/imgs/readme/1_telaInicial.jpg)
 
 ---
 
 ### **Resposta do Bot**
 
-![primeira interacao](files/imgs/readme/2_primeirainteracao.jng)
+![primeira interacao](files/imgs/readme/2_primeirainteracao.jpg)
 
 ---
 
 ### **Calculando Media**
 
-![calculando media](files/imgs/readme/3_media.jng)
+![calculando media](files/imgs/readme/3_media.jpg)
 
 ---
 
 ### **Calculando Moda**
 
-![calculando moda](files/imgs/readme/4_moda.jng)
+![calculando moda](files/imgs/readme/4_moda.jpg)
 
 ---
 
 ### **Calculando Mediana**
 
-![calculando mediana](files/imgs/readme/5_mediana.jng)
+![calculando mediana](files/imgs/readme/5_mediana.jpg)
 
 ---
 
