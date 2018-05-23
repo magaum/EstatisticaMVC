@@ -9,6 +9,7 @@ public class Historic implements Comparable<Historic> {
 	private ArrayList<Double> values;
 	private ArrayList<Double> resultArr;
 	private Double result;
+	private String modeNull;
 	private long chatId;
 	private String type;
 	private File boxPlot;
@@ -90,5 +91,13 @@ public class Historic implements Comparable<Historic> {
 	@Override
 	public int compareTo(Historic historic) {
 		return type.compareTo(historic.getType());
+	}
+
+	public void setModeNull() {
+		this.modeNull = "Não existe moda";
+	}
+	
+	public String getModeNull() {
+		return modeNull;
 	}
 }

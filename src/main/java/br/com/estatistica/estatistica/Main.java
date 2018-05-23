@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-import br.com.estatistica.estatistica.log.Log;
+import br.com.estatistica.estatistica.model.Log;
 import br.com.estatistica.estatistica.model.Model;
 import br.com.estatistica.estatistica.view.View;
 

@@ -22,7 +22,7 @@ import br.com.estatistica.estatistica.controller.ExerciseControllerMean;
 import br.com.estatistica.estatistica.controller.ExerciseControllerMedian;
 import br.com.estatistica.estatistica.controller.ExerciseControllerMode;
 import br.com.estatistica.estatistica.controller.HistoricController;
-import br.com.estatistica.estatistica.log.Log;
+import br.com.estatistica.estatistica.model.Log;
 import br.com.estatistica.estatistica.model.Model;
 
 public class View implements Observer {
@@ -145,18 +145,14 @@ public class View implements Observer {
 	}
 
 	@Override
-	public void sendImage(String imgName, long chatId) {
-		File file = new File("files/Imgs/boxPlots/" + imgName + ".png");
-		sendResponse = bot.execute(new SendPhoto(chatId, file));
+	public void sendImage(File img, long chatId) {
+		sendResponse = bot.execute(new SendPhoto(chatId, img));
 		this.waitUserInput = true;
 	}
 
 	@Override
-	public void sendDocument(long chatId) {
-		File file = new File("files/pdf/" + chatId + ".pdf");
-		SendDocument sendDocument = new SendDocument(chatId, file);
-		sendDocument.fileName("historico.pdf");
-		sendResponse = bot.execute(sendDocument);
+	public void sendDocument(File file, long chatId) {
+		sendResponse = bot.execute(new SendDocument(chatId, file).fileName("historico.pdf"));
 		this.waitUserInput = true;
 	}
 }

@@ -14,19 +14,19 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.pengrad.telegrambot.model.Update;
 
-import br.com.estatistica.estatistica.log.Log;
-
 public class Pdf {
 
-	public static boolean createPdf(Update update) {
+	public static File createPdf(Update update) {
 		List<Historic> userHistoric = ModelDAO.getHistoric(update);
+		File file = null;
 		if (userHistoric != null) {
 			Collections.sort(userHistoric);
 			Document pdf = new Document();
+			file = new File("files/pdf/" + update.message().chat().id() + ".pdf");
 			try {
 				int request = 0;
-				PdfWriter.getInstance(pdf,
-						new FileOutputStream(new File("files/pdf/" + update.message().chat().id() + ".pdf")));
+				PdfWriter pdfW = PdfWriter.getInstance(pdf, new FileOutputStream(file));
+
 				pdf.open();
 				Paragraph p = new Paragraph();
 				p.add(new Paragraph("Histórico de requisições"));
@@ -41,23 +41,39 @@ public class Pdf {
 					if (historic.getResult() != null) {
 						p.add("Resultado: " + historic.getResult());
 						p.add(new Paragraph(" "));
+					} else if (historic.getResultArr() != null) {
+						p.add("Resultado: " + historic.getResultArr().toString().replaceAll("\\[|\\]", ""));
+						p.add(new Paragraph(" "));
 					} else {
-						p.add("Resultado: " + historic.getResultArr());
+						p.add("Resultado: " + historic.getModeNull());
 						p.add(new Paragraph(" "));
 					}
 					Image image = Image.getInstance(historic.getBoxPlot().toString());
 					image.scaleToFit(200, 200);
 					p.add(image);
+					if (request % 2 == 0) {
+						if(request > 2) {
+							p.add(new Paragraph(" "));
+							p.add(new Paragraph(" "));
+						}
+						p.add(new Paragraph(" "));
+						p.add(new Paragraph(" "));
+						p.add(new Paragraph(" "));
+						p.add(new Paragraph(" "));
+						p.add(new Paragraph(" "));
+						p.add(new Paragraph(" "));
+						p.add(new Paragraph(" "));
+					}
 				}
 				pdf.add(p);
 				pdf.close();
 			} catch (IOException | DocumentException e) {
 				Log.logErrorWriter("Erro ao criar pdf: " + e);
-				return false;
+				return file;
 			}
 		} else {
-			return false;
+			return file;
 		}
-		return true;
+		return file;
 	}
 }

@@ -1,4 +1,4 @@
-package br.com.estatistica.estatistica.log;
+package br.com.estatistica.estatistica.model;
 
 import org.apache.log4j.Logger;
 

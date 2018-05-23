@@ -1925,3 +1925,310 @@
 22-05-2018 22:55:42 INFO  Log:14 Log - Nome do usuário: bel
 22-05-2018 22:55:42 INFO  Log:14 Log - Mensagem: Relatório de requisições
 22-05-2018 22:55:42 INFO  Log:14 Log - ChatID: 462077336
+23-05-2018 16:56:00 INFO  Log:14 Log - Mensagem processada
+23-05-2018 16:56:00 INFO  Log:14 Log - Nome do usuário: Leudiane
+23-05-2018 16:56:00 INFO  Log:14 Log - Mensagem: /start
+23-05-2018 16:56:00 INFO  Log:14 Log - ChatID: 585363483
+23-05-2018 16:56:01 INFO  Log:14 Log - Mensagem processada
+23-05-2018 16:56:01 INFO  Log:14 Log - Nome do usuário: Leudiane
+23-05-2018 16:56:01 INFO  Log:14 Log - Mensagem: /
+23-05-2018 16:56:01 INFO  Log:14 Log - ChatID: 585363483
+23-05-2018 16:56:05 INFO  Log:14 Log - Mensagem processada
+23-05-2018 16:56:05 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 16:56:05 INFO  Log:14 Log - Mensagem: /start
+23-05-2018 16:56:05 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 16:56:08 INFO  Log:14 Log - Mensagem processada
+23-05-2018 16:56:08 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 16:56:08 INFO  Log:14 Log - Mensagem: Mediana
+23-05-2018 16:56:08 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 16:56:12 INFO  Log:14 Log - Mensagem processada
+23-05-2018 16:56:12 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 16:56:12 INFO  Log:14 Log - Mensagem: 9;6;8;5;3
+23-05-2018 16:56:12 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 16:56:30 INFO  Log:14 Log - Dados armazenados no banco: 
+23-05-2018 16:56:30 INFO  Log:14 Log - Tipo: mediana
+23-05-2018 16:56:30 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 16:56:30 INFO  Log:14 Log - Valores: [9.0, 6.0, 8.0, 5.0, 3.0]
+23-05-2018 16:56:47 INFO  Log:14 Log - Mensagem processada
+23-05-2018 16:56:47 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 16:56:47 INFO  Log:14 Log - Mensagem: Relatório de requisições
+23-05-2018 16:56:47 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 16:56:48 ERROR Log:10 Log - Erro ao criar pdf: java.io.FileNotFoundException: /home/magao/Dropbox/FATEC/Workspaces/ESIII/EstatisticaMVC/files/Imgs/boxPlots/1527211151642.png (Arquivo ou diretório não encontrado)
+23-05-2018 17:00:46 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:00:46 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:00:46 INFO  Log:14 Log - Mensagem: /start
+23-05-2018 17:00:46 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:00:49 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:00:49 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:00:49 INFO  Log:14 Log - Mensagem: Mediana
+23-05-2018 17:00:49 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:00:53 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:00:53 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:00:53 INFO  Log:14 Log - Mensagem: 69;8;5;3;
+23-05-2018 17:00:53 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:00:54 INFO  Log:14 Log - Dados armazenados no banco: 
+23-05-2018 17:00:54 INFO  Log:14 Log - Tipo: mediana
+23-05-2018 17:00:54 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:00:54 INFO  Log:14 Log - Valores: [69.0, 8.0, 5.0, 3.0]
+23-05-2018 17:00:57 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:00:57 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:00:57 INFO  Log:14 Log - Mensagem: Relatório de requisições
+23-05-2018 17:00:57 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:01:17 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:01:17 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:01:17 INFO  Log:14 Log - Mensagem: Media
+23-05-2018 17:01:17 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:01:23 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:01:23 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:01:23 INFO  Log:14 Log - Mensagem: 9;8;7;5;6
+23-05-2018 17:01:23 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:01:24 INFO  Log:14 Log - Dados armazenados no banco: 
+23-05-2018 17:01:24 INFO  Log:14 Log - Tipo: media
+23-05-2018 17:01:24 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:01:24 INFO  Log:14 Log - Valores: [9.0, 8.0, 7.0, 5.0, 6.0]
+23-05-2018 17:01:26 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:01:26 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:01:26 INFO  Log:14 Log - Mensagem: Relatório de requisições
+23-05-2018 17:01:26 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:01:50 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:01:50 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:01:50 INFO  Log:14 Log - Mensagem: Moda
+23-05-2018 17:01:50 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:01:53 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:01:53 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:01:53 INFO  Log:14 Log - Mensagem: 6;9;8;5;3;
+23-05-2018 17:01:53 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:01:54 INFO  Log:14 Log - Dados armazenados no banco: 
+23-05-2018 17:01:54 INFO  Log:14 Log - Tipo: Moda
+23-05-2018 17:01:54 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:01:54 INFO  Log:14 Log - Valores: [3.0, 5.0, 6.0, 8.0, 9.0]
+23-05-2018 17:01:58 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:01:58 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:01:58 INFO  Log:14 Log - Mensagem: Moda
+23-05-2018 17:01:58 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:02:00 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:02:00 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:02:00 INFO  Log:14 Log - Mensagem: 9;9;9;9;6
+23-05-2018 17:02:00 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:02:01 INFO  Log:14 Log - Dados armazenados no banco: 
+23-05-2018 17:02:01 INFO  Log:14 Log - Tipo: Moda
+23-05-2018 17:02:01 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:02:01 INFO  Log:14 Log - Valores: [6.0, 9.0, 9.0, 9.0, 9.0]
+23-05-2018 17:02:03 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:02:03 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:02:03 INFO  Log:14 Log - Mensagem: Relatório de requisições
+23-05-2018 17:02:03 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:12:31 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:12:31 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:12:31 INFO  Log:14 Log - Mensagem: Relatório de requisições
+23-05-2018 17:12:31 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:15:42 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:15:42 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:15:42 INFO  Log:14 Log - Mensagem: /start
+23-05-2018 17:15:42 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:15:46 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:15:46 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:15:46 INFO  Log:14 Log - Mensagem: Media
+23-05-2018 17:15:46 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:15:49 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:15:49 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:15:49 INFO  Log:14 Log - Mensagem: 9;6;8;5;6;3
+23-05-2018 17:15:49 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:15:51 INFO  Log:14 Log - Dados armazenados no banco: 
+23-05-2018 17:15:51 INFO  Log:14 Log - Tipo: media
+23-05-2018 17:15:51 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:15:51 INFO  Log:14 Log - Valores: [9.0, 6.0, 8.0, 5.0, 6.0, 3.0]
+23-05-2018 17:16:03 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:16:03 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:16:03 INFO  Log:14 Log - Mensagem: Relatório de requisições
+23-05-2018 17:16:03 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:30:19 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:30:19 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:30:19 INFO  Log:14 Log - Mensagem: Mediana
+23-05-2018 17:30:19 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:30:24 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:30:24 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:30:24 INFO  Log:14 Log - Mensagem: 9;9;9;9;6;8;5;6
+23-05-2018 17:30:24 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:30:25 INFO  Log:14 Log - Dados armazenados no banco: 
+23-05-2018 17:30:25 INFO  Log:14 Log - Tipo: mediana
+23-05-2018 17:30:25 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:30:25 INFO  Log:14 Log - Valores: [9.0, 9.0, 9.0, 9.0, 6.0, 8.0, 5.0, 6.0]
+23-05-2018 17:30:27 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:30:27 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:30:27 INFO  Log:14 Log - Mensagem: Moda
+23-05-2018 17:30:27 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:30:30 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:30:30 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:30:30 INFO  Log:14 Log - Mensagem: 6;3;9;8;5;6
+23-05-2018 17:30:30 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:30:31 INFO  Log:14 Log - Dados armazenados no banco: 
+23-05-2018 17:30:31 INFO  Log:14 Log - Tipo: Moda
+23-05-2018 17:30:31 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:30:31 INFO  Log:14 Log - Valores: [3.0, 5.0, 6.0, 6.0, 8.0, 9.0]
+23-05-2018 17:30:33 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:30:33 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:30:33 INFO  Log:14 Log - Mensagem: Moda
+23-05-2018 17:30:33 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:30:37 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:30:37 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:30:37 INFO  Log:14 Log - Mensagem: 9;8;6;5;7
+23-05-2018 17:30:37 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:30:38 INFO  Log:14 Log - Dados armazenados no banco: 
+23-05-2018 17:30:38 INFO  Log:14 Log - Tipo: Moda
+23-05-2018 17:30:38 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:30:38 INFO  Log:14 Log - Valores: [5.0, 6.0, 7.0, 8.0, 9.0]
+23-05-2018 17:30:40 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:30:40 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:30:40 INFO  Log:14 Log - Mensagem: Relatório de requisições
+23-05-2018 17:30:40 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:32:35 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:32:35 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:32:35 INFO  Log:14 Log - Mensagem: /start
+23-05-2018 17:32:35 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:32:37 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:32:37 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:32:37 INFO  Log:14 Log - Mensagem: Media
+23-05-2018 17:32:37 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:32:40 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:32:40 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:32:40 INFO  Log:14 Log - Mensagem: 9;8;6;8;5;3
+23-05-2018 17:32:40 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:32:42 INFO  Log:14 Log - Dados armazenados no banco: 
+23-05-2018 17:32:42 INFO  Log:14 Log - Tipo: media
+23-05-2018 17:32:42 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:32:42 INFO  Log:14 Log - Valores: [9.0, 8.0, 6.0, 8.0, 5.0, 3.0]
+23-05-2018 17:32:44 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:32:44 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:32:44 INFO  Log:14 Log - Mensagem: Mediana
+23-05-2018 17:32:44 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:32:46 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:32:46 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:32:46 INFO  Log:14 Log - Mensagem: 9;8;5;6;3
+23-05-2018 17:32:46 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:32:47 INFO  Log:14 Log - Dados armazenados no banco: 
+23-05-2018 17:32:47 INFO  Log:14 Log - Tipo: mediana
+23-05-2018 17:32:47 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:32:47 INFO  Log:14 Log - Valores: [9.0, 8.0, 5.0, 6.0, 3.0]
+23-05-2018 17:32:48 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:32:48 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:32:48 INFO  Log:14 Log - Mensagem: Moda
+23-05-2018 17:32:48 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:32:52 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:32:52 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:32:52 INFO  Log:14 Log - Mensagem: 5;9;8;63
+23-05-2018 17:32:52 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:32:53 INFO  Log:14 Log - Dados armazenados no banco: 
+23-05-2018 17:32:53 INFO  Log:14 Log - Tipo: Moda
+23-05-2018 17:32:53 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:32:53 INFO  Log:14 Log - Valores: [5.0, 8.0, 9.0, 63.0]
+23-05-2018 17:32:54 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:32:54 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:32:54 INFO  Log:14 Log - Mensagem: Relatório de requisições
+23-05-2018 17:32:54 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:35:49 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:35:49 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:35:49 INFO  Log:14 Log - Mensagem: /start
+23-05-2018 17:35:49 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:35:51 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:35:51 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:35:51 INFO  Log:14 Log - Mensagem: Relatório de requisições
+23-05-2018 17:35:51 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:43:58 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:43:58 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:43:58 INFO  Log:14 Log - Mensagem: Relatório de requisições
+23-05-2018 17:43:58 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:45:55 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:45:55 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:45:55 INFO  Log:14 Log - Mensagem: Relatório de requisições
+23-05-2018 17:45:55 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:46:11 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:46:11 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:46:11 INFO  Log:14 Log - Mensagem: Moda
+23-05-2018 17:46:11 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:46:19 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:46:19 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:46:19 INFO  Log:14 Log - Mensagem: 5;9;8;6;3;9;6
+23-05-2018 17:46:19 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:46:21 INFO  Log:14 Log - Dados armazenados no banco: 
+23-05-2018 17:46:21 INFO  Log:14 Log - Tipo: Moda
+23-05-2018 17:46:21 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:46:21 INFO  Log:14 Log - Valores: [3.0, 5.0, 6.0, 6.0, 8.0, 9.0, 9.0]
+23-05-2018 17:46:22 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:46:22 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:46:22 INFO  Log:14 Log - Mensagem: Relatório de requisições
+23-05-2018 17:46:22 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:46:35 WARN  Log:18 Log - Erro ao processar mensagens: java.lang.RuntimeException: java.net.SocketTimeoutException: timeout
+23-05-2018 17:51:05 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:51:05 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:51:05 INFO  Log:14 Log - Mensagem: Relatório de requisições
+23-05-2018 17:51:05 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:51:50 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:51:50 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:51:50 INFO  Log:14 Log - Mensagem: Relatório de requisições
+23-05-2018 17:51:50 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:52:42 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:52:42 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:52:42 INFO  Log:14 Log - Mensagem: Relatório de requisições
+23-05-2018 17:52:42 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:52:45 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:52:45 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:52:45 INFO  Log:14 Log - Mensagem: Relatório de requisições
+23-05-2018 17:52:45 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:52:46 WARN  Log:18 Log - Erro ao processar mensagens: com.db4o.ext.DatabaseFileLockedException: /home/magao/Dropbox/FATEC/Workspaces/ESIII/EstatisticaMVC/db/bancoProblemas.db4o
+23-05-2018 17:53:13 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:53:13 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:53:13 INFO  Log:14 Log - Mensagem: Relatório de requisições
+23-05-2018 17:53:13 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 17:54:15 INFO  Log:14 Log - Mensagem processada
+23-05-2018 17:54:15 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 17:54:15 INFO  Log:14 Log - Mensagem: Relatório de requisições
+23-05-2018 17:54:15 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 18:05:50 INFO  Log:14 Log - Mensagem processada
+23-05-2018 18:05:50 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 18:05:50 INFO  Log:14 Log - Mensagem: Relatório de requisições
+23-05-2018 18:05:50 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 18:08:37 INFO  Log:14 Log - Mensagem processada
+23-05-2018 18:08:37 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 18:08:37 INFO  Log:14 Log - Mensagem: Relatório de requisições
+23-05-2018 18:08:37 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 18:09:40 INFO  Log:14 Log - Mensagem processada
+23-05-2018 18:09:40 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 18:09:40 INFO  Log:14 Log - Mensagem: Relatório de requisições
+23-05-2018 18:09:40 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 18:13:25 INFO  Log:14 Log - Mensagem processada
+23-05-2018 18:13:25 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 18:13:25 INFO  Log:14 Log - Mensagem: Relatório de requisições
+23-05-2018 18:13:25 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 18:14:26 INFO  Log:14 Log - Mensagem processada
+23-05-2018 18:14:26 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 18:14:26 INFO  Log:14 Log - Mensagem: Relatório de requisições
+23-05-2018 18:14:26 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 18:16:25 INFO  Log:14 Log - Mensagem processada
+23-05-2018 18:16:25 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 18:16:25 INFO  Log:14 Log - Mensagem: Media
+23-05-2018 18:16:25 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 18:16:28 INFO  Log:14 Log - Mensagem processada
+23-05-2018 18:16:28 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 18:16:28 INFO  Log:14 Log - Mensagem: 9;8;5;6;3;2
+23-05-2018 18:16:28 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 18:16:30 INFO  Log:14 Log - Dados armazenados no banco: 
+23-05-2018 18:16:30 INFO  Log:14 Log - Tipo: media
+23-05-2018 18:16:30 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 18:16:30 INFO  Log:14 Log - Valores: [9.0, 8.0, 5.0, 6.0, 3.0, 2.0]
+23-05-2018 18:16:31 INFO  Log:14 Log - Mensagem processada
+23-05-2018 18:16:31 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 18:16:31 INFO  Log:14 Log - Mensagem: Relatório de requisições
+23-05-2018 18:16:31 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 18:17:52 INFO  Log:14 Log - Mensagem processada
+23-05-2018 18:17:52 INFO  Log:14 Log - Nome do usuário: Magão
+23-05-2018 18:17:52 INFO  Log:14 Log - Mensagem: Relatório de requisições
+23-05-2018 18:17:52 INFO  Log:14 Log - ChatID: 173375027
+23-05-2018 18:18:52 INFO  Log:14 Log - Mensagem processada
+23-05-2018 18:18:52 INFO  Log:14 Log - Nome do usuário: bel
+23-05-2018 18:18:52 INFO  Log:14 Log - Mensagem: /start
+23-05-2018 18:18:52 INFO  Log:14 Log - ChatID: 462077336
+23-05-2018 18:18:55 INFO  Log:14 Log - Mensagem processada
+23-05-2018 18:18:55 INFO  Log:14 Log - Nome do usuário: bel
+23-05-2018 18:18:55 INFO  Log:14 Log - Mensagem: Media
+23-05-2018 18:18:55 INFO  Log:14 Log - ChatID: 462077336

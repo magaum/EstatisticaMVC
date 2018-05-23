@@ -1,7 +1,6 @@
 package br.com.estatistica.estatistica.model;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -9,7 +8,6 @@ import java.util.List;
 
 import com.pengrad.telegrambot.model.Update;
 
-import br.com.estatistica.estatistica.log.Log;
 import br.com.estatistica.estatistica.model.utils.ModelUtils;
 import br.com.estatistica.estatistica.view.Observer;
 
@@ -17,7 +15,6 @@ public class Model {
 
 	private List<Observer> observers = new LinkedList<Observer>();
 	private static Model uniqueInstance;
-	private static String imgName;
 	private ModelDAO db4o = new ModelDAO();
 	long chatId;
 	String username;
@@ -40,23 +37,24 @@ public class Model {
 		}
 	}
 
-	public void sendPhotoToObservers(String imgName, long chatId) {
+	public void sendPhotoToObservers(File imgName, long chatId) {
 		for (Observer observer : observers) {
 			observer.sendImage(imgName, chatId);
 		}
 	}
 
-	public void sendFileToObservers(long chatId) {
+	public void sendFileToObservers(File pdf, long chatId) {
 		for (Observer observer : observers) {
-			observer.sendDocument(chatId);
+			observer.sendDocument(pdf, chatId);
 		}
 	}
 
 	public void getHistoric(Update update) {
 		String name = update.message().chat().firstName();
 		long chatId = update.message().chat().id();
-		if (Pdf.createPdf(update)) {
-			this.sendFileToObservers(chatId);
+		File pdf = Pdf.createPdf(update);
+		if (pdf != null) {
+			this.sendFileToObservers(pdf, chatId);
 		} else {
 			this.notifyObservers(update.message().chat().id(),
 					"Não encontrei nada aqui " + name + " desculpe \uD83D\uDE1E");
@@ -74,13 +72,8 @@ public class Model {
 			}
 			result = sum / values.size();
 			this.notifyObservers(chatId, "A média é igual a: " + result);
-			try {
-				imgName = BoxPlot.generateBoxPlot(update, "Media");
-			} catch (IOException e) {
-				Log.logWarnWriter("Erro ao gerar boxPlot: " + e);
-			}
-			Historic historic = new Historic(values, chatId, "media", result,
-					new File("files/Imgs/boxPlots/" + imgName + ".png"));
+			File file = BoxPlot.generateBoxPlot(update, "Media");
+			Historic historic = new Historic(values, chatId, "media", result, file);
 
 			if (!db4o.addHistoric(historic)) {
 				Log.logErrorWriter("Erro ao salvar no banco");
@@ -102,7 +95,7 @@ public class Model {
 		values = ModelUtils.messageToDouble(update.message().text());
 		if (values != null) {
 			Historic historic = new Historic(values, chatId, "Moda",
-					new File("files/Imgs/boxPlots/" + chatId + ".png"));
+					new File("files/imgs/boxPlots/" + chatId + ".png"));
 			Collections.sort(values);
 			for (int i = 1; i <= values.size(); i++) {
 				if (i < values.size() && values.get(i).equals(values.get(i - 1))) {
@@ -132,13 +125,10 @@ public class Model {
 				historic.setResult(bigger);
 			} else {
 				this.notifyObservers(chatId, "Não exite moda nesses valores");
+				historic.setModeNull();
 			}
-			try {
-				imgName = BoxPlot.generateBoxPlot(update, "Moda");
-			} catch (IOException e) {
-				Log.logWarnWriter("Erro ao gerar boxPlot: " + e);
-			}
-			historic.setBoxPlot(new File("files/Imgs/boxPlots/" + imgName + ".png"));
+			File file = BoxPlot.generateBoxPlot(update, "Moda");
+			historic.setBoxPlot(file);
 
 			if (!db4o.addHistoric(historic)) {
 				Log.logErrorWriter("Erro ao salvar no banco");
@@ -152,13 +142,8 @@ public class Model {
 	public void computeMedian(Update update) {
 		long chatId = update.message().chat().id();
 		ArrayList<Double> values = ModelUtils.messageToDouble(update.message().text());
-		try {
-			imgName = BoxPlot.generateBoxPlot(update, "Mediana");
-		} catch (IOException e) {
-			Log.logWarnWriter("Erro ao gerar boxPlot: " + e);
-		}
-		Historic historic = new Historic(values, chatId, "mediana",
-				new File("files/Imgs/boxPlots/" + imgName + ".png"));
+		File file = BoxPlot.generateBoxPlot(update, "Mediana");
+		Historic historic = new Historic(values, chatId, "mediana", file);
 		if (values != null) {
 			if (values.size() % 2 == 0) {
 				Double median = (((values.get(values.size() / 2) - 1)) + (values.get(values.size() / 2))) / 2;
@@ -178,8 +163,8 @@ public class Model {
 		}
 	}
 
-	public void sendBoxPlot(String imgName, long chatId) {
+	public void sendBoxPlot(File img, long chatId) {
 
-		this.sendPhotoToObservers(imgName, chatId);
+		this.sendPhotoToObservers(img, chatId);
 	}
 }
