@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-import br.com.estatistica.estatistica.log.Logs;
+import br.com.estatistica.estatistica.log.Log;
 import br.com.estatistica.estatistica.model.Model;
 import br.com.estatistica.estatistica.view.View;
 
@@ -26,7 +26,7 @@ public class Main {
 			prop.load(new FileInputStream("src/main/resources/token.properties"));
 			return prop.getProperty("token");
 		} catch (IOException e) {
-			Logs.logFatalWriter("TELEGRAM TOKEN ERROR: " + e);
+			Log.logFatalWriter("TELEGRAM TOKEN ERROR: " + e);
 			return null;
 		}
 	}

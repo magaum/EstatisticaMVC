@@ -1644,3 +1644,284 @@
 18-05-2018 17:33:31 INFO  Logs:14 Logs - Nome do usuário: Magão
 18-05-2018 17:33:31 INFO  Logs:14 Logs - Mensagem: Relatório de requisições
 18-05-2018 17:33:31 INFO  Logs:14 Logs - ChatID: 173375027
+22-05-2018 12:24:37 INFO  Log:14 Log - Mensagem processada
+22-05-2018 12:24:37 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 12:24:37 INFO  Log:14 Log - Mensagem: /start
+22-05-2018 12:24:37 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 12:24:41 INFO  Log:14 Log - Mensagem processada
+22-05-2018 12:24:41 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 12:24:41 INFO  Log:14 Log - Mensagem: Media
+22-05-2018 12:24:41 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 12:24:45 INFO  Log:14 Log - Mensagem processada
+22-05-2018 12:24:45 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 12:24:45 INFO  Log:14 Log - Mensagem: 6;3;9;8;5
+22-05-2018 12:24:45 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 12:25:04 INFO  Log:14 Log - Dados armazenados no banco: 
+22-05-2018 12:25:04 INFO  Log:14 Log - Tipo: media
+22-05-2018 12:25:04 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 12:25:04 INFO  Log:14 Log - Valores: [6.0, 3.0, 9.0, 8.0, 5.0]
+22-05-2018 12:25:33 INFO  Log:14 Log - Mensagem processada
+22-05-2018 12:25:33 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 12:25:33 INFO  Log:14 Log - Mensagem: Media
+22-05-2018 12:25:33 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 12:25:38 INFO  Log:14 Log - Mensagem processada
+22-05-2018 12:25:38 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 12:25:38 INFO  Log:14 Log - Mensagem: 39;6;9;5;
+22-05-2018 12:25:38 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 12:25:38 INFO  Log:14 Log - Dados armazenados no banco: 
+22-05-2018 12:25:38 INFO  Log:14 Log - Tipo: media
+22-05-2018 12:25:38 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 12:25:38 INFO  Log:14 Log - Valores: [39.0, 6.0, 9.0, 5.0]
+22-05-2018 12:25:50 INFO  Log:14 Log - Mensagem processada
+22-05-2018 12:25:50 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 12:25:50 INFO  Log:14 Log - Mensagem: Relatório de requisições
+22-05-2018 12:25:50 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 12:25:53 ERROR Log:10 Log - Erro ao criar pdf: java.io.FileNotFoundException: pdf/historico.pdf (Arquivo ou diretório não encontrado)
+22-05-2018 12:27:01 INFO  Log:14 Log - Mensagem processada
+22-05-2018 12:27:01 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 12:27:01 INFO  Log:14 Log - Mensagem: Relatório de requisições
+22-05-2018 12:27:01 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 12:27:02 ERROR Log:10 Log - Erro ao criar pdf: java.io.FileNotFoundException: /home/magao/Dropbox/FATEC/Workspaces/ESIII/EstatisticaMVC/boxPlots/173375027.png (Arquivo ou diretório não encontrado)
+22-05-2018 12:28:51 INFO  Log:14 Log - Mensagem processada
+22-05-2018 12:28:51 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 12:28:51 INFO  Log:14 Log - Mensagem: Relatório de requisições
+22-05-2018 12:28:51 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 12:28:52 ERROR Log:10 Log - Erro ao criar pdf: java.io.FileNotFoundException: /home/magao/Dropbox/FATEC/Workspaces/ESIII/EstatisticaMVC/boxPlots/files/Imgs/boxPlots/1527176061023.png.png (Arquivo ou diretório não encontrado)
+22-05-2018 12:30:02 INFO  Log:14 Log - Mensagem processada
+22-05-2018 12:30:02 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 12:30:02 INFO  Log:14 Log - Mensagem: Relatório de requisições
+22-05-2018 12:30:02 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 12:30:04 ERROR Log:10 Log - Erro ao criar pdf: java.io.FileNotFoundException: /home/magao/Dropbox/FATEC/Workspaces/ESIII/EstatisticaMVC/files/imgs/boxPlots/files/Imgs/boxPlots/1527176061023.png.png (Arquivo ou diretório não encontrado)
+22-05-2018 21:15:52 INFO  Log:14 Log - Mensagem processada
+22-05-2018 21:15:52 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 21:15:52 INFO  Log:14 Log - Mensagem: Relatório de requisições
+22-05-2018 21:15:52 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 21:15:54 ERROR Log:10 Log - Erro ao criar pdf: java.io.FileNotFoundException: /home/magao/Dropbox/FATEC/Workspaces/ESIII/EstatisticaMVC/files/Imgs/boxPlots/1527176061023.png.png (Arquivo ou diretório não encontrado)
+22-05-2018 21:15:55 INFO  Log:14 Log - Mensagem processada
+22-05-2018 21:15:55 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 21:15:55 INFO  Log:14 Log - Mensagem: Relatório de requisições
+22-05-2018 21:15:55 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 21:15:56 WARN  Log:18 Log - Erro ao processar mensagens: com.db4o.ext.DatabaseFileLockedException: /home/magao/Dropbox/FATEC/Workspaces/ESIII/EstatisticaMVC/db/bancoProblemas.db4o
+22-05-2018 21:16:12 INFO  Log:14 Log - Mensagem processada
+22-05-2018 21:16:12 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 21:16:12 INFO  Log:14 Log - Mensagem: Relatório de requisições
+22-05-2018 21:16:12 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 21:16:13 WARN  Log:18 Log - Erro ao processar mensagens: com.db4o.ext.DatabaseFileLockedException: /home/magao/Dropbox/FATEC/Workspaces/ESIII/EstatisticaMVC/db/bancoProblemas.db4o
+22-05-2018 21:16:13 INFO  Log:14 Log - Mensagem processada
+22-05-2018 21:16:13 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 21:16:13 INFO  Log:14 Log - Mensagem: Relatório de requisições
+22-05-2018 21:16:13 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 21:16:13 ERROR Log:10 Log - Erro ao criar pdf: java.io.FileNotFoundException: /home/magao/Dropbox/FATEC/Workspaces/ESIII/EstatisticaMVC/files/Imgs/boxPlots/1527176061023.png.png (Arquivo ou diretório não encontrado)
+22-05-2018 21:17:38 INFO  Log:14 Log - Mensagem processada
+22-05-2018 21:17:38 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 21:17:38 INFO  Log:14 Log - Mensagem: Relatório de requisições
+22-05-2018 21:17:38 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 21:17:41 INFO  Log:14 Log - Mensagem processada
+22-05-2018 21:17:41 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 21:17:41 INFO  Log:14 Log - Mensagem: Relatório de requisições
+22-05-2018 21:17:41 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 21:17:42 WARN  Log:18 Log - Erro ao processar mensagens: com.db4o.ext.DatabaseFileLockedException: /home/magao/Dropbox/FATEC/Workspaces/ESIII/EstatisticaMVC/db/bancoProblemas.db4o
+22-05-2018 21:26:30 INFO  Log:14 Log - Mensagem processada
+22-05-2018 21:26:30 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 21:26:30 INFO  Log:14 Log - Mensagem: /start
+22-05-2018 21:26:30 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 21:26:33 INFO  Log:14 Log - Mensagem processada
+22-05-2018 21:26:33 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 21:26:33 INFO  Log:14 Log - Mensagem: Media
+22-05-2018 21:26:33 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 21:26:33 INFO  Log:14 Log - Mensagem processada
+22-05-2018 21:26:33 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 21:26:33 INFO  Log:14 Log - Mensagem: Media
+22-05-2018 21:26:33 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 21:26:42 INFO  Log:14 Log - Mensagem processada
+22-05-2018 21:26:42 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 21:26:42 INFO  Log:14 Log - Mensagem: 6;9;8;5;3
+22-05-2018 21:26:42 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 21:26:42 INFO  Log:14 Log - Mensagem processada
+22-05-2018 21:26:42 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 21:26:42 INFO  Log:14 Log - Mensagem: 6;9;8;5;3
+22-05-2018 21:26:42 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 21:27:03 INFO  Log:14 Log - Dados armazenados no banco: 
+22-05-2018 21:27:03 INFO  Log:14 Log - Tipo: media
+22-05-2018 21:27:03 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 21:27:03 INFO  Log:14 Log - Valores: [6.0, 9.0, 8.0, 5.0, 3.0]
+22-05-2018 21:27:03 INFO  Log:14 Log - Dados armazenados no banco: 
+22-05-2018 21:27:03 INFO  Log:14 Log - Tipo: media
+22-05-2018 21:27:03 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 21:27:03 INFO  Log:14 Log - Valores: [6.0, 9.0, 8.0, 5.0, 3.0]
+22-05-2018 21:27:04 INFO  Log:14 Log - Mensagem processada
+22-05-2018 21:27:04 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 21:27:04 INFO  Log:14 Log - Mensagem: Moda
+22-05-2018 21:27:04 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 21:27:23 INFO  Log:14 Log - Mensagem processada
+22-05-2018 21:27:23 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 21:27:23 INFO  Log:14 Log - Mensagem: 5;9;8;6;3
+22-05-2018 21:27:23 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 21:27:23 INFO  Log:14 Log - Mensagem processada
+22-05-2018 21:27:23 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 21:27:23 INFO  Log:14 Log - Mensagem: 5;9;8;6;3
+22-05-2018 21:27:23 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 21:27:25 INFO  Log:14 Log - Dados armazenados no banco: 
+22-05-2018 21:27:25 INFO  Log:14 Log - Tipo: mediana
+22-05-2018 21:27:25 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 21:27:25 INFO  Log:14 Log - Valores: [3.0, 5.0, 6.0, 8.0, 9.0]
+22-05-2018 21:27:32 INFO  Log:14 Log - Mensagem processada
+22-05-2018 21:27:32 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 21:27:32 INFO  Log:14 Log - Mensagem: Relatório de requisições
+22-05-2018 21:27:32 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 21:27:33 INFO  Log:14 Log - Mensagem processada
+22-05-2018 21:27:33 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 21:27:33 INFO  Log:14 Log - Mensagem: Relatório de requisições
+22-05-2018 21:27:33 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 21:27:34 ERROR Log:10 Log - Erro ao criar pdf: java.io.FileNotFoundException: /home/magao/Dropbox/FATEC/Workspaces/ESIII/EstatisticaMVC/files/Imgs/boxPlots/1527176061023.png (Arquivo ou diretório não encontrado)
+22-05-2018 21:29:16 INFO  Log:14 Log - Mensagem processada
+22-05-2018 21:29:16 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 21:29:16 INFO  Log:14 Log - Mensagem: Relatório de requisições
+22-05-2018 21:29:16 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 21:29:16 INFO  Log:14 Log - Mensagem processada
+22-05-2018 21:29:16 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 21:29:16 INFO  Log:14 Log - Mensagem: Relatório de requisições
+22-05-2018 21:29:16 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 21:29:17 WARN  Log:18 Log - Erro ao processar mensagens: com.db4o.ext.DatabaseFileLockedException: /home/magao/Dropbox/FATEC/Workspaces/ESIII/EstatisticaMVC/db/bancoProblemas.db4o
+22-05-2018 21:29:54 INFO  Log:14 Log - Mensagem processada
+22-05-2018 21:29:54 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 21:29:54 INFO  Log:14 Log - Mensagem: Mediana
+22-05-2018 21:29:54 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 21:29:57 INFO  Log:14 Log - Mensagem processada
+22-05-2018 21:29:57 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 21:29:57 INFO  Log:14 Log - Mensagem: 6;9;8;5;3
+22-05-2018 21:29:57 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 21:29:58 INFO  Log:14 Log - Mensagem processada
+22-05-2018 21:29:58 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 21:29:58 INFO  Log:14 Log - Mensagem: 6;9;8;5;3
+22-05-2018 21:29:58 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 21:29:58 WARN  Log:18 Log - Erro ao processar mensagens: com.db4o.ext.DatabaseFileLockedException: /home/magao/Dropbox/FATEC/Workspaces/ESIII/EstatisticaMVC/db/bancoProblemas.db4o
+22-05-2018 21:29:58 INFO  Log:14 Log - Dados armazenados no banco: 
+22-05-2018 21:29:58 INFO  Log:14 Log - Tipo: mediana
+22-05-2018 21:29:58 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 21:29:58 INFO  Log:14 Log - Valores: [6.0, 9.0, 8.0, 5.0, 3.0]
+22-05-2018 21:30:01 INFO  Log:14 Log - Mensagem processada
+22-05-2018 21:30:01 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 21:30:01 INFO  Log:14 Log - Mensagem: Relatório de requisições
+22-05-2018 21:30:01 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 21:30:02 WARN  Log:18 Log - Erro ao processar mensagens: com.db4o.ext.DatabaseFileLockedException: /home/magao/Dropbox/FATEC/Workspaces/ESIII/EstatisticaMVC/db/bancoProblemas.db4o
+22-05-2018 22:07:46 INFO  Log:14 Log - Mensagem processada
+22-05-2018 22:07:46 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 22:07:46 INFO  Log:14 Log - Mensagem: Moda
+22-05-2018 22:07:46 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 22:07:51 INFO  Log:14 Log - Mensagem processada
+22-05-2018 22:07:51 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 22:07:51 INFO  Log:14 Log - Mensagem: 5;9;8;6;2
+22-05-2018 22:07:51 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 22:07:52 INFO  Log:14 Log - Dados armazenados no banco: 
+22-05-2018 22:07:52 INFO  Log:14 Log - Tipo: mediana
+22-05-2018 22:07:52 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 22:07:52 INFO  Log:14 Log - Valores: [2.0, 5.0, 6.0, 8.0, 9.0]
+22-05-2018 22:07:59 INFO  Log:14 Log - Mensagem processada
+22-05-2018 22:07:59 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 22:07:59 INFO  Log:14 Log - Mensagem: Relatório de requisições
+22-05-2018 22:07:59 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 22:09:30 INFO  Log:14 Log - Mensagem processada
+22-05-2018 22:09:30 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 22:09:30 INFO  Log:14 Log - Mensagem: Media
+22-05-2018 22:09:30 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 22:09:35 INFO  Log:14 Log - Mensagem processada
+22-05-2018 22:09:35 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 22:09:35 INFO  Log:14 Log - Mensagem: 5;8;6;9;6
+22-05-2018 22:09:35 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 22:09:37 INFO  Log:14 Log - Dados armazenados no banco: 
+22-05-2018 22:09:37 INFO  Log:14 Log - Tipo: media
+22-05-2018 22:09:37 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 22:09:37 INFO  Log:14 Log - Valores: [5.0, 8.0, 6.0, 9.0, 6.0]
+22-05-2018 22:09:38 INFO  Log:14 Log - Mensagem processada
+22-05-2018 22:09:38 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 22:09:38 INFO  Log:14 Log - Mensagem: Moda
+22-05-2018 22:09:38 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 22:09:44 INFO  Log:14 Log - Mensagem processada
+22-05-2018 22:09:44 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 22:09:44 INFO  Log:14 Log - Mensagem: 5;9;6;58
+22-05-2018 22:09:44 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 22:09:45 INFO  Log:14 Log - Dados armazenados no banco: 
+22-05-2018 22:09:45 INFO  Log:14 Log - Tipo: mediana
+22-05-2018 22:09:45 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 22:09:45 INFO  Log:14 Log - Valores: [5.0, 6.0, 9.0, 58.0]
+22-05-2018 22:09:47 INFO  Log:14 Log - Mensagem processada
+22-05-2018 22:09:47 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 22:09:47 INFO  Log:14 Log - Mensagem: Mediana
+22-05-2018 22:09:47 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 22:09:52 INFO  Log:14 Log - Mensagem processada
+22-05-2018 22:09:52 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 22:09:52 INFO  Log:14 Log - Mensagem: 6;9;8;5;3
+22-05-2018 22:09:52 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 22:09:53 INFO  Log:14 Log - Dados armazenados no banco: 
+22-05-2018 22:09:53 INFO  Log:14 Log - Tipo: mediana
+22-05-2018 22:09:53 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 22:09:53 INFO  Log:14 Log - Valores: [6.0, 9.0, 8.0, 5.0, 3.0]
+22-05-2018 22:10:11 INFO  Log:14 Log - Mensagem processada
+22-05-2018 22:10:11 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 22:10:11 INFO  Log:14 Log - Mensagem: Relatório de requisições
+22-05-2018 22:10:11 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 22:22:09 INFO  Log:14 Log - Mensagem processada
+22-05-2018 22:22:09 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 22:22:09 INFO  Log:14 Log - Mensagem: Relatório de requisições
+22-05-2018 22:22:09 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 22:51:46 INFO  Log:14 Log - Mensagem processada
+22-05-2018 22:51:46 INFO  Log:14 Log - Nome do usuário: Magão
+22-05-2018 22:51:46 INFO  Log:14 Log - Mensagem: Relatório de requisições
+22-05-2018 22:51:46 INFO  Log:14 Log - ChatID: 173375027
+22-05-2018 22:53:29 INFO  Log:14 Log - Mensagem processada
+22-05-2018 22:53:29 INFO  Log:14 Log - Nome do usuário: bel
+22-05-2018 22:53:29 INFO  Log:14 Log - Mensagem: /start
+22-05-2018 22:53:29 INFO  Log:14 Log - ChatID: 462077336
+22-05-2018 22:53:32 INFO  Log:14 Log - Mensagem processada
+22-05-2018 22:53:32 INFO  Log:14 Log - Nome do usuário: bel
+22-05-2018 22:53:32 INFO  Log:14 Log - Mensagem: Media
+22-05-2018 22:53:32 INFO  Log:14 Log - ChatID: 462077336
+22-05-2018 22:53:52 INFO  Log:14 Log - Mensagem processada
+22-05-2018 22:53:52 INFO  Log:14 Log - Nome do usuário: bel
+22-05-2018 22:53:52 INFO  Log:14 Log - Mensagem: 3;4;6;1;8;0;4;1;2;7;8;9
+22-05-2018 22:53:52 INFO  Log:14 Log - ChatID: 462077336
+22-05-2018 22:53:53 INFO  Log:14 Log - Dados armazenados no banco: 
+22-05-2018 22:53:53 INFO  Log:14 Log - Tipo: media
+22-05-2018 22:53:53 INFO  Log:14 Log - ChatID: 462077336
+22-05-2018 22:53:53 INFO  Log:14 Log - Valores: [3.0, 4.0, 6.0, 1.0, 8.0, 0.0, 4.0, 1.0, 2.0, 7.0, 8.0, 9.0]
+22-05-2018 22:53:59 INFO  Log:14 Log - Mensagem processada
+22-05-2018 22:53:59 INFO  Log:14 Log - Nome do usuário: bel
+22-05-2018 22:53:59 INFO  Log:14 Log - Mensagem: Moda
+22-05-2018 22:53:59 INFO  Log:14 Log - ChatID: 462077336
+22-05-2018 22:54:27 INFO  Log:14 Log - Mensagem processada
+22-05-2018 22:54:27 INFO  Log:14 Log - Nome do usuário: bel
+22-05-2018 22:54:27 INFO  Log:14 Log - Mensagem: 2;4;6;7;81;0;98;56;84;32;
+22-05-2018 22:54:27 INFO  Log:14 Log - ChatID: 462077336
+22-05-2018 22:54:28 INFO  Log:14 Log - Dados armazenados no banco: 
+22-05-2018 22:54:28 INFO  Log:14 Log - Tipo: Moda
+22-05-2018 22:54:28 INFO  Log:14 Log - ChatID: 462077336
+22-05-2018 22:54:28 INFO  Log:14 Log - Valores: [0.0, 2.0, 4.0, 6.0, 7.0, 32.0, 56.0, 81.0, 84.0, 98.0]
+22-05-2018 22:54:48 INFO  Log:14 Log - Mensagem processada
+22-05-2018 22:54:48 INFO  Log:14 Log - Nome do usuário: bel
+22-05-2018 22:54:48 INFO  Log:14 Log - Mensagem: Moda
+22-05-2018 22:54:48 INFO  Log:14 Log - ChatID: 462077336
+22-05-2018 22:55:02 INFO  Log:14 Log - Mensagem processada
+22-05-2018 22:55:02 INFO  Log:14 Log - Nome do usuário: bel
+22-05-2018 22:55:02 INFO  Log:14 Log - Mensagem: 3;4;2;4;6;8;8;5;4;3;21
+22-05-2018 22:55:02 INFO  Log:14 Log - ChatID: 462077336
+22-05-2018 22:55:03 INFO  Log:14 Log - Dados armazenados no banco: 
+22-05-2018 22:55:03 INFO  Log:14 Log - Tipo: Moda
+22-05-2018 22:55:03 INFO  Log:14 Log - ChatID: 462077336
+22-05-2018 22:55:03 INFO  Log:14 Log - Valores: [2.0, 3.0, 3.0, 4.0, 4.0, 4.0, 5.0, 6.0, 8.0, 8.0, 21.0]
+22-05-2018 22:55:19 INFO  Log:14 Log - Mensagem processada
+22-05-2018 22:55:19 INFO  Log:14 Log - Nome do usuário: bel
+22-05-2018 22:55:19 INFO  Log:14 Log - Mensagem: Mediana
+22-05-2018 22:55:19 INFO  Log:14 Log - ChatID: 462077336
+22-05-2018 22:55:38 INFO  Log:14 Log - Mensagem processada
+22-05-2018 22:55:38 INFO  Log:14 Log - Nome do usuário: bel
+22-05-2018 22:55:38 INFO  Log:14 Log - Mensagem: 3;5;7;1;5;9;4;2;4;2;5;
+22-05-2018 22:55:38 INFO  Log:14 Log - ChatID: 462077336
+22-05-2018 22:55:39 INFO  Log:14 Log - Dados armazenados no banco: 
+22-05-2018 22:55:39 INFO  Log:14 Log - Tipo: mediana
+22-05-2018 22:55:39 INFO  Log:14 Log - ChatID: 462077336
+22-05-2018 22:55:39 INFO  Log:14 Log - Valores: [3.0, 5.0, 7.0, 1.0, 5.0, 9.0, 4.0, 2.0, 4.0, 2.0, 5.0]
+22-05-2018 22:55:42 INFO  Log:14 Log - Mensagem processada
+22-05-2018 22:55:42 INFO  Log:14 Log - Nome do usuário: bel
+22-05-2018 22:55:42 INFO  Log:14 Log - Mensagem: Relatório de requisições
+22-05-2018 22:55:42 INFO  Log:14 Log - ChatID: 462077336

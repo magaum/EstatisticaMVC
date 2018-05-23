@@ -1,7 +1,6 @@
 package br.com.estatistica.estatistica.view;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 import com.pengrad.telegrambot.TelegramBot;
@@ -23,16 +22,15 @@ import br.com.estatistica.estatistica.controller.ExerciseControllerMean;
 import br.com.estatistica.estatistica.controller.ExerciseControllerMedian;
 import br.com.estatistica.estatistica.controller.ExerciseControllerMode;
 import br.com.estatistica.estatistica.controller.HistoricController;
-import br.com.estatistica.estatistica.log.Logs;
+import br.com.estatistica.estatistica.log.Log;
 import br.com.estatistica.estatistica.model.Model;
 
 public class View implements Observer {
 
 	private Model model;
-	int queue = 0;
 	boolean waitUserInput = true;
 	String operacao;
-	TelegramBot bot; // TelegramBotAdapter.build(token);
+	TelegramBot bot;
 
 	// Object that receives messages
 	GetUpdatesResponse updatesResponse;
@@ -58,7 +56,7 @@ public class View implements Observer {
 				try {
 					execute(updates);
 				} catch (Exception e) {
-					Logs.logWarnWriter("Erro ao processar mensagens: " + e);
+					Log.logWarnWriter("Erro ao processar mensagens: " + e);
 				}
 				return UpdatesListener.CONFIRMED_UPDATES_ALL;
 			}
@@ -72,12 +70,12 @@ public class View implements Observer {
 			String message = update.message().text();
 			long chatId = update.message().chat().id();
 			try {
-				Logs.logInfoWriter("Mensagem processada");
-				Logs.logInfoWriter("Nome do usuário: " + nome);
-				Logs.logInfoWriter("Mensagem: " + message);
-				Logs.logInfoWriter("ChatID: " + chatId);
+				Log.logInfoWriter("Mensagem processada");
+				Log.logInfoWriter("Nome do usuário: " + nome);
+				Log.logInfoWriter("Mensagem: " + message);
+				Log.logInfoWriter("ChatID: " + chatId);
 			} catch (Exception e) {
-				Logs.logErrorWriter("Algum erro ocorreu ao processar a mensagem!" + e);
+				Log.logErrorWriter("Algum erro ocorreu ao processar a mensagem!" + e);
 			}
 
 			if (message.equalsIgnoreCase("Relatório de requisições")) {
@@ -88,14 +86,15 @@ public class View implements Observer {
 
 			}
 			if (this.waitUserInput == false) {
-				if (!message.equalsIgnoreCase("Relatório de requisições")) {
-					try {
-						model.generateBoxPlot(update, operacao);
-					} catch (IOException e) {
-						sendResponse = bot.execute(
-								new SendMessage(chatId, "Não consegui gerar o box plot, desculpe \uD83D\uDE1E"));
-					}
-				}
+				// if (!message.equalsIgnoreCase("Relatório de requisições")) {
+				// try {
+				// String boxPlot = BoxPlot.generateBoxPlot(update, operacao);
+				// } catch (IOException e) {
+				// sendResponse = bot.execute(
+				// new SendMessage(chatId, "Não consegui gerar o box plot, desculpe
+				// \uD83D\uDE1E"));
+				// }
+				// }
 				this.callController(update);
 			} else if (message.equalsIgnoreCase("Media")) {
 				operacao = "Media";
@@ -146,16 +145,18 @@ public class View implements Observer {
 	}
 
 	@Override
-	public void sendImage(long chatId) {
-		File file = new File("boxPlots/" + chatId + ".png");
+	public void sendImage(String imgName, long chatId) {
+		File file = new File("files/Imgs/boxPlots/" + imgName + ".png");
 		sendResponse = bot.execute(new SendPhoto(chatId, file));
 		this.waitUserInput = true;
 	}
 
 	@Override
 	public void sendDocument(long chatId) {
-		File file = new File("pdf/historico.pdf");
-		sendResponse = bot.execute(new SendDocument(chatId, file));
+		File file = new File("files/pdf/" + chatId + ".pdf");
+		SendDocument sendDocument = new SendDocument(chatId, file);
+		sendDocument.fileName("historico.pdf");
+		sendResponse = bot.execute(sendDocument);
 		this.waitUserInput = true;
 	}
 }

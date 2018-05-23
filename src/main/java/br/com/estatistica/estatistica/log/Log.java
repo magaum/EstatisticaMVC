@@ -2,9 +2,9 @@ package br.com.estatistica.estatistica.log;
 
 import org.apache.log4j.Logger;
 
-public class Logs {
+public class Log {
 
-	final static Logger logger = Logger.getLogger(Logs.class);
+	final static Logger logger = Logger.getLogger(Log.class);
 	
 	public static void logErrorWriter(String error) {
 		logger.error(error);

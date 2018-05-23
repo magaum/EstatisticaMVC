@@ -11,7 +11,7 @@ import com.db4o.ObjectSet;
 import com.db4o.query.Query;
 import com.pengrad.telegrambot.model.Update;
 
-import br.com.estatistica.estatistica.log.Logs;
+import br.com.estatistica.estatistica.log.Log;
 
 public class ModelDAO {
 
@@ -32,10 +32,10 @@ public class ModelDAO {
 	}
 
 	public boolean addHistoric(Historic historic) {
-		Logs.logInfoWriter("Dados armazenados no banco: ");
-		Logs.logInfoWriter("Tipo: " + historic.getType());
-		Logs.logInfoWriter("ChatID: " + historic.getChatId());
-		Logs.logInfoWriter("Valores: " + historic.getValues());
+		Log.logInfoWriter("Dados armazenados no banco: ");
+		Log.logInfoWriter("Tipo: " + historic.getType());
+		Log.logInfoWriter("ChatID: " + historic.getChatId());
+		Log.logInfoWriter("Valores: " + historic.getValues());
 		bancoProblemas = connect();
 		bancoProblemas.store(historic);
 		bancoProblemas.commit();
@@ -57,8 +57,8 @@ public class ModelDAO {
 		List<Historic> userHistoric = new ArrayList<>();
 		for (Historic historic : allHistoric) {
 			if (historic.getChatId() == chatId) {
-				long diff = TimeUnit.DAYS.convert(date.getTime() - historic.getDate().getTime(), TimeUnit.MILLISECONDS);
-				if (diff > 2) {
+				long diffDate = TimeUnit.DAYS.convert(date.getTime() - historic.getDate().getTime(), TimeUnit.MILLISECONDS);
+				if (diffDate > 2) {
 					deleteRequest(historic);
 				}
 				userHistoric.add(historic);

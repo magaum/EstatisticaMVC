@@ -7,14 +7,9 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartUtilities;
-import org.jfree.chart.JFreeChart;
-import org.jfree.data.statistics.DefaultBoxAndWhiskerCategoryDataset;
-
 import com.pengrad.telegrambot.model.Update;
 
-import br.com.estatistica.estatistica.log.Logs;
+import br.com.estatistica.estatistica.log.Log;
 import br.com.estatistica.estatistica.model.utils.ModelUtils;
 import br.com.estatistica.estatistica.view.Observer;
 
@@ -22,6 +17,7 @@ public class Model {
 
 	private List<Observer> observers = new LinkedList<Observer>();
 	private static Model uniqueInstance;
+	private static String imgName;
 	private ModelDAO db4o = new ModelDAO();
 	long chatId;
 	String username;
@@ -44,9 +40,9 @@ public class Model {
 		}
 	}
 
-	public void sendPhotoToObservers(long chatId) {
+	public void sendPhotoToObservers(String imgName, long chatId) {
 		for (Observer observer : observers) {
-			observer.sendImage(chatId);
+			observer.sendImage(imgName, chatId);
 		}
 	}
 
@@ -59,7 +55,7 @@ public class Model {
 	public void getHistoric(Update update) {
 		String name = update.message().chat().firstName();
 		long chatId = update.message().chat().id();
-		if (ModelUtils.createPdf(update)) {
+		if (Pdf.createPdf(update)) {
 			this.sendFileToObservers(chatId);
 		} else {
 			this.notifyObservers(update.message().chat().id(),
@@ -70,7 +66,7 @@ public class Model {
 	public void computeMean(Update update) {
 
 		chatId = update.message().chat().id();
-		values = ModelUtils.convertStringToDouble(update.message().text());
+		values = ModelUtils.messageToDouble(update.message().text());
 		Double result, sum = 0.0;
 		if (values != null) {
 			for (Double v : values) {
@@ -78,10 +74,16 @@ public class Model {
 			}
 			result = sum / values.size();
 			this.notifyObservers(chatId, "A média é igual a: " + result);
-			Historic historic = new Historic(values, chatId, "media", result, new File("boxPlots/" + chatId + ".png"));
+			try {
+				imgName = BoxPlot.generateBoxPlot(update, "Media");
+			} catch (IOException e) {
+				Log.logWarnWriter("Erro ao gerar boxPlot: " + e);
+			}
+			Historic historic = new Historic(values, chatId, "media", result,
+					new File("files/Imgs/boxPlots/" + imgName + ".png"));
 
 			if (!db4o.addHistoric(historic)) {
-				Logs.logErrorWriter("Erro ao salvar no banco");
+				Log.logErrorWriter("Erro ao salvar no banco");
 			}
 		} else {
 			this.notifyObservers(chatId, update.message().chat().firstName()
@@ -97,9 +99,10 @@ public class Model {
 		double bigger = 0;
 		double biggerOccurrence = 0;
 		ArrayList<Double> modes = new ArrayList<>();
-		values = ModelUtils.convertStringToDouble(update.message().text());
+		values = ModelUtils.messageToDouble(update.message().text());
 		if (values != null) {
-			Historic historic = new Historic(values, chatId, "mediana", new File("boxPlots/" + chatId + ".png"));
+			Historic historic = new Historic(values, chatId, "Moda",
+					new File("files/Imgs/boxPlots/" + chatId + ".png"));
 			Collections.sort(values);
 			for (int i = 1; i <= values.size(); i++) {
 				if (i < values.size() && values.get(i).equals(values.get(i - 1))) {
@@ -130,9 +133,15 @@ public class Model {
 			} else {
 				this.notifyObservers(chatId, "Não exite moda nesses valores");
 			}
+			try {
+				imgName = BoxPlot.generateBoxPlot(update, "Moda");
+			} catch (IOException e) {
+				Log.logWarnWriter("Erro ao gerar boxPlot: " + e);
+			}
+			historic.setBoxPlot(new File("files/Imgs/boxPlots/" + imgName + ".png"));
 
 			if (!db4o.addHistoric(historic)) {
-				Logs.logErrorWriter("Erro ao salvar no banco");
+				Log.logErrorWriter("Erro ao salvar no banco");
 			}
 		} else {
 			this.notifyObservers(chatId, update.message().chat().firstName()
@@ -142,8 +151,14 @@ public class Model {
 
 	public void computeMedian(Update update) {
 		long chatId = update.message().chat().id();
-		ArrayList<Double> values = ModelUtils.convertStringToDouble(update.message().text());
-		Historic historic = new Historic(values, chatId, "mediana", new File("boxPlots/" + chatId + ".png"));
+		ArrayList<Double> values = ModelUtils.messageToDouble(update.message().text());
+		try {
+			imgName = BoxPlot.generateBoxPlot(update, "Mediana");
+		} catch (IOException e) {
+			Log.logWarnWriter("Erro ao gerar boxPlot: " + e);
+		}
+		Historic historic = new Historic(values, chatId, "mediana",
+				new File("files/Imgs/boxPlots/" + imgName + ".png"));
 		if (values != null) {
 			if (values.size() % 2 == 0) {
 				Double median = (((values.get(values.size() / 2) - 1)) + (values.get(values.size() / 2))) / 2;
@@ -155,7 +170,7 @@ public class Model {
 				historic.setResult((double) median);
 			}
 			if (!db4o.addHistoric(historic)) {
-				Logs.logErrorWriter("Erro ao salvar no banco");
+				Log.logErrorWriter("Erro ao salvar no banco");
 			}
 		} else {
 			this.notifyObservers(chatId, update.message().chat().firstName()
@@ -163,14 +178,8 @@ public class Model {
 		}
 	}
 
-	public void generateBoxPlot(Update update, String operation) throws IOException {
-		long chatId = update.message().chat().id();
-		DefaultBoxAndWhiskerCategoryDataset boxPlot = new DefaultBoxAndWhiskerCategoryDataset();
-		List<Double> values = ModelUtils.convertStringToDouble(update.message().text());
-		boxPlot.add(values, "", "Valores");
-		JFreeChart jFreeChart = ChartFactory.createBoxAndWhiskerChart("Box Plot", operation, "Coluna", boxPlot, false);
-		ChartUtilities.saveChartAsPNG(new File("boxPlots/" + chatId + ".png"), jFreeChart, 800, 800);
-		this.sendPhotoToObservers(chatId);
-	}
+	public void sendBoxPlot(String imgName, long chatId) {
 
+		this.sendPhotoToObservers(imgName, chatId);
+	}
 }
