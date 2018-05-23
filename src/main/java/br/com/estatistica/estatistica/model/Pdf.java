@@ -35,7 +35,6 @@ public class Pdf {
 				for (Historic historic : userHistoric) {
 					request++;
 					String valores = historic.getValues().toString().replaceAll("\\[|\\]", "");
-					p.add(new Paragraph("Requisição " + request));
 					p.add(new Paragraph("Tipo da requisicao: " + historic.getType()));
 					p.add(new Paragraph("Valores: " + valores));
 					if (historic.getResult() != null) {
@@ -56,6 +55,7 @@ public class Pdf {
 							p.add(new Paragraph(" "));
 							p.add(new Paragraph(" "));
 						}
+						p.add(new Paragraph(" "));
 						p.add(new Paragraph(" "));
 						p.add(new Paragraph(" "));
 						p.add(new Paragraph(" "));

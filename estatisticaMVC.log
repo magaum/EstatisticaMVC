@@ -2232,3 +2232,55 @@
 23-05-2018 18:18:55 INFO  Log:14 Log - Nome do usuário: bel
 23-05-2018 18:18:55 INFO  Log:14 Log - Mensagem: Media
 23-05-2018 18:18:55 INFO  Log:14 Log - ChatID: 462077336
+23-05-2018 18:19:13 INFO  Log:14 Log - Mensagem processada
+23-05-2018 18:19:13 INFO  Log:14 Log - Nome do usuário: bel
+23-05-2018 18:19:13 INFO  Log:14 Log - Mensagem: 4;5;7;7;8;8;9;0;1;3;4;2
+23-05-2018 18:19:13 INFO  Log:14 Log - ChatID: 462077336
+23-05-2018 18:19:15 INFO  Log:14 Log - Dados armazenados no banco: 
+23-05-2018 18:19:15 INFO  Log:14 Log - Tipo: media
+23-05-2018 18:19:15 INFO  Log:14 Log - ChatID: 462077336
+23-05-2018 18:19:15 INFO  Log:14 Log - Valores: [4.0, 5.0, 7.0, 7.0, 8.0, 8.0, 9.0, 0.0, 1.0, 3.0, 4.0, 2.0]
+23-05-2018 18:19:17 INFO  Log:14 Log - Mensagem processada
+23-05-2018 18:19:17 INFO  Log:14 Log - Nome do usuário: bel
+23-05-2018 18:19:17 INFO  Log:14 Log - Mensagem: Mediana
+23-05-2018 18:19:17 INFO  Log:14 Log - ChatID: 462077336
+23-05-2018 18:19:39 INFO  Log:14 Log - Mensagem processada
+23-05-2018 18:19:39 INFO  Log:14 Log - Nome do usuário: bel
+23-05-2018 18:19:39 INFO  Log:14 Log - Mensagem: 3;4;5;1;6;7;8;6;9;9;1;3;2;
+23-05-2018 18:19:39 INFO  Log:14 Log - ChatID: 462077336
+23-05-2018 18:19:40 INFO  Log:14 Log - Dados armazenados no banco: 
+23-05-2018 18:19:40 INFO  Log:14 Log - Tipo: mediana
+23-05-2018 18:19:40 INFO  Log:14 Log - ChatID: 462077336
+23-05-2018 18:19:40 INFO  Log:14 Log - Valores: [3.0, 4.0, 5.0, 1.0, 6.0, 7.0, 8.0, 6.0, 9.0, 9.0, 1.0, 3.0, 2.0]
+23-05-2018 18:19:47 INFO  Log:14 Log - Mensagem processada
+23-05-2018 18:19:47 INFO  Log:14 Log - Nome do usuário: bel
+23-05-2018 18:19:47 INFO  Log:14 Log - Mensagem: Moda
+23-05-2018 18:19:47 INFO  Log:14 Log - ChatID: 462077336
+23-05-2018 18:20:25 INFO  Log:14 Log - Mensagem processada
+23-05-2018 18:20:25 INFO  Log:14 Log - Nome do usuário: bel
+23-05-2018 18:20:25 INFO  Log:14 Log - Mensagem: 38;52;54;34;54;53;74;13;964;80;434;234;236;
+23-05-2018 18:20:25 INFO  Log:14 Log - ChatID: 462077336
+23-05-2018 18:20:26 INFO  Log:14 Log - Dados armazenados no banco: 
+23-05-2018 18:20:26 INFO  Log:14 Log - Tipo: Moda
+23-05-2018 18:20:26 INFO  Log:14 Log - ChatID: 462077336
+23-05-2018 18:20:26 INFO  Log:14 Log - Valores: [13.0, 34.0, 38.0, 52.0, 53.0, 54.0, 54.0, 74.0, 80.0, 234.0, 236.0, 434.0, 964.0]
+23-05-2018 18:20:34 INFO  Log:14 Log - Mensagem processada
+23-05-2018 18:20:34 INFO  Log:14 Log - Nome do usuário: bel
+23-05-2018 18:20:34 INFO  Log:14 Log - Mensagem: Relatório de requisições
+23-05-2018 18:20:34 INFO  Log:14 Log - ChatID: 462077336
+23-05-2018 18:22:20 INFO  Log:14 Log - Mensagem processada
+23-05-2018 18:22:20 INFO  Log:14 Log - Nome do usuário: bel
+23-05-2018 18:22:20 INFO  Log:14 Log - Mensagem: Moda
+23-05-2018 18:22:20 INFO  Log:14 Log - ChatID: 462077336
+23-05-2018 18:22:48 INFO  Log:14 Log - Mensagem processada
+23-05-2018 18:22:48 INFO  Log:14 Log - Nome do usuário: bel
+23-05-2018 18:22:48 INFO  Log:14 Log - Mensagem: 3;4;2;5;1;4;2;3;6;8;7;5;3;
+23-05-2018 18:22:48 INFO  Log:14 Log - ChatID: 462077336
+23-05-2018 18:22:49 INFO  Log:14 Log - Dados armazenados no banco: 
+23-05-2018 18:22:49 INFO  Log:14 Log - Tipo: Moda
+23-05-2018 18:22:49 INFO  Log:14 Log - ChatID: 462077336
+23-05-2018 18:22:49 INFO  Log:14 Log - Valores: [1.0, 2.0, 2.0, 3.0, 3.0, 3.0, 4.0, 4.0, 5.0, 5.0, 6.0, 7.0, 8.0]
+23-05-2018 18:22:52 INFO  Log:14 Log - Mensagem processada
+23-05-2018 18:22:52 INFO  Log:14 Log - Nome do usuário: bel
+23-05-2018 18:22:52 INFO  Log:14 Log - Mensagem: Relatório de requisições
+23-05-2018 18:22:52 INFO  Log:14 Log - ChatID: 462077336
