@@ -17,42 +17,42 @@ Para que o projeto funcione o arquivo example.properties deve ser renomeado para
 
 ### **Informações Bot**
 
-![informacoes bot](files/imgs/readme/0_informacoesBot.png)
+![informacoes bot](files/imgs/readme/0_informacoesBot.jng)
 
 ---
 
 ### **Primeiro comando**
 
-![tela inicial](files/imgs/readme/1_telaInicial.png)
+![tela inicial](files/imgs/readme/1_telaInicial.jng)
 
 ---
 
 ### **Resposta do Bot**
 
-![primeira interacao](files/imgs/readme/2_primeirainteracao.png)
+![primeira interacao](files/imgs/readme/2_primeirainteracao.jng)
 
 ---
 
 ### **Calculando Media**
 
-![calculando media](files/imgs/readme/3_media.png)
+![calculando media](files/imgs/readme/3_media.jng)
 
 ---
 
 ### **Calculando Moda**
 
-![calculando moda](files/imgs/readme/4_moda.png)
+![calculando moda](files/imgs/readme/4_moda.jng)
 
 ---
 
 ### **Calculando Mediana**
 
-![calculando mediana](files/imgs/readme/5_mediana.png)
+![calculando mediana](files/imgs/readme/5_mediana.jng)
 
 ---
 
 ### **Tratativa para comandos inválidos**
 
-![tratando erros](files/imgs/readme/6_tratativas.png)
+![tratando erros](files/imgs/readme/6_tratativas.jng)
 
 ---
