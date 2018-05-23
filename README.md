@@ -53,6 +53,6 @@ Para que o projeto funcione o arquivo example.properties deve ser renomeado para
 
 ### **Tratativa para comandos inválidos**
 
-![tratando erros](files/imgs/readme/6_tratativas.jng)
+![tratando erros](files/imgs/readme/6_tratativas.jpg)
 
 ---
