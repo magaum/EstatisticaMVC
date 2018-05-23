@@ -7,48 +7,52 @@ Para que o projeto funcione o arquivo example.properties deve ser renomeado para
 
 * API [Pengrad;](https://github.com/pengrad/java-telegram-bot-api/blob/master/README.md)
 
+# Diagrama de classes
+
+![diagrama de classes](files/imgs/diagramas/EstatisticaMVCv2.jpg)
+
 # Funcionamento do sistema
 
 ---
 
 ### **Informações Bot**
 
-![description](Imgs/0_informacoesBot.png)
+![informacoes bot](files/imgs/readme/0_informacoesBot.png)
 
 ---
 
 ### **Primeiro comando**
 
-![description](Imgs/1_telaInicial.png)
+![tela inicial](files/imgs/readme/1_telaInicial.png)
 
 ---
 
 ### **Resposta do Bot**
 
-![description](Imgs/2_primeirainteracao.png)
+![primeira interacao](files/imgs/readme/2_primeirainteracao.png)
 
 ---
 
 ### **Calculando Media**
 
-![description](Imgs/3_media.png)
+![calculando media](files/imgs/readme/3_media.png)
 
 ---
 
 ### **Calculando Moda**
 
-![description](Imgs/4_moda.png)
+![calculando moda](files/imgs/readme/4_moda.png)
 
 ---
 
 ### **Calculando Mediana**
 
-![description](Imgs/5_mediana.png)
+![calculando mediana](files/imgs/readme/5_mediana.png)
 
 ---
 
 ### **Tratativa para comandos inválidos**
 
-![description](Imgs/6_tratativas.png)
+![tratando erros](files/imgs/readme/6_tratativas.png)
 
 ---
