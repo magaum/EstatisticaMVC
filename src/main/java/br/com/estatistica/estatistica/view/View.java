@@ -28,18 +28,18 @@ import br.com.estatistica.estatistica.model.Model;
 public class View implements Observer {
 
 	private Model model;
-	boolean waitUserInput = true;
-	String operacao;
-	TelegramBot bot;
+	private boolean waitUserInput = true;
+	private String operacao;
+	private TelegramBot bot;
 
 	// Object that receives messages
-	GetUpdatesResponse updatesResponse;
+	private GetUpdatesResponse updatesResponse;
 	// Object that send responses
-	SendResponse sendResponse;
+	private SendResponse sendResponse;
 	// Object that manage chat actions like "typing action"
-	BaseResponse baseResponse;
-
-	ActionController actionController; // Strategy Pattern -- connection View -> Controller
+	private BaseResponse baseResponse;
+	// Strategy Pattern -- connection View -> Controller
+	private ActionController actionController;
 
 	public View(String token, Model model) {
 		this.model = model;
@@ -85,16 +85,7 @@ public class View implements Observer {
 				this.waitUserInput = false;
 
 			}
-			if (this.waitUserInput == false) {
-				// if (!message.equalsIgnoreCase("Relatório de requisições")) {
-				// try {
-				// String boxPlot = BoxPlot.generateBoxPlot(update, operacao);
-				// } catch (IOException e) {
-				// sendResponse = bot.execute(
-				// new SendMessage(chatId, "Não consegui gerar o box plot, desculpe
-				// \uD83D\uDE1E"));
-				// }
-				// }
+			if (!this.waitUserInput) {
 				this.callController(update);
 			} else if (message.equalsIgnoreCase("Media")) {
 				operacao = "Media";
@@ -116,7 +107,7 @@ public class View implements Observer {
 						"Entendi, moda! Então digita os valores de entrada separados por ponto e virgula ; para eu poder calcular que já respondo"));
 				this.waitUserInput = false;
 
-			} else if (message.equals("/start")) {
+			} else if ("/start".equals(message)) {
 				Keyboard replyKeyboardMarkup = new ReplyKeyboardMarkup(
 						new String[] { "Media", "Moda", "Mediana", "Relatório de requisições" }).oneTimeKeyboard(false)
 								.resizeKeyboard(true).selective(true);

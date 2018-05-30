@@ -5,12 +5,11 @@ import com.pengrad.telegrambot.model.Update;
 import br.com.estatistica.estatistica.model.Model;
 import br.com.estatistica.estatistica.view.View;
 
-
-public class ExerciseControllerMean implements ActionController{
+public class ExerciseControllerMean implements ActionController {
 
 	private Model model;
 	private View view;
-	
+
 	public ExerciseControllerMean(Model model, View view) {
 		this.model = model;
 		this.view = view;
@@ -20,6 +19,5 @@ public class ExerciseControllerMean implements ActionController{
 		view.sendTypingMessage(update);
 		model.computeMean(update);
 	}
-	
-		
+
 }

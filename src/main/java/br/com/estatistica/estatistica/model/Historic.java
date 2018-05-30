@@ -79,7 +79,7 @@ public class Historic implements Comparable<Historic> {
 	public void setBoxPlot(File boxPlot) {
 		this.boxPlot = boxPlot;
 	}
-	
+
 	public Date getDate() {
 		return date;
 	}
@@ -96,7 +96,7 @@ public class Historic implements Comparable<Historic> {
 	public void setModeNull() {
 		this.modeNull = "Não existe moda";
 	}
-	
+
 	public String getModeNull() {
 		return modeNull;
 	}

@@ -20,5 +20,4 @@ public class ExerciseControllerMedian implements ActionController {
 		model.computeMedian(update);
 	}
 
-	
 }

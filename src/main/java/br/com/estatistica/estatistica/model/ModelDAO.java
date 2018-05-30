@@ -55,7 +55,8 @@ public class ModelDAO {
 		List<Historic> userHistoric = new ArrayList<>();
 		for (Historic historic : allHistoric) {
 			if (historic.getChatId() == chatId) {
-				long diffDate = TimeUnit.DAYS.convert(date.getTime() - historic.getDate().getTime(), TimeUnit.MILLISECONDS);
+				long diffDate = TimeUnit.DAYS.convert(date.getTime() - historic.getDate().getTime(),
+						TimeUnit.MILLISECONDS);
 				if (diffDate > 2) {
 					deleteRequest(historic);
 				}

@@ -16,9 +16,9 @@ public class Model {
 	private List<Observer> observers = new LinkedList<Observer>();
 	private static Model uniqueInstance;
 	private ModelDAO db4o = new ModelDAO();
-	long chatId;
-	String username;
-	ArrayList<Double> values;
+	private long chatId;
+	private String username;
+	private ArrayList<Double> values;
 
 	public static Model getInstance() {
 		if (uniqueInstance == null) {

@@ -4,8 +4,8 @@ import org.apache.log4j.Logger;
 
 public class Log {
 
-	final static Logger logger = Logger.getLogger(Log.class);
-	
+	private final static Logger logger = Logger.getLogger(Log.class);
+
 	public static void logErrorWriter(String error) {
 		logger.error(error);
 	}
