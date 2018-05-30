@@ -1,4 +1,7 @@
 # EstatisticaMVC
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/8d8bb3407bce4680ac77df728a99e6d7)](https://www.codacy.com/app/magaum/EstatisticaMVC?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=magaum/EstatisticaMVC&amp;utm_campaign=Badge_Grade)
+
 Projeto para o material de estatística aplicado, feito com metologia MVC
 
 Para que o projeto funcione o arquivo example.properties deve ser renomeado para token.properties e o token gerado no bot father deve ser adicionado no arquivo para que a integração com o telegram ocorra
