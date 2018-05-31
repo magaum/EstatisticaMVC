@@ -2284,3 +2284,220 @@
 23-05-2018 18:22:52 INFO  Log:14 Log - Nome do usuário: bel
 23-05-2018 18:22:52 INFO  Log:14 Log - Mensagem: Relatório de requisições
 23-05-2018 18:22:52 INFO  Log:14 Log - ChatID: 462077336
+30-05-2018 21:07:18 INFO  Log:14 Log - Mensagem processada
+30-05-2018 21:07:18 INFO  Log:14 Log - Nome do usuário: Magão
+30-05-2018 21:07:18 INFO  Log:14 Log - Mensagem: /start
+30-05-2018 21:07:18 INFO  Log:14 Log - ChatID: 173375027
+30-05-2018 21:07:22 INFO  Log:14 Log - Mensagem processada
+30-05-2018 21:07:22 INFO  Log:14 Log - Nome do usuário: Magão
+30-05-2018 21:07:22 INFO  Log:14 Log - Mensagem: Media
+30-05-2018 21:07:22 INFO  Log:14 Log - ChatID: 173375027
+30-05-2018 21:07:27 INFO  Log:14 Log - Mensagem processada
+30-05-2018 21:07:27 INFO  Log:14 Log - Nome do usuário: Magão
+30-05-2018 21:07:27 INFO  Log:14 Log - Mensagem: 6;9;9;9;6;3
+30-05-2018 21:07:27 INFO  Log:14 Log - ChatID: 173375027
+30-05-2018 21:07:43 INFO  Log:14 Log - Dados armazenados no banco: 
+30-05-2018 21:07:43 INFO  Log:14 Log - Tipo: media
+30-05-2018 21:07:43 INFO  Log:14 Log - ChatID: 173375027
+30-05-2018 21:07:43 INFO  Log:14 Log - Valores: [6.0, 9.0, 9.0, 9.0, 6.0, 3.0]
+30-05-2018 21:07:44 INFO  Log:14 Log - Mensagem processada
+30-05-2018 21:07:44 INFO  Log:14 Log - Nome do usuário: Magão
+30-05-2018 21:07:44 INFO  Log:14 Log - Mensagem: Relatório de requisições
+30-05-2018 21:07:44 INFO  Log:14 Log - ChatID: 173375027
+30-05-2018 21:08:59 INFO  Log:14 Log - Mensagem processada
+30-05-2018 21:08:59 INFO  Log:14 Log - Nome do usuário: Magão
+30-05-2018 21:08:59 INFO  Log:14 Log - Mensagem: Media
+30-05-2018 21:08:59 INFO  Log:14 Log - ChatID: 173375027
+30-05-2018 21:09:06 INFO  Log:14 Log - Mensagem processada
+30-05-2018 21:09:06 INFO  Log:14 Log - Nome do usuário: Magão
+30-05-2018 21:09:06 INFO  Log:14 Log - Mensagem: 9;6;8;5;6;
+30-05-2018 21:09:06 INFO  Log:14 Log - ChatID: 173375027
+30-05-2018 21:09:09 INFO  Log:14 Log - Dados armazenados no banco: 
+30-05-2018 21:09:09 INFO  Log:14 Log - Tipo: media
+30-05-2018 21:09:09 INFO  Log:14 Log - ChatID: 173375027
+30-05-2018 21:09:09 INFO  Log:14 Log - Valores: [9.0, 6.0, 8.0, 5.0, 6.0]
+30-05-2018 21:09:12 INFO  Log:14 Log - Mensagem processada
+30-05-2018 21:09:12 INFO  Log:14 Log - Nome do usuário: Magão
+30-05-2018 21:09:12 INFO  Log:14 Log - Mensagem: Relatório de requisições
+30-05-2018 21:09:12 INFO  Log:14 Log - ChatID: 173375027
+30-05-2018 21:09:19 WARN  Log:18 Log - Erro ao processar mensagens: java.lang.RuntimeException: java.net.ConnectException: Failed to connect to api.telegram.org/2001:67c:4e8:f004:0:0:0:9:443
+30-05-2018 21:12:04 INFO  Log:14 Log - Mensagem processada
+30-05-2018 21:12:04 INFO  Log:14 Log - Nome do usuário: Magão
+30-05-2018 21:12:04 INFO  Log:14 Log - Mensagem: Relatório de requisições
+30-05-2018 21:12:04 INFO  Log:14 Log - ChatID: 173375027
+30-05-2018 21:12:28 WARN  Log:18 Log - Erro ao processar mensagens: java.lang.RuntimeException: java.net.ConnectException: Failed to connect to api.telegram.org/2001:67c:4e8:f004:0:0:0:9:443
+30-05-2018 21:15:47 INFO  Log:14 Log - Mensagem processada
+30-05-2018 21:15:47 INFO  Log:14 Log - Nome do usuário: Magão
+30-05-2018 21:15:47 INFO  Log:14 Log - Mensagem: Mediana
+30-05-2018 21:15:47 INFO  Log:14 Log - ChatID: 173375027
+30-05-2018 21:15:52 INFO  Log:14 Log - Mensagem processada
+30-05-2018 21:15:52 INFO  Log:14 Log - Nome do usuário: Magão
+30-05-2018 21:15:52 INFO  Log:14 Log - Mensagem: 6;9;8;5;6;3
+30-05-2018 21:15:52 INFO  Log:14 Log - ChatID: 173375027
+30-05-2018 21:15:58 INFO  Log:14 Log - Dados armazenados no banco: 
+30-05-2018 21:15:58 INFO  Log:14 Log - Tipo: mediana
+30-05-2018 21:15:58 INFO  Log:14 Log - ChatID: 173375027
+30-05-2018 21:15:58 INFO  Log:14 Log - Valores: [6.0, 9.0, 8.0, 5.0, 6.0, 3.0]
+30-05-2018 21:16:01 INFO  Log:14 Log - Mensagem processada
+30-05-2018 21:16:01 INFO  Log:14 Log - Nome do usuário: Magão
+30-05-2018 21:16:01 INFO  Log:14 Log - Mensagem: Moda
+30-05-2018 21:16:01 INFO  Log:14 Log - ChatID: 173375027
+30-05-2018 21:16:03 INFO  Log:14 Log - Mensagem processada
+30-05-2018 21:16:03 INFO  Log:14 Log - Nome do usuário: Magão
+30-05-2018 21:16:03 INFO  Log:14 Log - Mensagem: 9;6;8;5;3
+30-05-2018 21:16:03 INFO  Log:14 Log - ChatID: 173375027
+30-05-2018 21:16:04 INFO  Log:14 Log - Dados armazenados no banco: 
+30-05-2018 21:16:04 INFO  Log:14 Log - Tipo: Moda
+30-05-2018 21:16:04 INFO  Log:14 Log - ChatID: 173375027
+30-05-2018 21:16:04 INFO  Log:14 Log - Valores: [3.0, 5.0, 6.0, 8.0, 9.0]
+30-05-2018 21:16:06 INFO  Log:14 Log - Mensagem processada
+30-05-2018 21:16:06 INFO  Log:14 Log - Nome do usuário: Magão
+30-05-2018 21:16:06 INFO  Log:14 Log - Mensagem: Media
+30-05-2018 21:16:06 INFO  Log:14 Log - ChatID: 173375027
+30-05-2018 21:16:09 INFO  Log:14 Log - Mensagem processada
+30-05-2018 21:16:09 INFO  Log:14 Log - Nome do usuário: Magão
+30-05-2018 21:16:09 INFO  Log:14 Log - Mensagem: 9;8;5;6;3;
+30-05-2018 21:16:09 INFO  Log:14 Log - ChatID: 173375027
+30-05-2018 21:16:16 INFO  Log:14 Log - Dados armazenados no banco: 
+30-05-2018 21:16:16 INFO  Log:14 Log - Tipo: media
+30-05-2018 21:16:16 INFO  Log:14 Log - ChatID: 173375027
+30-05-2018 21:16:16 INFO  Log:14 Log - Valores: [9.0, 8.0, 5.0, 6.0, 3.0]
+30-05-2018 21:16:20 INFO  Log:14 Log - Mensagem processada
+30-05-2018 21:16:20 INFO  Log:14 Log - Nome do usuário: Magão
+30-05-2018 21:16:20 INFO  Log:14 Log - Mensagem: Relatório de requisições
+30-05-2018 21:16:20 INFO  Log:14 Log - ChatID: 173375027
+30-05-2018 21:16:22 WARN  Log:18 Log - Erro ao processar mensagens: java.lang.RuntimeException: java.net.ConnectException: Failed to connect to api.telegram.org/2001:67c:4e8:f004:0:0:0:9:443
+30-05-2018 21:18:01 INFO  Log:14 Log - Mensagem processada
+30-05-2018 21:18:01 INFO  Log:14 Log - Nome do usuário: Magão
+30-05-2018 21:18:01 INFO  Log:14 Log - Mensagem: Relatório de requisições
+30-05-2018 21:18:01 INFO  Log:14 Log - ChatID: 173375027
+30-05-2018 21:18:17 WARN  Log:18 Log - Erro ao processar mensagens: br.com.estatistica.estatistica.view.Viewjava.lang.RuntimeException: java.net.ConnectException: Failed to connect to api.telegram.org/2001:67c:4e8:f004:0:0:0:9:443
+30-05-2018 21:22:40 INFO  Log:14 Log - Mensagem processada
+30-05-2018 21:22:40 INFO  Log:14 Log - Nome do usuário: Magão
+30-05-2018 21:22:40 INFO  Log:14 Log - Mensagem: Relatório de requisições
+30-05-2018 21:22:40 INFO  Log:14 Log - ChatID: 173375027
+30-05-2018 21:22:49 WARN  Log:18 Log - Erro ao processar mensagens: java.lang.RuntimeException: java.net.ConnectException: Failed to connect to api.telegram.org/2001:67c:4e8:f004:0:0:0:9:443
+30-05-2018 21:26:56 INFO  Log:14 Log - Mensagem processada
+30-05-2018 21:26:56 INFO  Log:14 Log - Nome do usuário: Magão
+30-05-2018 21:26:56 INFO  Log:14 Log - Mensagem: Relatório de requisições
+30-05-2018 21:26:56 INFO  Log:14 Log - ChatID: 173375027
+30-05-2018 21:27:01 WARN  Log:18 Log - Erro ao processar mensagens: java.lang.RuntimeException: java.net.ConnectException: Failed to connect to api.telegram.org/2001:67c:4e8:f004:0:0:0:9:443
+31-05-2018 00:41:09 INFO  Log:14 Log - Mensagem processada
+31-05-2018 00:41:09 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 00:41:09 INFO  Log:14 Log - Mensagem: Relatório de requisições
+31-05-2018 00:41:09 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 00:41:20 WARN  Log:18 Log - Erro ao processar mensagens: java.lang.RuntimeException: java.net.ConnectException: Failed to connect to api.telegram.org/2001:67c:4e8:f004:0:0:0:9:443
+31-05-2018 00:42:32 INFO  Log:14 Log - Mensagem processada
+31-05-2018 00:42:32 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 00:42:32 INFO  Log:14 Log - Mensagem: Relatório de requisições
+31-05-2018 00:42:32 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 00:42:55 WARN  Log:18 Log - Erro ao processar mensagens: java.lang.RuntimeException: java.net.ConnectException: Failed to connect to api.telegram.org/2001:67c:4e8:f004:0:0:0:9:443
+31-05-2018 00:43:19 INFO  Log:14 Log - Mensagem processada
+31-05-2018 00:43:19 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 00:43:19 INFO  Log:14 Log - Mensagem: Relatório de requisições
+31-05-2018 00:43:19 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 00:43:27 WARN  Log:18 Log - Erro ao processar mensagens: java.lang.RuntimeException: java.net.ConnectException: Failed to connect to api.telegram.org/2001:67c:4e8:f004:0:0:0:9:443
+31-05-2018 00:45:22 INFO  Log:14 Log - Mensagem processada
+31-05-2018 00:45:22 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 00:45:22 INFO  Log:14 Log - Mensagem: Media
+31-05-2018 00:45:22 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 00:45:30 INFO  Log:14 Log - Mensagem processada
+31-05-2018 00:45:30 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 00:45:30 INFO  Log:14 Log - Mensagem: 9;8;6;9;8;5
+31-05-2018 00:45:30 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 00:45:32 INFO  Log:14 Log - Dados armazenados no banco: 
+31-05-2018 00:45:32 INFO  Log:14 Log - Tipo: media
+31-05-2018 00:45:32 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 00:45:32 INFO  Log:14 Log - Valores: [9.0, 8.0, 6.0, 9.0, 8.0, 5.0]
+31-05-2018 00:45:37 INFO  Log:14 Log - Mensagem processada
+31-05-2018 00:45:37 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 00:45:37 INFO  Log:14 Log - Mensagem: Moda
+31-05-2018 00:45:37 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 00:45:47 INFO  Log:14 Log - Mensagem processada
+31-05-2018 00:45:47 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 00:45:47 INFO  Log:14 Log - Mensagem: 9;8;5;6;3;2;6
+31-05-2018 00:45:47 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 00:45:49 INFO  Log:14 Log - Dados armazenados no banco: 
+31-05-2018 00:45:49 INFO  Log:14 Log - Tipo: Moda
+31-05-2018 00:45:49 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 00:45:49 INFO  Log:14 Log - Valores: [2.0, 3.0, 5.0, 6.0, 6.0, 8.0, 9.0]
+31-05-2018 00:45:53 INFO  Log:14 Log - Mensagem processada
+31-05-2018 00:45:53 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 00:45:53 INFO  Log:14 Log - Mensagem: Mediana
+31-05-2018 00:45:53 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 00:45:59 INFO  Log:14 Log - Mensagem processada
+31-05-2018 00:45:59 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 00:45:59 INFO  Log:14 Log - Mensagem: 6;5;3;6;9;8;5;
+31-05-2018 00:45:59 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 00:46:00 INFO  Log:14 Log - Dados armazenados no banco: 
+31-05-2018 00:46:00 INFO  Log:14 Log - Tipo: mediana
+31-05-2018 00:46:00 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 00:46:00 INFO  Log:14 Log - Valores: [6.0, 5.0, 3.0, 6.0, 9.0, 8.0, 5.0]
+31-05-2018 00:46:05 INFO  Log:14 Log - Mensagem processada
+31-05-2018 00:46:05 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 00:46:05 INFO  Log:14 Log - Mensagem: Relatório de requisições
+31-05-2018 00:46:05 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 00:46:11 WARN  Log:18 Log - Erro ao processar mensagens: java.lang.RuntimeException: java.net.ConnectException: Failed to connect to api.telegram.org/2001:67c:4e8:f004:0:0:0:9:443
+31-05-2018 00:46:51 INFO  Log:14 Log - Mensagem processada
+31-05-2018 00:46:51 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 00:46:51 INFO  Log:14 Log - Mensagem: Relatório de requisições
+31-05-2018 00:46:51 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 00:46:56 WARN  Log:18 Log - Erro ao processar mensagens: java.lang.RuntimeException: java.net.ConnectException: Failed to connect to api.telegram.org/2001:67c:4e8:f004:0:0:0:9:443
+31-05-2018 00:48:12 INFO  Log:14 Log - Mensagem processada
+31-05-2018 00:48:12 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 00:48:12 INFO  Log:14 Log - Mensagem: Relatório de requisições
+31-05-2018 00:48:12 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 00:48:24 WARN  Log:18 Log - Erro ao processar mensagens: java.lang.RuntimeException: java.net.ConnectException: Failed to connect to api.telegram.org/2001:67c:4e8:f004:0:0:0:9:443
+31-05-2018 01:05:07 INFO  Log:14 Log - Mensagem processada
+31-05-2018 01:05:07 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 01:05:07 INFO  Log:14 Log - Mensagem: Relatório de requisições
+31-05-2018 01:05:07 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 01:06:27 INFO  Log:14 Log - Mensagem processada
+31-05-2018 01:06:27 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 01:06:27 INFO  Log:14 Log - Mensagem: Relatório de requisições
+31-05-2018 01:06:27 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 01:06:35 INFO  Log:14 Log - Mensagem processada
+31-05-2018 01:06:35 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 01:06:35 INFO  Log:14 Log - Mensagem: Relatório de requisições
+31-05-2018 01:06:35 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 01:06:48 WARN  Log:18 Log - Erro ao processar mensagens: java.lang.RuntimeException: java.net.SocketTimeoutException: timeout
+31-05-2018 01:07:47 INFO  Log:14 Log - Mensagem processada
+31-05-2018 01:07:47 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 01:07:47 INFO  Log:14 Log - Mensagem: Relatório de requisições
+31-05-2018 01:07:47 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 01:08:33 INFO  Log:14 Log - Mensagem processada
+31-05-2018 01:08:33 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 01:08:33 INFO  Log:14 Log - Mensagem: Relatório de requisições
+31-05-2018 01:08:33 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 01:09:06 INFO  Log:14 Log - Mensagem processada
+31-05-2018 01:09:06 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 01:09:06 INFO  Log:14 Log - Mensagem: Mediana
+31-05-2018 01:09:06 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 01:09:14 INFO  Log:14 Log - Mensagem processada
+31-05-2018 01:09:14 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 01:09:14 INFO  Log:14 Log - Mensagem: 9;6;8;5;3
+31-05-2018 01:09:14 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 01:09:20 INFO  Log:14 Log - Dados armazenados no banco: 
+31-05-2018 01:09:20 INFO  Log:14 Log - Tipo: mediana
+31-05-2018 01:09:20 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 01:09:20 INFO  Log:14 Log - Valores: [9.0, 6.0, 8.0, 5.0, 3.0]
+31-05-2018 01:09:24 INFO  Log:14 Log - Mensagem processada
+31-05-2018 01:09:24 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 01:09:24 INFO  Log:14 Log - Mensagem: Relatório de requisições
+31-05-2018 01:09:24 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 01:10:03 INFO  Log:14 Log - Mensagem processada
+31-05-2018 01:10:03 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 01:10:03 INFO  Log:14 Log - Mensagem: Moda
+31-05-2018 01:10:03 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 01:10:13 INFO  Log:14 Log - Mensagem processada
+31-05-2018 01:10:13 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 01:10:13 INFO  Log:14 Log - Mensagem: 9;6;8;5;6
+31-05-2018 01:10:13 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 01:10:21 INFO  Log:14 Log - Dados armazenados no banco: 
+31-05-2018 01:10:21 INFO  Log:14 Log - Tipo: Moda
+31-05-2018 01:10:21 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 01:10:21 INFO  Log:14 Log - Valores: [5.0, 6.0, 6.0, 8.0, 9.0]
+31-05-2018 01:10:27 INFO  Log:14 Log - Mensagem processada
+31-05-2018 01:10:27 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 01:10:27 INFO  Log:14 Log - Mensagem: Relatório de requisições
+31-05-2018 01:10:27 INFO  Log:14 Log - ChatID: 173375027

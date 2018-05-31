@@ -17,7 +17,8 @@ public class ModelDAOTest {
 		
 		SimpleDateFormat test = new SimpleDateFormat("dd/MM/yyyy");
 		Date date = new Date();
-		Date date2 = test.parse("16/05/2018");
-		assertEquals(2,TimeUnit.DAYS.convert(date.getTime()-date2.getTime(), TimeUnit.MILLISECONDS));
+		Date date2 = new Date();
+		date2.setTime(date.getTime());
+		assertEquals(0,TimeUnit.DAYS.convert(date.getTime()-date2.getTime(), TimeUnit.MILLISECONDS));
 	}
 }

@@ -14,7 +14,7 @@ import com.pengrad.telegrambot.model.Update;
 public class ModelDAO {
 
 	private static ModelDAO modelDAO;
-	static ObjectContainer bancoProblemas;
+	private static ObjectContainer bancoProblemas;
 
 	public static ModelDAO getInstance() {
 		if (modelDAO == null) {

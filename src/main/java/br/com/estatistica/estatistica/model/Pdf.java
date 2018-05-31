@@ -1,6 +1,7 @@
 package br.com.estatistica.estatistica.model;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
@@ -10,6 +11,7 @@ import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
 import com.itextpdf.text.Image;
 import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 import com.pengrad.telegrambot.model.Update;
 
 public class Pdf {
@@ -23,6 +25,7 @@ public class Pdf {
 			file = new File("files/pdf/" + update.message().chat().id() + ".pdf");
 			try {
 				int request = 0;
+				PdfWriter pdfWriter = PdfWriter.getInstance(pdf, new FileOutputStream(file));
 				pdf.open();
 				Paragraph p = new Paragraph();
 				p.add(new Paragraph("Histórico de requisições"));
@@ -50,7 +53,9 @@ public class Pdf {
 						if (request > 2) {
 							p.add(new Paragraph(" "));
 							p.add(new Paragraph(" "));
+							p.add(new Paragraph(" "));
 						}
+						p.add(new Paragraph(" "));
 						p.add(new Paragraph(" "));
 						p.add(new Paragraph(" "));
 						p.add(new Paragraph(" "));
@@ -63,6 +68,7 @@ public class Pdf {
 				}
 				pdf.add(p);
 				pdf.close();
+				pdfWriter.close();
 			} catch (IOException | DocumentException e) {
 				Log.logErrorWriter("Erro ao criar pdf: " + e);
 				return file;

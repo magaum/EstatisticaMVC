@@ -17,7 +17,6 @@ public class Model {
 	private static Model uniqueInstance;
 	private ModelDAO db4o = new ModelDAO();
 	private long chatId;
-	private String username;
 	private ArrayList<Double> values;
 
 	public static Model getInstance() {
@@ -39,13 +38,13 @@ public class Model {
 
 	public void sendPhotoToObservers(File imgName, long chatId) {
 		for (Observer observer : observers) {
-			observer.sendImage(imgName, chatId);
+			observer.sendImage(chatId, imgName);
 		}
 	}
 
-	public void sendFileToObservers(File pdf, long chatId) {
+	public void sendFileToObservers(long chatId, File pdf) {
 		for (Observer observer : observers) {
-			observer.sendDocument(pdf, chatId);
+			observer.sendDocument(chatId, pdf);
 		}
 	}
 
@@ -54,10 +53,9 @@ public class Model {
 		long chatId = update.message().chat().id();
 		File pdf = Pdf.createPdf(update);
 		if (pdf != null) {
-			this.sendFileToObservers(pdf, chatId);
+			this.sendFileToObservers(chatId, pdf);
 		} else {
-			this.notifyObservers(update.message().chat().id(),
-					"Não encontrei nada aqui " + name + " desculpe \uD83D\uDE1E");
+			this.notifyObservers(chatId, "Não encontrei nada aqui " + name + " desculpe \uD83D\uDE1E");
 		}
 	}
 
@@ -65,7 +63,8 @@ public class Model {
 
 		chatId = update.message().chat().id();
 		values = ModelUtils.messageToDouble(update.message().text());
-		Double result, sum = 0.0;
+		Double result;
+		Double sum = 0.0;
 		if (values != null) {
 			for (Double v : values) {
 				sum += v;
@@ -116,12 +115,13 @@ public class Model {
 			if (modes.size() > 1) {
 				String result = "Os valores da moda são: ";
 				for (Double mode : modes) {
-					result += mode + ", ";
+					if (mode != modes.get(modes.size() - 1))
+						result += mode + ", ";
 				}
 				historic.setResultArr(modes);
 				this.notifyObservers(chatId, result);
 			} else if (modes.size() == 1) {
-				this.notifyObservers(chatId, "Calculei a moda, o valor da é igual a: " + bigger);
+				this.notifyObservers(chatId, "Calculei a moda, o resultado é: " + bigger);
 				historic.setResult(bigger);
 			} else {
 				this.notifyObservers(chatId, "Não exite moda nesses valores");

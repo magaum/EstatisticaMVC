@@ -5,7 +5,7 @@ import java.io.File;
 public interface Observer {
 	public void update(long chatId, String data);
 
-	public void sendImage(File img, long chatId);
+	public void sendDocument(long chatId, File doc);
 
-	public void sendDocument(File doc, long chatId);
+	public void sendImage(long chatId, File img);
 }

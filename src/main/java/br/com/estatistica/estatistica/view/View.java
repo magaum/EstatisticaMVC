@@ -14,7 +14,6 @@ import com.pengrad.telegrambot.request.SendDocument;
 import com.pengrad.telegrambot.request.SendMessage;
 import com.pengrad.telegrambot.request.SendPhoto;
 import com.pengrad.telegrambot.response.BaseResponse;
-import com.pengrad.telegrambot.response.GetUpdatesResponse;
 import com.pengrad.telegrambot.response.SendResponse;
 
 import br.com.estatistica.estatistica.controller.ActionController;
@@ -29,15 +28,10 @@ public class View implements Observer {
 
 	private Model model;
 	private boolean waitUserInput = true;
-	private String operacao;
 	private TelegramBot bot;
 
-	// Object that receives messages
-	private GetUpdatesResponse updatesResponse;
 	// Object that send responses
 	private SendResponse sendResponse;
-	// Object that manage chat actions like "typing action"
-	private BaseResponse baseResponse;
 	// Strategy Pattern -- connection View -> Controller
 	private ActionController actionController;
 
@@ -88,20 +82,17 @@ public class View implements Observer {
 			if (!this.waitUserInput) {
 				this.callController(update);
 			} else if (message.equalsIgnoreCase("Media")) {
-				operacao = "Media";
 				setController(new ExerciseControllerMean(model, this));
 				sendResponse = bot.execute(new SendMessage(chatId,
 						"Entendi, media! Então digita os valores de entrada separados por ponto e virgula ; para eu poder calcular que já respondo"));
 				this.waitUserInput = false;
 
 			} else if (message.equalsIgnoreCase("Mediana")) {
-				operacao = "Mediana";
 				setController(new ExerciseControllerMedian(model, this));
 				sendResponse = bot.execute(new SendMessage(chatId,
 						"Entendi, mediana! Então digita os valores de entrada separados por ponto e virgula ; para eu poder calcular que já respondo"));
 				this.waitUserInput = false;
 			} else if (message.equalsIgnoreCase("Moda")) {
-				operacao = "Moda";
 				setController(new ExerciseControllerMode(model, this));
 				sendResponse = bot.execute(new SendMessage(chatId,
 						"Entendi, moda! Então digita os valores de entrada separados por ponto e virgula ; para eu poder calcular que já respondo"));
@@ -126,7 +117,8 @@ public class View implements Observer {
 	}
 
 	public void sendTypingMessage(Update update) {
-		baseResponse = bot.execute(new SendChatAction(update.message().chat().id(), ChatAction.typing.name()));
+		BaseResponse baseResponse = bot
+				.execute(new SendChatAction(update.message().chat().id(), ChatAction.typing.name()));
 	}
 
 	@Override
@@ -136,13 +128,13 @@ public class View implements Observer {
 	}
 
 	@Override
-	public void sendImage(File img, long chatId) {
+	public void sendImage(long chatId,File img) {
 		sendResponse = bot.execute(new SendPhoto(chatId, img));
 		this.waitUserInput = true;
 	}
 
 	@Override
-	public void sendDocument(File file, long chatId) {
+	public void sendDocument(long chatId, File file) {
 		sendResponse = bot.execute(new SendDocument(chatId, file).fileName("historico.pdf"));
 		this.waitUserInput = true;
 	}
