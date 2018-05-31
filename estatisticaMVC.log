@@ -2501,3 +2501,41 @@
 31-05-2018 01:10:27 INFO  Log:14 Log - Nome do usuário: Magão
 31-05-2018 01:10:27 INFO  Log:14 Log - Mensagem: Relatório de requisições
 31-05-2018 01:10:27 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 02:28:31 INFO  Log:14 Log - Mensagem processada
+31-05-2018 02:28:31 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 02:28:31 INFO  Log:14 Log - Mensagem: Media
+31-05-2018 02:28:31 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 02:28:41 INFO  Log:14 Log - Mensagem processada
+31-05-2018 02:28:41 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 02:28:41 INFO  Log:14 Log - Mensagem: 9;6;8;5;6;3
+31-05-2018 02:28:41 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 02:28:44 INFO  Log:14 Log - Dados armazenados no banco: 
+31-05-2018 02:28:44 INFO  Log:14 Log - Tipo: media
+31-05-2018 02:28:44 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 02:28:44 INFO  Log:14 Log - Valores: [9.0, 6.0, 8.0, 5.0, 6.0, 3.0]
+31-05-2018 02:28:44 WARN  Log:18 Log - Erro ao processar mensagens: com.db4o.ext.Db4oIOException: /home/magao/Dropbox/FATEC/Workspaces/ESIII/EstatisticaMVC/db/bancoProblemas.db4o (Arquivo ou diretório não encontrado)
+31-05-2018 02:29:15 INFO  Log:14 Log - Mensagem processada
+31-05-2018 02:29:15 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 02:29:15 INFO  Log:14 Log - Mensagem: Relatório de requisições
+31-05-2018 02:29:15 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 02:29:16 WARN  Log:18 Log - Erro ao processar mensagens: com.db4o.ext.Db4oIOException: /home/magao/Dropbox/FATEC/Workspaces/ESIII/EstatisticaMVC/db/bancoProblemas.db4o (Arquivo ou diretório não encontrado)
+31-05-2018 02:30:14 INFO  Log:14 Log - Mensagem processada
+31-05-2018 02:30:14 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 02:30:14 INFO  Log:14 Log - Mensagem: Relatório de requisições
+31-05-2018 02:30:14 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 02:30:27 INFO  Log:14 Log - Mensagem processada
+31-05-2018 02:30:27 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 02:30:27 INFO  Log:14 Log - Mensagem: Mediana
+31-05-2018 02:30:27 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 02:30:31 INFO  Log:14 Log - Mensagem processada
+31-05-2018 02:30:31 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 02:30:31 INFO  Log:14 Log - Mensagem: 6;3;9;6
+31-05-2018 02:30:31 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 02:30:34 INFO  Log:14 Log - Dados armazenados no banco: 
+31-05-2018 02:30:34 INFO  Log:14 Log - Tipo: mediana
+31-05-2018 02:30:34 INFO  Log:14 Log - ChatID: 173375027
+31-05-2018 02:30:34 INFO  Log:14 Log - Valores: [6.0, 3.0, 9.0, 6.0]
+31-05-2018 02:30:36 INFO  Log:14 Log - Mensagem processada
+31-05-2018 02:30:36 INFO  Log:14 Log - Nome do usuário: Magão
+31-05-2018 02:30:36 INFO  Log:14 Log - Mensagem: Relatório de requisições
+31-05-2018 02:30:36 INFO  Log:14 Log - ChatID: 173375027
