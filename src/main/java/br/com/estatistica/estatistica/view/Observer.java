@@ -3,7 +3,7 @@ package br.com.estatistica.estatistica.view;
 import java.io.File;
 
 public interface Observer {
-	public void update(long chatId, String data);
+	public void sendMessage(long chatId, String data);
 
 	public void sendDocument(long chatId, File doc);
 

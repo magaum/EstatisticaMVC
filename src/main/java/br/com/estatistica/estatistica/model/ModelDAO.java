@@ -29,6 +29,7 @@ public class ModelDAO {
 		return bancoProblemas;
 	}
 
+	//Add data
 	public boolean addHistoric(Historic historic) {
 		Log.logInfoWriter("Dados armazenados no banco: ");
 		Log.logInfoWriter("Tipo: " + historic.getType());
@@ -40,11 +41,13 @@ public class ModelDAO {
 		return true;
 	}
 
+	//Delete data
 	public static boolean deleteRequest(Historic historic) {
 		bancoProblemas.delete(historic);
 		return true;
 	}
 
+	//Get data
 	public static List<Historic> getHistoric(Update update) {
 		long chatId = update.message().chat().id();
 		Date date = new Date();

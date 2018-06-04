@@ -14,16 +14,16 @@ import br.com.estatistica.estatistica.view.Observer;
 public class Model {
 
 	private List<Observer> observers = new LinkedList<Observer>();
-	private static Model uniqueInstance;
+	private static Model model;
 	private ModelDAO db4o = new ModelDAO();
 	private long chatId;
 	private ArrayList<Double> values;
 
 	public static Model getInstance() {
-		if (uniqueInstance == null) {
-			uniqueInstance = new Model();
+		if (model == null) {
+			model = new Model();
 		}
-		return uniqueInstance;
+		return model;
 	}
 
 	public void registerObserver(Observer observer) {
@@ -32,7 +32,7 @@ public class Model {
 
 	public void notifyObservers(long chatId, String data) {
 		for (Observer observer : observers) {
-			observer.update(chatId, data);
+			observer.sendMessage(chatId, data);
 		}
 	}
 
@@ -46,6 +46,10 @@ public class Model {
 		for (Observer observer : observers) {
 			observer.sendDocument(chatId, pdf);
 		}
+	}
+	
+	public void sendBoxPlot(File img, long chatId) {
+		this.sendPhotoToObservers(img, chatId);
 	}
 
 	public void getHistoric(Update update) {
@@ -162,9 +166,5 @@ public class Model {
 					+ ", você digitou algo errado, não consegui calcular os valores \uD83D\uDE1E escolhe ou digita moda, media ou mediana para eu tentar de novo?");
 		}
 	}
-
-	public void sendBoxPlot(File img, long chatId) {
-
-		this.sendPhotoToObservers(img, chatId);
-	}
+	
 }

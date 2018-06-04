@@ -34,10 +34,6 @@ public class View implements Observer {
 		bot = new TelegramBot(token);
 	}
 
-	public void setController(ActionController actionController) { // Strategy Pattern
-		this.actionController = actionController;
-	}
-
 	public void receiveUsersMessages() {
 		bot.setUpdatesListener(new UpdatesListener() {
 			public int process(List<Update> updates) {
@@ -51,6 +47,7 @@ public class View implements Observer {
 		});
 	}
 
+	//Action flow for each update
 	public void execute(List<Update> updates) {
 
 		for (Update update : updates) {
@@ -105,26 +102,35 @@ public class View implements Observer {
 
 	}
 
+	// Strategy Pattern
+	public void setController(ActionController actionController) { 
+		this.actionController = actionController;
+	}
+	
 	public void callController(Update update) {
 		this.actionController.action(update);
 	}
 
+	//Action of 'Typing' on user telegram
 	public void sendTypingMessage(Update update) {
 		bot.execute(new SendChatAction(update.message().chat().id(), ChatAction.typing.name()));
 	}
 
+	//Send text to user
 	@Override
-	public void update(long chatId, String data) {
+	public void sendMessage(long chatId, String data) {
 		bot.execute(new SendMessage(chatId, data));
 		this.waitUserInput = true;
 	}
 
+	//Send Image to user
 	@Override
 	public void sendImage(long chatId, File img) {
 		bot.execute(new SendPhoto(chatId, img));
 		this.waitUserInput = true;
 	}
 
+	//Send Files to user
 	@Override
 	public void sendDocument(long chatId, File file) {
 		bot.execute(new SendDocument(chatId, file).fileName("historico.pdf"));
