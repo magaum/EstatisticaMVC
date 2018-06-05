@@ -47,7 +47,7 @@ public class View implements Observer {
 		});
 	}
 
-	//Action flow for each update
+	// Action flow for each update
 	public void execute(List<Update> updates) {
 
 		for (Update update : updates) {
@@ -103,37 +103,33 @@ public class View implements Observer {
 	}
 
 	// Strategy Pattern
-	public void setController(ActionController actionController) { 
+	public void setController(ActionController actionController) {
 		this.actionController = actionController;
 	}
-	
+
 	public void callController(Update update) {
 		this.actionController.action(update);
 	}
 
-	//Action of 'Typing' on user telegram
+	// Action of 'Typing' on user telegram
 	public void sendTypingMessage(Update update) {
 		bot.execute(new SendChatAction(update.message().chat().id(), ChatAction.typing.name()));
 	}
 
-	//Send text to user
+	// Send messages to user
 	@Override
-	public void sendMessage(long chatId, String data) {
-		bot.execute(new SendMessage(chatId, data));
-		this.waitUserInput = true;
+	public void update(long chatId, String data, boolean isImage, boolean isDocument, File file) {
+		if (isDocument) {
+			bot.execute(new SendDocument(chatId, file).fileName("historico.pdf"));
+			this.waitUserInput = true;
+		} else {
+			bot.execute(new SendMessage(chatId, data));
+			this.waitUserInput = true;
+			if (isImage) {
+				bot.execute(new SendPhoto(chatId, file));
+				this.waitUserInput = true;
+			}
+		}
 	}
 
-	//Send Image to user
-	@Override
-	public void sendImage(long chatId, File img) {
-		bot.execute(new SendPhoto(chatId, img));
-		this.waitUserInput = true;
-	}
-
-	//Send Files to user
-	@Override
-	public void sendDocument(long chatId, File file) {
-		bot.execute(new SendDocument(chatId, file).fileName("historico.pdf"));
-		this.waitUserInput = true;
-	}
 }

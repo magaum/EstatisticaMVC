@@ -14,7 +14,7 @@ import com.pengrad.telegrambot.model.Update;
 public class ModelDAO {
 
 	private static ModelDAO modelDAO;
-	private static ObjectContainer bancoProblemas;
+	private static ObjectContainer database;
 
 	public static ModelDAO getInstance() {
 		if (modelDAO == null) {
@@ -23,10 +23,10 @@ public class ModelDAO {
 		return modelDAO;
 	}
 
-	public static ObjectContainer connect() {
-		if (bancoProblemas == null)
-			bancoProblemas = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(), "db/bancoProblemas.db4o");
-		return bancoProblemas;
+	private static ObjectContainer connect() {
+		if (database == null)
+			database = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(), "db/bancoProblemas.db4o");
+		return database;
 	}
 
 	//Add data
@@ -35,15 +35,15 @@ public class ModelDAO {
 		Log.logInfoWriter("Tipo: " + historic.getType());
 		Log.logInfoWriter("ChatID: " + historic.getChatId());
 		Log.logInfoWriter("Valores: " + historic.getValues());
-		bancoProblemas = connect();
-		bancoProblemas.store(historic);
-		bancoProblemas.commit();
+		database = connect();
+		database.store(historic);
+		database.commit();
 		return true;
 	}
 
 	//Delete data
 	public static boolean deleteRequest(Historic historic) {
-		bancoProblemas.delete(historic);
+		database.delete(historic);
 		return true;
 	}
 
@@ -51,8 +51,8 @@ public class ModelDAO {
 	public static List<Historic> getHistoric(Update update) {
 		long chatId = update.message().chat().id();
 		Date date = new Date();
-		bancoProblemas = connect();
-		Query query = bancoProblemas.query();
+		database = connect();
+		Query query = database.query();
 		query.constrain(Historic.class);
 		ObjectSet<Historic> allHistoric = query.execute();
 		List<Historic> userHistoric = new ArrayList<>();

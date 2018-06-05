@@ -30,26 +30,10 @@ public class Model {
 		observers.add(observer);
 	}
 
-	public void notifyObservers(long chatId, String data) {
+	public void notifyObservers(long chatId, String data, boolean isImage, boolean isDocument, File file) {
 		for (Observer observer : observers) {
-			observer.sendMessage(chatId, data);
+			observer.update(chatId, data, isImage, isDocument, file);
 		}
-	}
-
-	public void sendPhotoToObservers(File imgName, long chatId) {
-		for (Observer observer : observers) {
-			observer.sendImage(chatId, imgName);
-		}
-	}
-
-	public void sendFileToObservers(long chatId, File pdf) {
-		for (Observer observer : observers) {
-			observer.sendDocument(chatId, pdf);
-		}
-	}
-	
-	public void sendBoxPlot(File img, long chatId) {
-		this.sendPhotoToObservers(img, chatId);
 	}
 
 	public void getHistoric(Update update) {
@@ -57,9 +41,8 @@ public class Model {
 		long chatId = update.message().chat().id();
 		File pdf = Pdf.createPdf(update);
 		if (pdf != null) {
-			this.sendFileToObservers(chatId, pdf);
-		} else {
-			this.notifyObservers(chatId, "Não encontrei nada aqui " + name + " desculpe \uD83D\uDE1E");
+			this.notifyObservers(chatId, "Não encontrei nada aqui " + name + " desculpe \uD83D\uDE1E", false, true,
+					pdf);
 		}
 	}
 
@@ -74,8 +57,8 @@ public class Model {
 				sum += v;
 			}
 			result = sum / values.size();
-			this.notifyObservers(chatId, "A média é igual a: " + result);
 			File file = BoxPlot.generateBoxPlot(update, "Media");
+			this.notifyObservers(chatId, "A média é igual a: " + result, true, false, file);
 			Historic historic = new Historic(values, chatId, "media", result, file);
 
 			if (!db4o.addHistoric(historic)) {
@@ -83,7 +66,8 @@ public class Model {
 			}
 		} else {
 			this.notifyObservers(chatId, update.message().chat().firstName()
-					+ ", você digitou algo errado, não consegui calcular os valores \uD83D\uDE1E escolhe ou digita moda, media ou mediana para eu tentar de novo?");
+					+ ", você digitou algo errado, não consegui calcular os valores \uD83D\uDE1E escolhe ou digita moda, media ou mediana para eu tentar de novo?",
+					false, false, null);
 		}
 
 	}
@@ -94,6 +78,7 @@ public class Model {
 		int counter = 0;
 		double bigger = 0;
 		double biggerOccurrence = 0;
+		String result = "";
 		ArrayList<Double> modes = new ArrayList<>();
 		values = ModelUtils.messageToDouble(update.message().text());
 		if (values != null) {
@@ -106,7 +91,7 @@ public class Model {
 					continue;
 				} else if (counter > 0) {
 					if (counter > biggerOccurrence) {
-						ModelUtils.removerDadosMap(modes);
+						ModelUtils.removeMapData(modes);
 						bigger = values.get(i - 1);
 						biggerOccurrence = counter;
 						modes.add(bigger);
@@ -116,22 +101,23 @@ public class Model {
 				}
 				counter = 0;
 			}
+			
 			if (modes.size() > 1) {
-				String result = "Os valores da moda são: ";
+				result = "Os valores da moda são: ";
 				for (Double mode : modes) {
 					if (mode != modes.get(modes.size() - 1))
 						result += mode + ", ";
 				}
 				historic.setResultArr(modes);
-				this.notifyObservers(chatId, result);
 			} else if (modes.size() == 1) {
-				this.notifyObservers(chatId, "Calculei a moda, o resultado é: " + bigger);
+				result = "Calculei a moda, o resultado é: " + bigger;
 				historic.setResult(bigger);
 			} else {
-				this.notifyObservers(chatId, "Não exite moda nesses valores");
+				this.notifyObservers(chatId, "Não exite moda nesses valores", false, false, null);
 				historic.setModeNull();
 			}
 			File file = BoxPlot.generateBoxPlot(update, "Moda");
+			this.notifyObservers(chatId, result, true, false, file);
 			historic.setBoxPlot(file);
 
 			if (!db4o.addHistoric(historic)) {
@@ -139,32 +125,37 @@ public class Model {
 			}
 		} else {
 			this.notifyObservers(chatId, update.message().chat().firstName()
-					+ ", você digitou algo errado, não consegui calcular os valores \uD83D\uDE1E escolhe ou digita moda, media ou mediana para eu tentar de novo?");
+					+ ", você digitou algo errado, não consegui calcular os valores \uD83D\uDE1E escolhe ou digita moda, media ou mediana para eu tentar de novo?",
+					false, false, null);
 		}
 	}
 
 	public void computeMedian(Update update) {
 		long chatId = update.message().chat().id();
 		ArrayList<Double> values = ModelUtils.messageToDouble(update.message().text());
+		String result = "A mediana é igual a: ";
 		File file = BoxPlot.generateBoxPlot(update, "Mediana");
 		Historic historic = new Historic(values, chatId, "mediana", file);
 		if (values != null) {
 			if (values.size() % 2 == 0) {
 				Double median = (((values.get(values.size() / 2) - 1)) + (values.get(values.size() / 2))) / 2;
-				this.notifyObservers(update.message().chat().id(), "A mediana é igual a: " + median);
+				result += median;
 				historic.setResult(median);
 			} else {
 				int median = values.get(values.size() / 2).intValue();
-				this.notifyObservers(update.message().chat().id(), "A mediana é igual a: " + median);
+				result += median;
 				historic.setResult((double) median);
 			}
+			this.notifyObservers(update.message().chat().id(), result, true, false,
+					file);
 			if (!db4o.addHistoric(historic)) {
 				Log.logErrorWriter("Erro ao salvar no banco");
 			}
 		} else {
 			this.notifyObservers(chatId, update.message().chat().firstName()
-					+ ", você digitou algo errado, não consegui calcular os valores \uD83D\uDE1E escolhe ou digita moda, media ou mediana para eu tentar de novo?");
+					+ ", você digitou algo errado, não consegui calcular os valores \uD83D\uDE1E escolhe ou digita moda, media ou mediana para eu tentar de novo?",
+					false, false, null);
 		}
 	}
-	
+
 }
