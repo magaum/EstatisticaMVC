@@ -11,6 +11,8 @@ import com.db4o.ObjectSet;
 import com.db4o.query.Query;
 import com.pengrad.telegrambot.model.Update;
 
+import br.com.estatistica.estatistica.log.Log;
+
 public class ModelDAO {
 
 	private static ModelDAO modelDAO;

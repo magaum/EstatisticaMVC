@@ -18,7 +18,7 @@ import br.com.estatistica.estatistica.controller.ExerciseControllerMean;
 import br.com.estatistica.estatistica.controller.ExerciseControllerMedian;
 import br.com.estatistica.estatistica.controller.ExerciseControllerMode;
 import br.com.estatistica.estatistica.controller.HistoricController;
-import br.com.estatistica.estatistica.model.Log;
+import br.com.estatistica.estatistica.log.Log;
 import br.com.estatistica.estatistica.model.Model;
 
 public class View implements Observer {

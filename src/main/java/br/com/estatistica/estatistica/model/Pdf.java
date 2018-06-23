@@ -14,6 +14,8 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.pengrad.telegrambot.model.Update;
 
+import br.com.estatistica.estatistica.log.Log;
+
 public class Pdf {
 
 	public static File createPdf(Update update) {
@@ -71,10 +73,7 @@ public class Pdf {
 				pdfWriter.close();
 			} catch (IOException | DocumentException e) {
 				Log.logErrorWriter("Erro ao criar pdf: " + e);
-				return file;
 			}
-		} else {
-			return file;
 		}
 		return file;
 	}

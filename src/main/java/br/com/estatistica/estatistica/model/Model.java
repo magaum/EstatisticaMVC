@@ -8,6 +8,7 @@ import java.util.List;
 
 import com.pengrad.telegrambot.model.Update;
 
+import br.com.estatistica.estatistica.log.Log;
 import br.com.estatistica.estatistica.model.utils.ModelUtils;
 import br.com.estatistica.estatistica.view.Observer;
 
@@ -40,9 +41,11 @@ public class Model {
 		String name = update.message().chat().firstName();
 		long chatId = update.message().chat().id();
 		File pdf = Pdf.createPdf(update);
-		if (pdf != null) {
-			this.notifyObservers(chatId, "Não encontrei nada aqui " + name + " desculpe \uD83D\uDE1E", false, true,
+		if (pdf == null) {
+			this.notifyObservers(chatId, "Não encontrei nada aqui " + name + " desculpe \uD83D\uDE1E", false, false,
 					pdf);
+		} else {
+			this.notifyObservers(chatId, "Encontrei seu histórico " + name, false, true, pdf);
 		}
 	}
 
@@ -101,12 +104,13 @@ public class Model {
 				}
 				counter = 0;
 			}
-			
+
 			if (modes.size() > 1) {
 				result = "Os valores da moda são: ";
 				for (Double mode : modes) {
+					result += mode;
 					if (mode != modes.get(modes.size() - 1))
-						result += mode + ", ";
+						result += ", ";
 				}
 				historic.setResultArr(modes);
 			} else if (modes.size() == 1) {
@@ -146,8 +150,7 @@ public class Model {
 				result += median;
 				historic.setResult((double) median);
 			}
-			this.notifyObservers(update.message().chat().id(), result, true, false,
-					file);
+			this.notifyObservers(update.message().chat().id(), result, true, false, file);
 			if (!db4o.addHistoric(historic)) {
 				Log.logErrorWriter("Erro ao salvar no banco");
 			}
