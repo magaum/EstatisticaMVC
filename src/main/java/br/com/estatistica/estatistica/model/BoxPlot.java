@@ -12,7 +12,6 @@ import org.jfree.data.statistics.DefaultBoxAndWhiskerCategoryDataset;
 
 import com.pengrad.telegrambot.model.Update;
 
-import br.com.estatistica.estatistica.log.Log;
 import br.com.estatistica.estatistica.model.utils.ModelUtils;
 
 public class BoxPlot {

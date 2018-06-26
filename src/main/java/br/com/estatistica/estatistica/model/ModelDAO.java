@@ -11,8 +11,6 @@ import com.db4o.ObjectSet;
 import com.db4o.query.Query;
 import com.pengrad.telegrambot.model.Update;
 
-import br.com.estatistica.estatistica.log.Log;
-
 public class ModelDAO {
 
 	private static ModelDAO modelDAO;
@@ -37,6 +35,7 @@ public class ModelDAO {
 		Log.logInfoWriter("Tipo: " + historic.getType());
 		Log.logInfoWriter("ChatID: " + historic.getChatId());
 		Log.logInfoWriter("Valores: " + historic.getValues());
+		Log.logInfoWriter("Classe: "+this.getClass().getSimpleName());
 		database = connect();
 		database.store(historic);
 		database.commit();

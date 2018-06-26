@@ -14,8 +14,6 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.pengrad.telegrambot.model.Update;
 
-import br.com.estatistica.estatistica.log.Log;
-
 public class Pdf {
 
 	public static File createPdf(Update update) {
@@ -51,21 +49,15 @@ public class Pdf {
 					Image image = Image.getInstance(historic.getBoxPlot().toString());
 					image.scaleToFit(200, 200);
 					p.add(image);
-					if (request % 2 == 0) {
-						if (request > 2) {
-							p.add(new Paragraph(" "));
-							p.add(new Paragraph(" "));
+					if (request % 2 == 0 && request > 2) {
+						p.add(new Paragraph(" "));
+						p.add(new Paragraph(" "));
+						p.add(new Paragraph(" "));
+					}
+					for (int i = 0; i < 9; i++) {
+						if (request % 2 == 0) {
 							p.add(new Paragraph(" "));
 						}
-						p.add(new Paragraph(" "));
-						p.add(new Paragraph(" "));
-						p.add(new Paragraph(" "));
-						p.add(new Paragraph(" "));
-						p.add(new Paragraph(" "));
-						p.add(new Paragraph(" "));
-						p.add(new Paragraph(" "));
-						p.add(new Paragraph(" "));
-						p.add(new Paragraph(" "));
 					}
 				}
 				pdf.add(p);
@@ -73,6 +65,7 @@ public class Pdf {
 				pdfWriter.close();
 			} catch (IOException | DocumentException e) {
 				Log.logErrorWriter("Erro ao criar pdf: " + e);
+				Log.logErrorWriter("Classe: " + Pdf.class.getSimpleName());
 			}
 		}
 		return file;

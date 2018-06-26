@@ -2,7 +2,7 @@ package br.com.estatistica.estatistica.model.utils;
 
 import java.util.ArrayList;
 
-import br.com.estatistica.estatistica.log.Log;
+import br.com.estatistica.estatistica.model.Log;
 
 public class ModelUtils {
 

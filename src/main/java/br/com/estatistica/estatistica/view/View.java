@@ -18,7 +18,7 @@ import br.com.estatistica.estatistica.controller.ExerciseControllerMean;
 import br.com.estatistica.estatistica.controller.ExerciseControllerMedian;
 import br.com.estatistica.estatistica.controller.ExerciseControllerMode;
 import br.com.estatistica.estatistica.controller.HistoricController;
-import br.com.estatistica.estatistica.log.Log;
+import br.com.estatistica.estatistica.model.Log;
 import br.com.estatistica.estatistica.model.Model;
 
 public class View implements Observer {
@@ -41,6 +41,7 @@ public class View implements Observer {
 					execute(updates);
 				} catch (Exception e) {
 					Log.logWarnWriter("Erro ao processar mensagens: " + e);
+					Log.logWarnWriter("Classe: "+this.getClass().getSimpleName());
 				}
 				return UpdatesListener.CONFIRMED_UPDATES_ALL;
 			}
@@ -59,8 +60,10 @@ public class View implements Observer {
 				Log.logInfoWriter("Nome do usuário: " + nome);
 				Log.logInfoWriter("Mensagem: " + message);
 				Log.logInfoWriter("ChatID: " + chatId);
+				Log.logInfoWriter("Classe: "+this.getClass().getSimpleName());
 			} catch (Exception e) {
 				Log.logErrorWriter("Algum erro ocorreu ao processar a mensagem!" + e);
+				Log.logErrorWriter("Classe: "+this.getClass().getSimpleName());
 			}
 
 			if (message.equalsIgnoreCase("Relatório de requisições")) {

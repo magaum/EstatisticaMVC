@@ -8,7 +8,6 @@ import java.util.List;
 
 import com.pengrad.telegrambot.model.Update;
 
-import br.com.estatistica.estatistica.log.Log;
 import br.com.estatistica.estatistica.model.utils.ModelUtils;
 import br.com.estatistica.estatistica.view.Observer;
 
@@ -62,10 +61,11 @@ public class Model {
 			result = sum / values.size();
 			File file = BoxPlot.generateBoxPlot(update, "Media");
 			this.notifyObservers(chatId, "A média é igual a: " + result, true, false, file);
-			Historic historic = new Historic(values, chatId, "media", result, file);
+			Historic historic = new Historic(values, chatId, "Media", result, file);
 
 			if (!db4o.addHistoric(historic)) {
 				Log.logErrorWriter("Erro ao salvar no banco");
+				Log.logErrorWriter("Classe: "+this.getClass().getSimpleName());
 			}
 		} else {
 			this.notifyObservers(chatId, update.message().chat().firstName()
@@ -126,6 +126,7 @@ public class Model {
 
 			if (!db4o.addHistoric(historic)) {
 				Log.logErrorWriter("Erro ao salvar no banco");
+				Log.logErrorWriter("Classe: "+this.getClass().getSimpleName());
 			}
 		} else {
 			this.notifyObservers(chatId, update.message().chat().firstName()
@@ -139,7 +140,7 @@ public class Model {
 		ArrayList<Double> values = ModelUtils.messageToDouble(update.message().text());
 		String result = "A mediana é igual a: ";
 		File file = BoxPlot.generateBoxPlot(update, "Mediana");
-		Historic historic = new Historic(values, chatId, "mediana", file);
+		Historic historic = new Historic(values, chatId, "Mediana", file);
 		if (values != null) {
 			if (values.size() % 2 == 0) {
 				Double median = (((values.get(values.size() / 2) - 1)) + (values.get(values.size() / 2))) / 2;
@@ -153,6 +154,7 @@ public class Model {
 			this.notifyObservers(update.message().chat().id(), result, true, false, file);
 			if (!db4o.addHistoric(historic)) {
 				Log.logErrorWriter("Erro ao salvar no banco");
+				Log.logErrorWriter("Classe: "+this.getClass().getSimpleName());
 			}
 		} else {
 			this.notifyObservers(chatId, update.message().chat().firstName()
