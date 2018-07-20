@@ -1,11 +1,11 @@
-language: java
-
-mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-mvn test -B
-
-os: linux
-
-jdk:
-        - oraclejdk8
-        - oraclejdk9
-        - openjdk8
+{
+        "os": "linux",
+        "jdk": "oraclejdk8",
+        "dist": "trusty",
+        "sudo": "required",
+        "group": "stable",
+        "install": [
+            "mvn clean test"
+          ],
+        "language": "java"
+}
