@@ -10,12 +10,14 @@ public class ViewUtils {
 
 	public static String getTelegramToken() {
 		Properties prop = new Properties();
+		String token;
 		try {
 			prop.load(new FileInputStream("src/main/resources/token.properties"));
-			return prop.getProperty("token");
+			token = prop.getProperty("token");
 		} catch (IOException e) {
 			Log.logFatalWriter("TELEGRAM TOKEN ERROR: " + e);
-			return null;
+			token = null;
 		}
+		return token;
 	}
 }
