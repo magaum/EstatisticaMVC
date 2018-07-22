@@ -49,26 +49,29 @@ public class ModelDAO {
 
 	// Get data
 	public static List<Historic> getHistoric(Update update) {
+		
 		long chatId = 0;
-		try {
-			chatId = update.message().chat().id();
-		} catch (Exception error) {
-			Log.logErrorWriter("Erro ao gerar historico: " + error);
-		}
+		List<Historic> userHistoric = new ArrayList<>();
 		Calendar date = Calendar.getInstance();
 		database = connect();
 		Query query = database.query();
 		query.constrain(Historic.class);
-		ObjectSet<Historic> allHistoric = query.execute();
-		List<Historic> userHistoric = new ArrayList<>();
-		for (Historic historic : allHistoric) {
-			if (historic.getChatId() == chatId) {
-				if (date.before(historic.getDate())) {
-					deleteRequest(historic);
+
+		try {
+			chatId = update.message().chat().id();
+			ObjectSet<Historic> allHistoric = query.execute();
+			for (Historic historic : allHistoric) {
+				if (historic.getChatId() == chatId) {
+					if (date.before(historic.getDate())) {
+						deleteRequest(historic);
+					}
+					userHistoric.add(historic);
 				}
-				userHistoric.add(historic);
 			}
+		} catch (Exception error) {
+			Log.logErrorWriter("Erro ao recuperar historico: " + error);
 		}
+
 		if (userHistoric.isEmpty()) {
 			userHistoric = null;
 		}

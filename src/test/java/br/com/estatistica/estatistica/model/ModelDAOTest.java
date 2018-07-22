@@ -29,7 +29,6 @@ public class ModelDAOTest {
 		assertTrue(dao.deleteRequest(historic));
 	}
 
-	@Ignore
 	@Test
 	public void getHistoricTest() {
 		assertNull(ModelDAO.getHistoric(null));

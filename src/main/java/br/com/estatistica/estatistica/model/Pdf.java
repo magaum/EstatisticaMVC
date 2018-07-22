@@ -3,6 +3,7 @@ package br.com.estatistica.estatistica.model;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -17,7 +18,12 @@ import com.pengrad.telegrambot.model.Update;
 public class Pdf {
 
 	public static File createPdf(Update update) {
-		List<Historic> userHistoric = ModelDAO.getHistoric(update);
+		List<Historic> userHistoric = new ArrayList<Historic>();
+		try {
+			userHistoric = ModelDAO.getHistoric(update);
+		} catch (NullPointerException error) {
+			Log.logErrorWriter("Mensagem nula, erro ao gerar PDF: " + error);
+		}
 		File file = null;
 		if (userHistoric != null) {
 			Collections.sort(userHistoric);
