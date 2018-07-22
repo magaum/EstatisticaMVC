@@ -2,10 +2,10 @@
         "os": "linux",
         "jdk": "oraclejdk8",
         "dist": "trusty",
-        "sudo": "required",
+        "sudo": "false",
         "group": "stable",
-        "install": [
-                "mvn clean test coveralls:report"
-          ],
+        "after_success": [
+                "mvn clean test jacoco:report coveralls:report"
+        ],
         "language": "java"
 }
