@@ -1,9 +1,7 @@
 # EstatisticaMVC
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/8d8bb3407bce4680ac77df728a99e6d7)](https://www.codacy.com/app/magaum/EstatisticaMVC?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=magaum/EstatisticaMVC&amp;utm_campaign=Badge_Grade)
-
 [![Build Status](https://travis-ci.org/magaum/EstatisticaMVC.svg?branch=master)](https://travis-ci.org/magaum/EstatisticaMVC)
-
 [![Coverage Status](https://coveralls.io/repos/github/magaum/EstatisticaMVC/badge.svg?branch=master)](https://coveralls.io/github/magaum/EstatisticaMVC?branch=master)
 
 Projeto para a materia de Estatística Aplicada e Engenharia de Software III, criado com o padrão de arquitetura MVC.

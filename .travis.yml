@@ -5,7 +5,7 @@
         "sudo": "required",
         "group": "stable",
         "install": [
-            "mvn clean test"
+                "mvn clean test coveralls:report"
           ],
         "language": "java"
 }
