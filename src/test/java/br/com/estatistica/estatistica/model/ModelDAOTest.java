@@ -1,11 +1,13 @@
 package br.com.estatistica.estatistica.model;
 
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.text.ParseException;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class ModelDAOTest {
@@ -22,11 +24,14 @@ public class ModelDAOTest {
 	@Test
 	public void addDataTest() {
 		ModelDAO dao = ModelDAO.getInstance();
-		assertTrue(dao.addHistoric(new Historic()));
+		Historic historic = new Historic();
+		assertTrue(dao.addHistoric(historic));
+		assertTrue(dao.deleteRequest(historic));
 	}
 
+	@Ignore
 	@Test
 	public void getHistoricTest() {
-		ModelDAO.getHistoric(null);
+		assertNull(ModelDAO.getHistoric(null));
 	}
 }
