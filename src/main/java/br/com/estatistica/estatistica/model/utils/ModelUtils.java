@@ -16,8 +16,8 @@ public class ModelUtils {
 
 	public static ArrayList<Double> messageToDouble(String value) {
 		ArrayList<Double> values = new ArrayList<Double>();
-		String[] numbers = value.replaceAll(",", ".").split(";");
 		try {
+			String[] numbers = value.replaceAll(",", ".").split(";");
 			for (String number : numbers) {
 				values.add(Double.parseDouble(number));
 			}

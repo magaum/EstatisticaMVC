@@ -1,24 +1,32 @@
 package br.com.estatistica.estatistica.model;
 
-
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.concurrent.TimeUnit;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 import org.junit.Test;
 
 public class ModelDAOTest {
 
 	@Test
-	public void testDelete() throws ParseException {
-		
-		SimpleDateFormat test = new SimpleDateFormat("dd/MM/yyyy");
-		Date date = new Date();
-		Date date2 = new Date();
-		date2.setTime(date.getTime());
-		assertEquals(0,TimeUnit.DAYS.convert(date.getTime()-date2.getTime(), TimeUnit.MILLISECONDS));
+	public void deleteTest() throws ParseException {
+
+		GregorianCalendar cal = new GregorianCalendar();
+		cal.setLenient(false);
+		cal.roll(Calendar.DAY_OF_MONTH, -2);
+		assertTrue(cal.before(Calendar.getInstance()));
+	}
+
+	@Test
+	public void addDataTest() {
+		ModelDAO dao = ModelDAO.getInstance();
+		assertTrue(dao.addHistoric(new Historic()));
+	}
+
+	@Test
+	public void getHistoricTest() {
+		ModelDAO.getHistoric(null);
 	}
 }

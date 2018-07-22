@@ -1,9 +1,8 @@
 package br.com.estatistica.estatistica.model;
 
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Calendar;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import com.db4o.Db4oEmbedded;
 import com.db4o.ObjectContainer;
@@ -29,29 +28,34 @@ public class ModelDAO {
 		return database;
 	}
 
-	//Add data
+	// Add data
 	public boolean addHistoric(Historic historic) {
 		Log.logInfoWriter("Dados armazenados no banco: ");
 		Log.logInfoWriter("Tipo: " + historic.getType());
 		Log.logInfoWriter("ChatID: " + historic.getChatId());
 		Log.logInfoWriter("Valores: " + historic.getValues());
-		Log.logInfoWriter("Classe: "+this.getClass().getSimpleName());
+		Log.logInfoWriter("Classe: " + this.getClass().getSimpleName());
 		database = connect();
 		database.store(historic);
 		database.commit();
 		return true;
 	}
 
-	//Delete data
+	// Delete data
 	public static boolean deleteRequest(Historic historic) {
 		database.delete(historic);
 		return true;
 	}
 
-	//Get data
+	// Get data
 	public static List<Historic> getHistoric(Update update) {
-		long chatId = update.message().chat().id();
-		Date date = new Date();
+		long chatId = 0;
+		try {
+			chatId = update.message().chat().id();
+		} catch (Exception error) {
+			Log.logErrorWriter("Erro ao gerar historico: " + error);
+		}
+		Calendar date = Calendar.getInstance();
 		database = connect();
 		Query query = database.query();
 		query.constrain(Historic.class);
@@ -59,9 +63,7 @@ public class ModelDAO {
 		List<Historic> userHistoric = new ArrayList<>();
 		for (Historic historic : allHistoric) {
 			if (historic.getChatId() == chatId) {
-				long diffDate = TimeUnit.DAYS.convert(date.getTime() - historic.getDate().getTime(),
-						TimeUnit.MILLISECONDS);
-				if (diffDate > 2) {
+				if (date.before(historic.getDate())) {
 					deleteRequest(historic);
 				}
 				userHistoric.add(historic);

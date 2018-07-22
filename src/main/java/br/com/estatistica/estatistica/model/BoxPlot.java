@@ -17,14 +17,14 @@ import br.com.estatistica.estatistica.model.utils.ModelUtils;
 public class BoxPlot {
 
 	public static File generateBoxPlot(Update update, String operation) {
-		long chatId = update.message().chat().id();
 		DefaultBoxAndWhiskerCategoryDataset boxPlot = new DefaultBoxAndWhiskerCategoryDataset();
 		List<Double> values = ModelUtils.messageToDouble(update.message().text());
 		boxPlot.add(values, "", "Valores");
-		String fileName = chatId + new Date().getTime() + "";
 		JFreeChart jFreeChart = ChartFactory.createBoxAndWhiskerChart("Box Plot", operation, "Coluna", boxPlot, false);
 		File file = null;
 		try {
+			long chatId = update.message().chat().id();
+			String fileName = chatId + new Date().getTime() + "";
 			file = new File("files/imgs/boxPlots/" + fileName + ".png");
 			ChartUtilities.saveChartAsPNG(file, jFreeChart, 800, 800);
 		} catch (IOException e) {

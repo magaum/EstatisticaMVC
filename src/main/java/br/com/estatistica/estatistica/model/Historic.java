@@ -2,7 +2,7 @@ package br.com.estatistica.estatistica.model;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Calendar;
 
 public class Historic implements Comparable<Historic> {
 
@@ -13,14 +13,16 @@ public class Historic implements Comparable<Historic> {
 	private long chatId;
 	private String type;
 	private File boxPlot;
-	private Date date;
+	private Calendar date;
+	
+	public Historic() {	}
 
 	public Historic(ArrayList<Double> valores, long chatId, String string, File boxPlot) {
 		this.values = valores;
 		this.chatId = chatId;
 		this.type = string;
 		this.boxPlot = boxPlot;
-		this.date = new Date();
+		this.date = Calendar.getInstance();
 	}
 
 	public Historic(ArrayList<Double> valores, long chatId, String string, Double resultado, File boxPlot) {
@@ -29,7 +31,7 @@ public class Historic implements Comparable<Historic> {
 		this.type = string;
 		this.result = resultado;
 		this.boxPlot = boxPlot;
-		this.date = new Date();
+		this.date = Calendar.getInstance();
 	}
 
 	public ArrayList<Double> getValues() {
@@ -80,11 +82,11 @@ public class Historic implements Comparable<Historic> {
 		this.boxPlot = boxPlot;
 	}
 
-	public Date getDate() {
+	public Calendar getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(Calendar date) {
 		this.date = date;
 	}
 

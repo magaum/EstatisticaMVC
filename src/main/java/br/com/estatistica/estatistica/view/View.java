@@ -13,6 +13,7 @@ import com.pengrad.telegrambot.request.SendChatAction;
 import com.pengrad.telegrambot.request.SendDocument;
 import com.pengrad.telegrambot.request.SendMessage;
 import com.pengrad.telegrambot.request.SendPhoto;
+
 import br.com.estatistica.estatistica.controller.ActionController;
 import br.com.estatistica.estatistica.controller.ExerciseControllerMean;
 import br.com.estatistica.estatistica.controller.ExerciseControllerMedian;
@@ -20,6 +21,7 @@ import br.com.estatistica.estatistica.controller.ExerciseControllerMode;
 import br.com.estatistica.estatistica.controller.HistoricController;
 import br.com.estatistica.estatistica.model.Log;
 import br.com.estatistica.estatistica.model.Model;
+import br.com.estatistica.estatistica.view.utils.ViewUtils;
 
 public class View implements Observer {
 
@@ -29,9 +31,9 @@ public class View implements Observer {
 	// Strategy Pattern -- connection View -> Controller
 	private ActionController actionController;
 
-	public View(String token, Model model) {
+	public View(Model model) {
 		this.model = model;
-		bot = new TelegramBot(token);
+		bot = new TelegramBot(ViewUtils.getTelegramToken());
 	}
 
 	public void receiveUsersMessages() {
@@ -41,7 +43,7 @@ public class View implements Observer {
 					execute(updates);
 				} catch (Exception e) {
 					Log.logWarnWriter("Erro ao processar mensagens: " + e);
-					Log.logWarnWriter("Classe: "+this.getClass().getSimpleName());
+					Log.logWarnWriter("Classe: " + this.getClass().getSimpleName());
 				}
 				return UpdatesListener.CONFIRMED_UPDATES_ALL;
 			}
@@ -60,10 +62,10 @@ public class View implements Observer {
 				Log.logInfoWriter("Nome do usuário: " + nome);
 				Log.logInfoWriter("Mensagem: " + message);
 				Log.logInfoWriter("ChatID: " + chatId);
-				Log.logInfoWriter("Classe: "+this.getClass().getSimpleName());
+				Log.logInfoWriter("Classe: " + this.getClass().getSimpleName());
 			} catch (Exception e) {
 				Log.logErrorWriter("Algum erro ocorreu ao processar a mensagem!" + e);
-				Log.logErrorWriter("Classe: "+this.getClass().getSimpleName());
+				Log.logErrorWriter("Classe: " + this.getClass().getSimpleName());
 			}
 
 			if (message.equalsIgnoreCase("Relatório de requisições")) {
